@@ -4,12 +4,13 @@ export const business = {
   phoneHref: "tel:+18163129131",
   email: "info@noblehardwoods.co",
   emailHref: "mailto:info@noblehardwoods.co",
+  instagram: "https://www.instagram.com/noblehardwoodskcmo/",
   siteUrl: "https://www.noblehardwoods.co",
   area: "Kansas City metro"
 };
 
 export const navItems = [
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
   { label: "Process", href: "/#process" },
@@ -107,6 +108,52 @@ export const values = [
   }
 ];
 
+export const proofPoints = [
+  {
+    title: "Over 15 years of experience",
+    text: "Seasoned hardwood floor craftsmen with deep Kansas City project experience."
+  },
+  {
+    title: "Comprehensive services",
+    text: "Installation, refinishing, repair, stairs, railings, and custom hardwood details."
+  },
+  {
+    title: "Exceptional work quality",
+    text: "Careful prep, clean communication, and finish work homeowners are proud to recommend."
+  }
+];
+
+export const teamMembers = [
+  {
+    name: "Josiah",
+    role: "Owner, Operator",
+    image: "/images/noble-hardwoods-hero.jpg",
+    bio:
+      "Josiah is a co-owner and founder of Noble Hardwoods. He brings a craftsman's eye for accuracy, a calm process, and a sincere desire to help homeowners understand each step of their hardwood floor project."
+  },
+  {
+    name: "Ben",
+    role: "Owner, Quality Control",
+    image: "/images/projects/living-room-hardwood-floors.jpg",
+    bio:
+      "Ben helps lead quality control for Noble Hardwoods. His practical field experience, problem-solving, and steady attention to detail help the team deliver floors that look right and last."
+  },
+  {
+    name: "Simeon",
+    role: "Floor Technician, Media Manager",
+    image: "/images/projects/kitchen-hardwood-floors.jpg",
+    bio:
+      "Simeon supports the craft and the creative voice behind Noble Hardwoods. His growing trade skill and natural eye for the work help show Kansas City homeowners what careful hardwood work can become."
+  },
+  {
+    name: "Ethen",
+    role: "Floor Technician",
+    image: "/images/projects/hardwood-stairs.jpg",
+    bio:
+      "Ethen brings consistency, care, and a steady jobsite presence to the Noble Hardwoods team. His work helps keep projects moving while protecting the standard homeowners expect."
+  }
+];
+
 export const processSteps = [
   "Request a quote",
   "Schedule an in-home consultation",
@@ -121,23 +168,203 @@ export const processSteps = [
 export const featuredProjects = [
   {
     title: "Floor Installation and Refinishing in Overland Park, KS",
+    slug: "floor-installation-and-refinishing-in-overland-park-ks",
+    href: "/projects/floor-installation-and-refinishing-in-overland-park-ks",
+    city: "Overland Park, KS",
+    category: "Construction",
+    date: "Jul 2022",
     image: "/images/projects/living-room-hardwood-floors.jpg",
-    alt: "Finished hardwood floors in a bright Kansas City living room"
+    alt: "Finished hardwood floors in a bright Kansas City living room",
+    summary:
+      "Whole-home hardwood installation and refinishing for a warm, consistent floor plan.",
+    scope: [
+      "Installed hardwood in key living areas",
+      "Refinished existing hardwood for a more consistent look",
+      "Coordinated stain and finish details across transitions"
+    ],
+    relatedServices: [
+      "/hardwood-floor-installation-kansas-city",
+      "/hardwood-floor-refinishing-kansas-city"
+    ]
   },
   {
     title: "Floor Installation and Finish in Lawrence, KS",
+    slug: "floor-installation-and-finish-in-lawrence-ks",
+    href: "/projects/floor-installation-and-finish-in-lawrence-ks",
+    city: "Lawrence, KS",
+    category: "Remodeling",
+    date: "Jul 2022",
     image: "/images/projects/kitchen-hardwood-floors.jpg",
-    alt: "Natural hardwood floors in a bright kitchen"
+    alt: "Natural hardwood floors in a bright kitchen",
+    summary:
+      "Whole-home installation of unfinished hardwood floors, stairs, and railings.",
+    scope: [
+      "Installed unfinished hardwood flooring",
+      "Finished new floors on site for a natural tone",
+      "Coordinated stair and railing details with the floor plan"
+    ],
+    relatedServices: [
+      "/hardwood-floor-installation-kansas-city",
+      "/hardwood-stairs-railings-kansas-city"
+    ]
   },
   {
     title: "Stage and Steps Installation in Lenexa, KS",
+    slug: "stage-steps-installation-in-lenexa-ks",
+    href: "/projects/stage-steps-installation-in-lenexa-ks",
+    city: "Lenexa, KS",
+    category: "Construction",
+    date: "Oct 2023",
     image: "/images/projects/hardwood-stairs.jpg",
-    alt: "Hardwood stairs with black railings"
+    alt: "Hardwood stairs with black railings",
+    summary:
+      "Commercial hardwood stage installation with full-length stair treads and risers.",
+    scope: [
+      "Installed hardwood stage surface",
+      "Built full-length stair treads and risers",
+      "Finished the stage and step details for durability"
+    ],
+    relatedServices: [
+      "/hardwood-stairs-railings-kansas-city",
+      "/hardwood-floor-installation-kansas-city"
+    ]
   },
   {
-    title: "Downtown Loft Hardwood Floors",
+    title: "Installation, Repair and Refinish in Briarcliff, MO",
+    slug: "installation-repair-and-refinish-in-briarcliff-mo",
+    href: "/projects/installation-repair-and-refinish-in-briarcliff-mo",
+    city: "Briarcliff, MO",
+    category: "Remodeling",
+    date: "Oct 2023",
     image: "/images/noble-hardwoods-hero.jpg",
-    alt: "Premium hardwood floors in a warm living room"
+    alt: "Premium hardwood floors in a warm living room",
+    summary:
+      "Hardwood floor installation, repair, and refinishing with new planks laced into existing flooring.",
+    scope: [
+      "Installed new hardwood where needed",
+      "Laced new boards into existing hardwood",
+      "Repaired and refinished floors for a cleaner final result"
+    ],
+    relatedServices: [
+      "/hardwood-floor-repair-kansas-city",
+      "/hardwood-floor-refinishing-kansas-city",
+      "/hardwood-floor-installation-kansas-city"
+    ]
+  }
+];
+
+export const blogPosts = [
+  {
+    title: "How to Care for Your Hardwood Floors",
+    slug: "how-to-care-for-your-hardwood-floors",
+    href: "/blog/how-to-care-for-your-hardwood-floors",
+    date: "October 30, 2023",
+    category: "Maintenance",
+    author: "Simeon P.",
+    image: "/images/projects/kitchen-hardwood-floors.jpg",
+    excerpt:
+      "Hardwood floor maintenance directly impacts the lifespan and health of the floor. Avoid these common mistakes and build a simple care routine.",
+    sections: [
+      {
+        heading: "Do not use vinegar or ammonia",
+        body:
+          "Vinegar and harsh cleaners can eat away at a hardwood floor finish. Use products made for finished wood floors and apply liquid sparingly."
+      },
+      {
+        heading: "Do not let moisture sit",
+        body:
+          "Water, wet towels, steam mops, and heavy moisture can damage wood flooring. Clean spills quickly and use entry mats to reduce tracked-in moisture."
+      },
+      {
+        heading: "Protect the floor from grit and scratches",
+        body:
+          "Crumbs, dirt, and debris can act like sandpaper underfoot. Regular sweeping, felt pads, floor mats, and trimmed pet nails help protect the finish."
+      }
+    ]
+  },
+  {
+    title: "Do Hardwood Floors Provide the Best Return on Investment?",
+    slug: "do-hardwood-floors-provide-the-best-return-on-investment",
+    href: "/blog/do-hardwood-floors-provide-the-best-return-on-investment",
+    date: "October 30, 2023",
+    category: "Planning",
+    author: "Noble Hardwoods",
+    image: "/images/projects/living-room-hardwood-floors.jpg",
+    excerpt:
+      "Hardwood floors are one of the most durable and desirable upgrades homeowners can make when beauty, longevity, and resale appeal all matter.",
+    sections: [
+      {
+        heading: "Hardwood is built for long-term value",
+        body:
+          "Unlike many surface materials, hardwood can often be refinished instead of replaced, extending its lifespan and preserving the character of the home."
+      },
+      {
+        heading: "Buyers recognize real wood",
+        body:
+          "Clean, well-finished hardwood floors help a home feel warmer, more finished, and easier for buyers to imagine living in."
+      },
+      {
+        heading: "The right work matters",
+        body:
+          "Return depends on material choice, installation quality, repairs, finish selection, and how well the floor fits the home."
+      }
+    ]
+  },
+  {
+    title: "Wood Flooring Trends: 21 Trendy Flooring Ideas",
+    slug: "wood-flooring-trends-21-trendy-flooring-ideas",
+    href: "/blog/wood-flooring-trends-21-trendy-flooring-ideas",
+    date: "October 30, 2023",
+    category: "Design",
+    author: "Noble Hardwoods",
+    image: "/images/noble-hardwoods-hero.jpg",
+    excerpt:
+      "From natural white oak to custom pattern work, wood floor trends are strongest when they still feel timeless inside the home.",
+    sections: [
+      {
+        heading: "Natural tones remain strong",
+        body:
+          "Warm, natural wood colors continue to fit Kansas City homes because they brighten rooms without feeling overly trendy."
+      },
+      {
+        heading: "Wide plank and pattern work add character",
+        body:
+          "Wide plank, herringbone, chevron, and feature-room layouts can make a space feel more intentional when the proportions are right."
+      },
+      {
+        heading: "Timeless beats temporary",
+        body:
+          "The best hardwood flooring ideas balance current taste with wood species, finish, and layout decisions that will age well."
+      }
+    ]
+  },
+  {
+    title: "How To: Polishing Your Hardwood Floors",
+    slug: "how-to-polishing-your-hardwood-floors",
+    href: "/blog/how-to-polishing-your-hardwood-floors",
+    date: "October 27, 2023",
+    category: "Maintenance",
+    author: "Noble Hardwoods",
+    image: "/images/projects/hardwood-stairs.jpg",
+    excerpt:
+      "Polishing can help some floors look better, but only when the finish is ready for it and the product matches the floor system.",
+    sections: [
+      {
+        heading: "Know the condition of the finish",
+        body:
+          "Polish cannot fix deep scratches, worn-through finish, water damage, or pet stains. Those issues usually need repair, screening, or refinishing."
+      },
+      {
+        heading: "Use the right product",
+        body:
+          "Avoid waxy or incompatible products that can create buildup or interfere with future refinishing work."
+      },
+      {
+        heading: "Ask before covering up a bigger issue",
+        body:
+          "If the floor looks dull because the finish is failing, Noble Hardwoods can help determine whether polishing, recoating, or refinishing is the better next step."
+      }
+    ]
   }
 ];
 

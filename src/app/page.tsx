@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CTABand } from "@/components/CTABand";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
+import { QuickQuoteForm } from "@/components/QuickQuoteForm";
 import {
   business,
   faqs,
@@ -138,6 +139,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-cream-50 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+          <div>
+            <p className="w-fit border border-noble-orange/30 bg-white/65 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+              Start simple
+            </p>
+            <h2 className="mt-5 max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+              Ready for a hardwood quote?
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68">
+              Send the basics now. If photos, project details, or finish questions are useful,
+              the full quote form is still available on the contact page.
+            </p>
+            <Link
+              href="/contact"
+              className="mt-7 inline-flex items-center gap-3 text-sm font-extrabold uppercase text-noble-ink transition hover:text-noble-orange"
+            >
+              Open full quote form <ArrowMark />
+            </Link>
+          </div>
+          <QuickQuoteForm />
+        </div>
+      </section>
+
       <section id="projects" className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -157,7 +182,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-5 lg:grid-cols-[1.18fr_0.82fr]">
-            <Link href="/projects" className="group block" data-track="project_card_click">
+            <Link href={featuredProjects[0].href} className="group block" data-track="project_card_click">
               <div className="noble-shadow relative aspect-[1.16/1] overflow-hidden bg-noble-mist">
                 <Image
                   src={featuredProjects[0].image}
@@ -171,7 +196,7 @@ export default function Home() {
             </Link>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
               {featuredProjects.slice(1, 4).map((project) => (
-                <Link key={project.title} href="/projects" className="group grid gap-4 sm:grid-cols-[0.9fr_1fr] lg:grid-cols-[0.92fr_1fr]" data-track="project_card_click">
+                <Link key={project.title} href={project.href} className="group grid gap-4 sm:grid-cols-[0.9fr_1fr] lg:grid-cols-[0.92fr_1fr]" data-track="project_card_click">
                   <div className="relative aspect-[1.25/1] overflow-hidden bg-noble-mist">
                     <Image
                       src={project.image}

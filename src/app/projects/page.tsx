@@ -49,8 +49,9 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2">
             {featuredProjects.map((project, index) => (
-              <article
+              <Link
                 key={project.title}
+                href={project.href}
                 className="group border border-noble-ink/10 bg-white p-4 transition hover:-translate-y-1 hover:border-noble-orange/35 hover:shadow-soft"
               >
                 <div className="relative aspect-[1.22/1] overflow-hidden bg-noble-mist">
@@ -65,7 +66,7 @@ export default function ProjectsPage() {
                 <div className="mt-5 flex items-start justify-between gap-5">
                   <div>
                     <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
-                      Kansas City Metro
+                      {project.city} / {project.date}
                     </p>
                     <h2 className="mt-3 text-xl font-extrabold uppercase leading-tight text-noble-ink">
                       {project.title}
@@ -76,10 +77,9 @@ export default function ProjectsPage() {
                   </span>
                 </div>
                 <p className="mt-3 max-w-xl text-sm leading-7 text-noble-ink/68">
-                  A warm hardwood project focused on clean lines, lasting finish quality, and
-                  craftsmanship that fits the home.
+                  {project.summary}
                 </p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

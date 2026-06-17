@@ -11,6 +11,46 @@
   port = 8888
   framework = "#auto"
 
+[[redirects]]
+  from = "/services/installation"
+  to = "/hardwood-floor-installation-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/refinish-recoat-and-repair"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/refinish-recoat-repair"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/refinish-and-repair"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/stairs-and-railings"
+  to = "/hardwood-stairs-railings-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/custom-floor-patterns"
+  to = "/custom-hardwood-floors-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/custom-flooring"
+  to = "/custom-hardwood-floors-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/projects/stage-and-steps-installation-in-lenexa-ks"
+  to = "/projects/stage-steps-installation-in-lenexa-ks"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -1,4 +1,4 @@
-import { business, faqs, featuredProjects, reviews, serviceAreas, services } from "./site";
+import { blogPosts, business, faqs, featuredProjects, reviews, serviceAreas, services } from "./site";
 
 export type FAQ = {
   question: string;
@@ -346,10 +346,14 @@ export const publicRoutes = [
   "/",
   "/contact",
   "/thank-you",
+  "/services",
   "/projects",
+  "/blog",
   "/service-areas",
   "/about",
   "/privacy",
+  ...featuredProjects.map((project) => project.href),
+  ...blogPosts.map((post) => post.href),
   ...servicePages.map((service) => service.href)
 ];
 
@@ -370,6 +374,7 @@ export function getFeaturedProjectSchema() {
   return featuredProjects.map((project) => ({
     "@type": "CreativeWork",
     name: project.title,
+    url: getAbsoluteUrl(project.href),
     image: getAbsoluteUrl(project.image),
     about: "Hardwood flooring project"
   }));

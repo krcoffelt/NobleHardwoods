@@ -167,7 +167,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-3">
             {featuredProjects.slice(0, 3).map((project) => (
-              <Link key={project.title} href="/projects" className="group" data-track="project_card_click">
+              <Link key={project.title} href={project.href} className="group" data-track="project_card_click">
                 <div className="relative aspect-[1.18/1] overflow-hidden bg-noble-mist">
                   <Image
                     src={project.image}
