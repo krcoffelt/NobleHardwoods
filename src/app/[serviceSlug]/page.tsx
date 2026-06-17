@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowMark } from "@/components/ArrowMark";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABand } from "@/components/CTABand";
 import { FAQSection } from "@/components/FAQSection";
@@ -90,13 +91,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
         imageAlt={page.imageAlt}
       />
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
-              What is included
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
               Hardwood work planned around the home, not a generic checklist.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68">
@@ -105,22 +103,22 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </p>
           </div>
           <div className="grid gap-px bg-noble-ink/12 sm:grid-cols-2">
-            {page.includes.map((item) => (
+            {page.includes.map((item, index) => (
               <div key={item} className="bg-white p-6">
-                <p className="text-sm font-extrabold text-noble-ink">{item}</p>
+                <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-noble-orange">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-3 text-sm font-extrabold text-noble-ink">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-noble-mist py-16 sm:py-20">
+      <section className="bg-noble-mist py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
-              Problems solved
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
               Built for real Kansas City homes.
             </h2>
             <div className="mt-8 grid gap-4">
@@ -132,10 +130,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
           </div>
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
-              Process
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
               Clear steps before work begins.
             </h2>
             <div className="mt-8 grid gap-5">
@@ -152,15 +147,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-24">
         <JsonLd data={{ "@context": "https://schema.org", "@graph": getFeaturedProjectSchema() }} />
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
-                Project Proof
-              </p>
-              <h2 className="mt-4 max-w-xl font-serif text-4xl leading-tight text-noble-ink">
+              <h2 className="max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
                 Recent hardwood work across the Kansas City metro.
               </h2>
             </div>
@@ -169,7 +161,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               data-track="projects_index_click"
               className="inline-flex items-center gap-3 text-sm font-extrabold uppercase text-noble-ink hover:text-noble-orange"
             >
-              View projects <span className="text-2xl">-&gt;</span>
+              View projects <ArrowMark />
             </Link>
           </div>
 
@@ -194,13 +186,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="bg-noble-mist py-16 sm:py-20">
+      <section className="bg-noble-mist py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
-              Reviews
-            </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
               Trusted by homeowners who care about the details.
             </h2>
           </div>

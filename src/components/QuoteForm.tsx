@@ -7,6 +7,7 @@ import {
   validateLeadFields,
   validateLeadFiles
 } from "@/lib/lead";
+import { ArrowMark } from "./ArrowMark";
 import { trackEvent } from "./Tracking";
 
 type FormErrors = Record<string, string>;
@@ -89,7 +90,7 @@ export function QuoteForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="relative mx-auto w-full max-w-full bg-white p-6 shadow-soft sm:max-w-xl sm:p-8 lg:max-w-none"
+      className="noble-shadow relative mx-auto w-full max-w-full border border-white/70 bg-white/95 p-6 ring-1 ring-noble-ink/5 sm:max-w-xl sm:p-8 lg:max-w-none"
       noValidate
     >
       <input type="hidden" name="source_page" value={tracking.sourcePage} />
@@ -104,10 +105,10 @@ export function QuoteForm() {
       </div>
 
       <div className="border-b border-noble-ink/10 pb-6">
-        <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+        <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
           Get a quote
         </p>
-        <h2 className="mt-3 font-serif text-3xl leading-tight text-noble-ink sm:text-4xl">
+        <h2 className="mt-3 text-3xl font-black uppercase leading-[0.98] tracking-[-0.03em] text-noble-ink sm:text-4xl">
           Tell us about your floors.
         </h2>
         <p className="mt-3 text-sm leading-6 text-noble-ink/68">
@@ -134,7 +135,7 @@ export function QuoteForm() {
           <select
             name="project_type"
             defaultValue=""
-            className="min-h-14 border border-noble-ink/18 bg-white px-4 text-base text-noble-ink outline-none transition focus:border-noble-orange"
+            className="min-h-14 border border-noble-ink/18 bg-cream-50 px-4 text-base text-noble-ink outline-none transition duration-300 focus:border-noble-orange focus:bg-white"
             aria-invalid={Boolean(errors.project_type)}
           >
             <option value="" disabled>
@@ -159,7 +160,7 @@ export function QuoteForm() {
             {preferredContactOptions.map((option) => (
               <label
                 key={option}
-                className="flex min-h-12 items-center gap-3 border border-noble-ink/14 px-4 text-sm font-bold text-noble-ink"
+                className="flex min-h-12 items-center gap-3 border border-noble-ink/14 bg-cream-50 px-4 text-sm font-bold text-noble-ink transition has-[:checked]:border-noble-orange has-[:checked]:bg-white"
               >
                 <input
                   type="radio"
@@ -182,7 +183,7 @@ export function QuoteForm() {
             rows={5}
             maxLength={2000}
             placeholder="Tell us what is happening with your floors, timeline, and any rooms involved."
-            className="border border-noble-ink/18 bg-white px-4 py-3 text-base text-noble-ink outline-none transition placeholder:text-noble-ink/38 focus:border-noble-orange"
+            className="border border-noble-ink/18 bg-cream-50 px-4 py-3 text-base text-noble-ink outline-none transition duration-300 placeholder:text-noble-ink/45 focus:border-noble-orange focus:bg-white"
             aria-invalid={Boolean(errors.message)}
           />
           <ErrorText message={errors.message} />
@@ -211,10 +212,10 @@ export function QuoteForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex min-h-14 items-center justify-center rounded bg-noble-orange px-8 text-sm font-extrabold text-white shadow-soft transition hover:bg-noble-orange-dark disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-14 items-center justify-center rounded bg-noble-orange px-8 text-sm font-extrabold text-white shadow-soft transition duration-300 hover:bg-noble-orange-dark active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "Sending..." : "Send quote request"}
-          <span className="ml-4 text-xl leading-none">→</span>
+          <ArrowMark className="ml-4" />
         </button>
         <p className="text-xs leading-5 text-noble-ink/56">
           Your information stays with Noble Hardwoods and is used only to follow up on your
@@ -241,7 +242,7 @@ function Field({ label, name, type = "text", error, autoComplete }: FieldProps) 
         name={name}
         type={type}
         autoComplete={autoComplete}
-        className="min-h-14 border border-noble-ink/18 bg-white px-4 text-base text-noble-ink outline-none transition placeholder:text-noble-ink/38 focus:border-noble-orange"
+        className="min-h-14 border border-noble-ink/18 bg-cream-50 px-4 text-base text-noble-ink outline-none transition duration-300 placeholder:text-noble-ink/45 focus:border-noble-orange focus:bg-white"
         aria-invalid={Boolean(error)}
       />
       <ErrorText message={error} />

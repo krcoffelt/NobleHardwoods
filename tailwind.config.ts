@@ -37,11 +37,11 @@ const config: Config = {
       fontFamily: {
         serif: ["Georgia", "Cambria", "Times New Roman", "serif"],
         sans: [
-          "Inter",
+          "Helvetica Neue",
+          "Helvetica",
+          "Arial",
           "ui-sans-serif",
           "system-ui",
-          "Segoe UI",
-          "Arial",
           "sans-serif"
         ]
       },

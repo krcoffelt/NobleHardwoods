@@ -36,9 +36,9 @@ export default function PrivacyPage() {
     <>
       <JsonLd data={schema} />
       <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy" }]} />
-      <section className="bg-noble-mist py-14 sm:py-20">
+      <section className="bg-[linear-gradient(115deg,#fffdf8_0%,#f7f4ef_58%,#efe0c7_100%)] py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
-          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+          <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
             Privacy Policy
           </p>
           <h1 className="mt-5 text-[2.65rem] font-black uppercase leading-[0.98] text-noble-ink min-[390px]:text-5xl sm:text-6xl">
@@ -52,8 +52,8 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <section className="bg-white py-14 sm:py-16">
-        <div className="mx-auto grid max-w-4xl gap-10 px-5 text-base leading-8 text-noble-ink/72 sm:px-6 lg:px-8">
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-4xl gap-0 px-5 text-base leading-8 text-noble-ink/72 sm:px-6 lg:px-8">
           <PolicyBlock title="Information We Collect">
             <p>
               When you submit a quote request, Noble Hardwoods may collect your name, phone
@@ -123,8 +123,8 @@ export default function PrivacyPage() {
 
 function PolicyBlock({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="border-b border-noble-ink/10 pb-8 last:border-b-0 last:pb-0">
-      <h2 className="font-serif text-3xl leading-tight text-noble-ink">{title}</h2>
+    <section className="border-b border-noble-ink/10 py-8 first:pt-0 last:border-b-0 last:pb-0">
+      <h2 className="text-2xl font-black uppercase leading-tight text-noble-ink">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
   );

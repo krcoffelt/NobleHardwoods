@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { business, navItems } from "@/data/site";
+import { ArrowMark } from "./ArrowMark";
 import { ButtonLink } from "./ButtonLink";
 import { Logo } from "./Logo";
 
@@ -10,7 +11,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-noble-ink/10 bg-white/96 text-noble-ink backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/70 bg-cream-50/88 text-noble-ink shadow-[0_12px_40px_rgba(37,31,27,0.08)] backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:h-24 sm:px-6 lg:px-8">
         <Logo />
 
@@ -28,7 +29,7 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <ButtonLink href="/contact" variant="primary" className="min-h-14 px-8">
-            Get a quote <span className="ml-4 text-xl leading-none">→</span>
+            Get a quote <ArrowMark className="ml-4" />
           </ButtonLink>
         </div>
 
@@ -49,7 +50,7 @@ export function Header() {
       </div>
 
       {isOpen ? (
-        <div id="mobile-menu" className="border-t border-noble-ink/10 bg-white lg:hidden">
+        <div id="mobile-menu" className="border-t border-noble-ink/10 bg-cream-50/95 backdrop-blur-xl lg:hidden">
           <nav className="mx-auto grid max-w-sm gap-1 px-5 py-5" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link

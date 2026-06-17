@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowMark } from "@/components/ArrowMark";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABand } from "@/components/CTABand";
 import { InteriorHero } from "@/components/InteriorHero";
@@ -54,19 +55,22 @@ export default function AboutPage() {
         imageAlt="Warm hardwood floors in a Kansas City home"
       />
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+            <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               What Noble Means
             </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink sm:text-5xl">
               We do not just care about floors. We care about the people who walk on them.
             </h2>
           </div>
           <div className="grid gap-px bg-noble-ink/12 sm:grid-cols-2">
-            {values.map((value) => (
-              <div key={value.title} className="bg-white p-7">
+            {values.map((value, index) => (
+              <div key={value.title} className="bg-white p-7 transition hover:bg-cream-50">
+                <p className="mb-5 text-xs font-black uppercase tracking-[0.18em] text-noble-orange">
+                  0{index + 1}
+                </p>
                 <h3 className="text-sm font-extrabold uppercase text-noble-ink">
                   {value.title}
                 </h3>
@@ -77,9 +81,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-noble-mist py-16 sm:py-20">
+      <section className="bg-noble-mist py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-          <div className="relative aspect-[1.22/1] overflow-hidden bg-white shadow-soft">
+          <div className="relative aspect-[1.22/1] overflow-hidden border-[10px] border-white bg-white noble-shadow">
             <Image
               src="/images/projects/kitchen-hardwood-floors.jpg"
               alt="Natural hardwood floors in a bright Kansas City kitchen"
@@ -89,16 +93,16 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+            <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               How We Work
             </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               Clear expectations from quote to final walkthrough.
             </h2>
             <div className="mt-8 grid gap-4">
               {processSteps.slice(0, 5).map((step, index) => (
                 <div key={step} className="grid grid-cols-[auto_1fr] gap-4">
-                  <span className="grid size-9 place-items-center bg-noble-orange text-xs font-extrabold text-white">
+                  <span className="grid size-9 place-items-center bg-noble-ink text-xs font-extrabold text-white">
                     {index + 1}
                   </span>
                   <p className="text-sm font-bold leading-7 text-noble-ink">{step}</p>
@@ -109,25 +113,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+            <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               Local Trust
             </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               Hardwood work homeowners are proud to recommend.
             </h2>
             <Link
               href="/projects"
-              className="mt-7 inline-flex text-sm font-extrabold uppercase text-noble-ink hover:text-noble-orange"
+              className="mt-7 inline-flex items-center gap-3 text-sm font-extrabold uppercase text-noble-ink hover:text-noble-orange"
             >
-              View project examples -&gt;
+              View project examples <ArrowMark />
             </Link>
           </div>
           <div className="grid gap-5">
             {reviews.map((review) => (
-              <figure key={review.name} className="border-l-4 border-noble-orange bg-noble-mist p-6">
+              <figure key={review.name} className="border-l-4 border-noble-orange bg-cream-50 p-6 transition hover:bg-noble-mist">
                 <blockquote className="text-base leading-7 text-noble-ink">
                   {review.quote}
                 </blockquote>

@@ -16,14 +16,13 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-noble-mist">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12 lg:px-8 lg:py-20">
+      <section className="bg-[linear-gradient(115deg,#fffdf8,#f7f4ef_58%,#efe0c7)]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:gap-12 lg:px-8 lg:py-16">
           <div className="min-w-0 lg:col-start-1">
-            <div className="flex max-w-full flex-wrap items-center gap-x-6 gap-y-3 text-sm font-extrabold uppercase tracking-[0.16em] text-noble-orange">
+            <div className="inline-flex max-w-full flex-wrap items-center gap-x-4 gap-y-2 border border-noble-orange/30 bg-white/55 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
               <span>Kansas City hardwood quote</span>
-              <span className="h-0.5 w-14 shrink-0 bg-noble-orange" />
             </div>
-            <h1 className="mt-8 max-w-xl text-[2.65rem] font-black uppercase leading-[0.98] text-noble-ink min-[390px]:text-5xl sm:text-6xl">
+            <h1 className="mt-8 max-w-xl text-[2.45rem] font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink min-[390px]:text-5xl sm:text-6xl">
               Get a Hardwood Flooring Quote in Kansas City
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-noble-ink/68">
@@ -63,15 +62,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
-            Contact FAQs
-          </p>
-          <h2 className="mt-4 text-center font-serif text-4xl leading-tight text-noble-ink">
-            What happens after you reach out?
-          </h2>
-          <div className="mt-10 divide-y divide-noble-ink/12 border border-noble-ink/12 bg-white">
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
+          <div>
+            <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+              Contact FAQs
+            </p>
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
+              What happens after you reach out?
+            </h2>
+          </div>
+          <div className="divide-y divide-noble-ink/12 border border-noble-ink/12 bg-white">
             {[
               {
                 question: "How soon will I hear back?",

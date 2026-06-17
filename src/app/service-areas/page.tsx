@@ -49,13 +49,13 @@ export default function ServiceAreasPage() {
         imageAlt="Warm hardwood floors in a Kansas City home"
       />
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+            <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               Local Service
             </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               Local roots. Careful work. Clear communication.
             </h2>
             <p className="mt-5 text-base leading-8 text-noble-ink/68">
@@ -63,13 +63,13 @@ export default function ServiceAreasPage() {
               future dedicated city pages.
             </p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-px bg-noble-ink/12 sm:grid-cols-2">
             {serviceAreas.map((area) => (
               <Link
                 key={area}
                 href="/contact"
                 data-track="service_area_quote_click"
-                className="border border-noble-ink/12 bg-white p-5 text-sm font-extrabold text-noble-ink transition hover:border-noble-orange hover:bg-noble-mist hover:text-noble-orange"
+                className="bg-white p-5 text-sm font-extrabold uppercase text-noble-ink transition hover:bg-cream-50 hover:text-noble-orange"
               >
                 {area}
               </Link>
@@ -78,13 +78,13 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <section className="bg-noble-mist py-16 sm:py-20">
+      <section className="bg-noble-mist py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-noble-orange">
+            <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               Hardwood Services
             </p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-noble-ink">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               The same Noble standard across every service area.
             </h2>
           </div>
@@ -93,7 +93,7 @@ export default function ServiceAreasPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="bg-white p-6 transition hover:bg-cream-50"
+                className="border border-transparent bg-white p-6 transition hover:-translate-y-1 hover:border-noble-orange/35 hover:bg-cream-50"
               >
                 <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
                   {service.eyebrow}

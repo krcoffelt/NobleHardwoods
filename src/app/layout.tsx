@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     images: ["/images/noble-hardwoods-hero.jpg"]
   },
   icons: {
-    icon: "/images/brand/icon-flooring.png",
-    apple: "/images/brand/icon-flooring.png"
+    icon: "/favicon-noble.png",
+    apple: "/favicon-noble.png"
   }
 };
 
