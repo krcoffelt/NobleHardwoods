@@ -1,4 +1,13 @@
-import { blogPosts, business, faqs, featuredProjects, reviews, serviceAreas, services } from "./site";
+import {
+  blogPosts,
+  business,
+  faqs,
+  featuredProjects,
+  processSteps,
+  reviews,
+  serviceAreas,
+  services
+} from "./site";
 
 export type FAQ = {
   question: string;
@@ -23,12 +32,7 @@ export type ServicePage = {
   relatedServices: string[];
 };
 
-const sharedProcess = [
-  "Review the rooms, floor condition, timeline, and project goals.",
-  "Walk through practical options for materials, repair needs, color, and finish.",
-  "Provide a clear estimate before work begins.",
-  "Protect the home, complete the hardwood work, and finish with a final walkthrough."
-];
+const sharedProcess = processSteps;
 
 export const servicePages: ServicePage[] = [
   {
@@ -349,6 +353,7 @@ export const publicRoutes = [
   "/services",
   "/projects",
   "/blog",
+  "/stain-gallery",
   "/service-areas",
   "/about",
   "/privacy",

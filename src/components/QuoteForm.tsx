@@ -2,10 +2,13 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import {
+  getLeadUploadFiles,
   preferredContactOptions,
+  projectSizeOptions,
   projectTypeOptions,
   validateLeadFields,
-  validateLeadFiles
+  validateLeadFiles,
+  workOptionOptions
 } from "@/lib/lead";
 import { ArrowMark } from "./ArrowMark";
 import { trackEvent } from "./Tracking";
@@ -42,10 +45,8 @@ export function QuoteForm() {
 
     const formData = new FormData(formRef.current);
     const fieldValidation = validateLeadFields(formData);
-    const files = formData
-      .getAll("photos")
-      .filter((value): value is File => value instanceof File && value.size > 0);
-    const fileErrors = validateLeadFiles(files);
+    const uploadFiles = getLeadUploadFiles(formData);
+    const fileErrors = validateLeadFiles(uploadFiles);
 
     if (!fieldValidation.ok || Object.keys(fileErrors).length > 0) {
       setErrors({
@@ -112,8 +113,8 @@ export function QuoteForm() {
           Tell us about your floors.
         </h2>
         <p className="mt-3 text-sm leading-6 text-noble-ink/68">
-          Send a few details and the Noble Hardwoods team will follow up to talk through
-          the best next step.
+          Send the details you have now. Photos, a short video, and rough square footage
+          help the Noble Hardwoods team give a more useful first response.
         </p>
       </div>
 
@@ -152,6 +153,63 @@ export function QuoteForm() {
       </div>
 
       <div className="mt-5 grid gap-5">
+        <label className="grid gap-2">
+          <span className="text-sm font-extrabold uppercase text-noble-ink">
+            Approximate floor area
+          </span>
+          <div className="grid gap-2 sm:grid-cols-3">
+            {projectSizeOptions.map((option) => (
+              <label
+                key={option}
+                className="flex min-h-12 items-center gap-3 border border-noble-ink/14 bg-cream-50 px-4 text-sm font-bold text-noble-ink transition has-[:checked]:border-noble-orange has-[:checked]:bg-white"
+              >
+                <input
+                  type="radio"
+                  name="project_size"
+                  value={option}
+                  className="size-4 accent-noble-orange"
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs leading-5 text-noble-ink/56">
+            <span>A rough under/over 500 sq ft estimate is enough to start.</span>
+            <a
+              href="https://www.youtube.com/results?search_query=how+to+measure+square+footage+for+flooring"
+              target="_blank"
+              rel="noreferrer"
+              className="font-extrabold uppercase text-noble-orange transition hover:text-noble-orange-dark"
+            >
+              Watch how to measure square footage
+            </a>
+          </div>
+          <ErrorText message={errors.project_size} />
+        </label>
+
+        <fieldset className="grid gap-3">
+          <legend className="text-sm font-extrabold uppercase text-noble-ink">
+            Work options <span className="font-semibold text-noble-ink/50">(optional)</span>
+          </legend>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {workOptionOptions.map((option) => (
+              <label
+                key={option}
+                className="flex min-h-12 items-center gap-3 border border-noble-ink/14 bg-cream-50 px-4 text-sm font-bold text-noble-ink transition has-[:checked]:border-noble-orange has-[:checked]:bg-white"
+              >
+                <input
+                  type="checkbox"
+                  name="work_options"
+                  value={option}
+                  className="size-4 accent-noble-orange"
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+          <ErrorText message={errors.work_options} />
+        </fieldset>
+
         <label className="grid gap-2">
           <span className="text-sm font-extrabold uppercase text-noble-ink">
             Preferred contact method
@@ -202,9 +260,26 @@ export function QuoteForm() {
             aria-invalid={Boolean(errors.photos)}
           />
           <p className="text-xs leading-5 text-noble-ink/56">
-            Upload up to 5 photos. JPG, PNG, WebP, HEIC, or HEIF. Max 8 MB each.
+            Upload up to 12 photos. JPG, PNG, WebP, HEIC, or HEIF. Max 8 MB each.
           </p>
           <ErrorText message={errors.photos} />
+        </label>
+
+        <label className="grid gap-2">
+          <span className="text-sm font-extrabold uppercase text-noble-ink">
+            Short video <span className="font-semibold text-noble-ink/50">(optional)</span>
+          </span>
+          <input
+            name="videos"
+            type="file"
+            accept="video/mp4,video/quicktime,video/webm"
+            className="border border-dashed border-noble-ink/22 bg-noble-mist px-4 py-5 text-sm text-noble-ink file:mr-4 file:rounded-none file:border-0 file:bg-noble-orange file:px-4 file:py-3 file:text-sm file:font-extrabold file:text-white"
+            aria-invalid={Boolean(errors.videos)}
+          />
+          <p className="text-xs leading-5 text-noble-ink/56">
+            Upload one short MP4, MOV, or WebM video. Max 25 MB.
+          </p>
+          <ErrorText message={errors.videos} />
         </label>
       </div>
 

@@ -42,6 +42,8 @@ function customerEmailHtml(lead: LeadInput) {
     <p>Thanks for reaching out to Noble Hardwoods. We received your quote request and will follow up to talk through your project.</p>
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;margin:24px 0;">
       ${row("Project type", lead.projectType)}
+      ${row("Project size", lead.projectSize)}
+      ${lead.workOptions.length > 0 ? row("Work options", lead.workOptions.join(", ")) : ""}
       ${row("City", lead.city)}
       ${row("Preferred contact", lead.preferredContactMethod)}
       ${lead.message ? row("Message", lead.message) : ""}
@@ -65,7 +67,7 @@ function internalEmailHtml({
   const fileList =
     fileReferences.length > 0
       ? `<ul>${fileReferences.map((file) => `<li>${escapeHtml(file)}</li>`).join("")}</ul>`
-      : "<p>No photos uploaded.</p>";
+      : "<p>No project files uploaded.</p>";
 
   return emailLayout(`
     <p><strong>New lead ID:</strong> ${escapeHtml(leadId)}</p>
@@ -75,6 +77,8 @@ function internalEmailHtml({
       ${row("Email", lead.email)}
       ${row("City", lead.city)}
       ${row("Project type", lead.projectType)}
+      ${row("Project size", lead.projectSize)}
+      ${row("Work options", lead.workOptions.length > 0 ? lead.workOptions.join(", ") : "None selected")}
       ${row("Preferred contact", lead.preferredContactMethod)}
       ${row("Message", lead.message || "No message provided.")}
       ${row("Source page", lead.sourcePage || "Not captured")}
@@ -82,7 +86,7 @@ function internalEmailHtml({
       ${row("UTM medium", lead.utmMedium || "Not captured")}
       ${row("UTM campaign", lead.utmCampaign || "Not captured")}
     </table>
-    <p><strong>Uploaded photos</strong></p>
+    <p><strong>Uploaded project files</strong></p>
     ${fileList}
   `);
 }

@@ -52,7 +52,7 @@ export default function ThankYouPage() {
               </h2>
               <div className="mt-6 grid gap-5">
                 {[
-                  "We review your project type, city, message, and optional photos.",
+                  "We review your project type, size, work options, message, and optional files.",
                   "The team follows up by your preferred contact method when possible.",
                   "Most projects move toward an in-home consultation and clear estimate."
                 ].map((item, index) => (

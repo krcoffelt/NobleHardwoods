@@ -54,9 +54,15 @@ export function Footer() {
                 </Link>
               ))}
             <Link href="/service-areas">Service Areas</Link>
+            <Link href="/stain-gallery">Stain Gallery</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href={business.instagram}>Instagram</Link>
+            <Link href={business.zeraServicesHref} target="_blank" rel="noreferrer">
+              Zera Services
+            </Link>
+            <Link href={business.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </Link>
           </FooterGroup>
         </div>
       </div>

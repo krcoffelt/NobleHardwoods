@@ -1,7 +1,12 @@
 import { randomUUID } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { sendLeadEmails } from "@/lib/email";
-import { getLeadFiles, validateLeadFields, validateLeadFiles } from "@/lib/lead";
+import {
+  getLeadFiles,
+  getLeadUploadFiles,
+  validateLeadFields,
+  validateLeadFiles
+} from "@/lib/lead";
 import { createSupabaseAdminClient, getLeadUploadBucket } from "@/lib/supabaseAdmin";
 
 export const runtime = "nodejs";
@@ -26,8 +31,9 @@ export async function POST(request: NextRequest) {
   }
 
   const fieldValidation = validateLeadFields(formData);
-  const files = getLeadFiles(formData);
-  const fileErrors = validateLeadFiles(files);
+  const uploadFiles = getLeadUploadFiles(formData);
+  const files = getLeadFiles(uploadFiles);
+  const fileErrors = validateLeadFiles(uploadFiles);
 
   if (!fieldValidation.ok || Object.keys(fileErrors).length > 0) {
     return NextResponse.json(
@@ -58,6 +64,8 @@ export async function POST(request: NextRequest) {
         phone: lead.phone,
         city: lead.city,
         project_type: lead.projectType,
+        project_size: lead.projectSize,
+        work_options: lead.workOptions,
         message: lead.message,
         preferred_contact_method: lead.preferredContactMethod,
         source_page: sourcePage,

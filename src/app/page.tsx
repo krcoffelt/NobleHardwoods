@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { CTABand } from "@/components/CTABand";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
-import { QuickQuoteForm } from "@/components/QuickQuoteForm";
+import { QuoteForm } from "@/components/QuoteForm";
 import {
   business,
   faqs,
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/images/noble-hardwoods-hero.jpg",
-        width: 1672,
-        height: 941,
-        alt: "Premium hardwood floors in a warm Kansas City home"
+        url: "/images/projects/living-room-hardwood-floors.jpg",
+        width: 1600,
+        height: 814,
+        alt: "Finished hardwood floor completed by Noble Hardwoods"
       }
     ]
   }
@@ -52,7 +52,7 @@ export default function Home() {
     telephone: business.phone,
     email: business.email,
     areaServed: getAreaSchema(),
-    image: getAbsoluteUrl("/images/noble-hardwoods-hero.jpg"),
+    image: getAbsoluteUrl("/images/projects/living-room-hardwood-floors.jpg"),
     priceRange: "$$",
     description:
       "Kansas City hardwood flooring company offering refinishing, installation, repair, dustless sanding, stairs, railings, and custom hardwood floors.",
@@ -66,8 +66,8 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-[linear-gradient(115deg,#fffdf8_0%,#f7f4ef_48%,#efe0c7_100%)]">
         <div className="hero-curve absolute inset-y-0 right-0 hidden w-[50%] overflow-hidden bg-noble-mist lg:block xl:w-[56%]">
           <Image
-            src="/images/noble-hardwoods-hero.jpg"
-            alt="Premium hardwood floors in a warm Kansas City home"
+            src="/images/projects/living-room-hardwood-floors.jpg"
+            alt="Finished hardwood floor completed by Noble Hardwoods"
             fill
             priority
             className="object-cover"
@@ -99,8 +99,8 @@ export default function Home() {
 
           <div className="relative mt-12 h-80 overflow-hidden rounded lg:hidden">
             <Image
-              src="/images/noble-hardwoods-hero.jpg"
-              alt="Premium hardwood floors in a warm Kansas City home"
+              src="/images/projects/living-room-hardwood-floors.jpg"
+              alt="Finished hardwood floor completed by Noble Hardwoods"
               fill
               priority
               className="object-cover"
@@ -140,26 +140,62 @@ export default function Home() {
       </section>
 
       <section className="bg-cream-50 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:px-8">
+          <div>
+            <p className="w-fit border border-noble-orange/30 bg-white/65 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+              Other Contracting Services
+            </p>
+            <h2 className="mt-5 max-w-xl text-3xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+              Need painting, drywall, or other home work?
+            </h2>
+          </div>
+          <div className="grid gap-5 bg-white p-6 shadow-soft sm:grid-cols-[auto_1fr_auto] sm:items-center">
+            <div className="grid size-16 place-items-center bg-noble-orange text-2xl font-black text-white">
+              Z
+            </div>
+            <div>
+              <h3 className="text-xl font-black uppercase leading-tight text-noble-ink">
+                Zera Services, LLC
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-noble-ink/68">
+                For painting, drywall, and other contracting services outside of hardwood
+                flooring, connect with the Zera Services team.
+              </p>
+            </div>
+            <Link
+              href={business.zeraServicesHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-12 items-center justify-center bg-noble-ink px-5 text-sm font-extrabold uppercase text-white transition hover:bg-noble-orange"
+            >
+              Visit Zera <ArrowMark className="ml-3" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="quote" className="bg-cream-50 py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
           <div>
             <p className="w-fit border border-noble-orange/30 bg-white/65 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
-              Start simple
+              Start your quote
             </p>
             <h2 className="mt-5 max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
-              Ready for a hardwood quote?
+              Tell us what your floors need.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68">
-              Send the basics now. If photos, project details, or finish questions are useful,
-              the full quote form is still available on the contact page.
+              The full quote form is now right here on the homepage. Add your project type,
+              contact preference, work options, message, and optional photos or video so the
+              first response is more useful.
             </p>
             <Link
-              href="/contact"
+              href="/stain-gallery"
               className="mt-7 inline-flex items-center gap-3 text-sm font-extrabold uppercase text-noble-ink transition hover:text-noble-orange"
             >
-              Open full quote form <ArrowMark />
+              Browse stain colors <ArrowMark />
             </Link>
           </div>
-          <QuickQuoteForm />
+          <QuoteForm />
         </div>
       </section>
 
@@ -248,7 +284,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-4">
-            {processSteps.slice(0, 5).map((step, index) => (
+            {processSteps.map((step, index) => (
               <div key={step} className="grid grid-cols-[auto_1fr] gap-5 border-b border-noble-ink/10 pb-5 last:border-b-0">
                 <span className="grid size-10 place-items-center bg-noble-ink text-sm font-extrabold text-white">
                   {index + 1}
@@ -293,6 +329,31 @@ export default function Home() {
               </div>
             ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream-50 py-16 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:px-8">
+          <div>
+            <p className="w-fit border border-noble-orange/30 bg-white/65 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+              DuraSeal Stain Gallery
+            </p>
+            <h2 className="mt-5 max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+              Compare stain directions before your consultation.
+            </h2>
+          </div>
+          <div className="bg-white p-6 shadow-soft">
+            <p className="text-base leading-8 text-noble-ink/68">
+              Browse common DuraSeal stain colors for White Oak and Red Oak, then use the
+              quote form to tell us if you already have a color direction in mind.
+            </p>
+            <Link
+              href="/stain-gallery"
+              className="mt-6 inline-flex min-h-12 items-center justify-center bg-noble-orange px-6 text-sm font-extrabold uppercase text-white transition hover:bg-noble-orange-dark"
+            >
+              Open stain selector <ArrowMark className="ml-3" />
+            </Link>
           </div>
         </div>
       </section>

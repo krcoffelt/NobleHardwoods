@@ -171,7 +171,7 @@ export default function AboutPage() {
               Clear expectations from quote to final walkthrough.
             </h2>
             <div className="mt-8 grid gap-4">
-              {processSteps.slice(0, 5).map((step, index) => (
+              {processSteps.map((step, index) => (
                 <div key={step} className="grid grid-cols-[auto_1fr] gap-4">
                   <span className="grid size-9 place-items-center bg-noble-ink text-xs font-extrabold text-white">
                     {index + 1}

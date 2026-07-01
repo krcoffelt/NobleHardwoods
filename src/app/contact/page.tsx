@@ -26,8 +26,8 @@ export default function ContactPage() {
               Get a Hardwood Flooring Quote in Kansas City
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-noble-ink/68">
-              Tell us about your floors, and the Noble Hardwoods team will follow up to talk
-              through your project.
+              Tell us about your floors, add rough square footage, and upload optional photos
+              or a short video so the Noble Hardwoods team can talk through your project.
             </p>
           </div>
 
@@ -85,9 +85,9 @@ export default function ContactPage() {
                   "Yes. Most projects need an in-home consultation so the team can review the floors, measurements, repairs, and finish goals."
               },
               {
-                question: "Can I upload photos of my floors?",
+                question: "Can I upload photos or video of my floors?",
                 answer:
-                  "Yes. Photos are optional, but they can help the team understand wear, damage, room layout, and possible repair needs."
+                  "Yes. Photos and one short video are optional, but they can help the team understand wear, damage, room layout, and possible repair needs."
               },
               ...faqs.slice(2, 4)
             ].map((faq) => (

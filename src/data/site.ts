@@ -5,6 +5,7 @@ export const business = {
   email: "info@noblehardwoods.co",
   emailHref: "mailto:info@noblehardwoods.co",
   instagram: "https://www.instagram.com/noblehardwoodskcmo/",
+  zeraServicesHref: "https://zeraservicesllc.com/",
   siteUrl: "https://www.noblehardwoods.co",
   area: "Kansas City metro"
 };
@@ -156,13 +157,11 @@ export const teamMembers = [
 
 export const processSteps = [
   "Request a quote",
+  "Receive a preliminary estimate",
   "Schedule an in-home consultation",
   "Review flooring options, stain, and finish",
   "Receive a clear estimate",
-  "Prep and schedule the project",
-  "Install, repair, sand, or refinish",
-  "Complete the final walkthrough",
-  "Get care instructions"
+  "Prep and schedule the project"
 ];
 
 export const featuredProjects = [

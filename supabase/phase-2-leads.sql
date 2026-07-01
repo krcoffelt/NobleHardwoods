@@ -9,6 +9,8 @@ create table if not exists public.leads (
   phone text not null,
   city text not null,
   project_type text not null,
+  project_size text,
+  work_options text[] not null default '{}',
   message text,
   preferred_contact_method text not null,
   source_page text,
@@ -19,6 +21,12 @@ create table if not exists public.leads (
   assigned_to text,
   notes text
 );
+
+alter table if exists public.leads
+  add column if not exists project_size text;
+
+alter table if exists public.leads
+  add column if not exists work_options text[] not null default '{}';
 
 create table if not exists public.lead_files (
   id uuid primary key default gen_random_uuid(),

@@ -9,7 +9,7 @@ import { business } from "@/data/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy policy for Noble Hardwoods quote requests, contact information, optional project photos, analytics, and website usage.",
+    "Privacy policy for Noble Hardwoods quote requests, contact information, optional project photos or video, analytics, and website usage.",
   alternates: {
     canonical: "/privacy"
   },
@@ -57,8 +57,9 @@ export default function PrivacyPage() {
           <PolicyBlock title="Information We Collect">
             <p>
               When you submit a quote request, Noble Hardwoods may collect your name, phone
-              number, email address, city, project type, preferred contact method, message,
-              source page, UTM campaign information, and optional project photos.
+              number, email address, city, project type, approximate project size, selected
+              work options, preferred contact method, message, source page, UTM campaign
+              information, and optional project photos or video.
             </p>
           </PolicyBlock>
 
@@ -70,10 +71,11 @@ export default function PrivacyPage() {
             </p>
           </PolicyBlock>
 
-          <PolicyBlock title="Project Photos">
+          <PolicyBlock title="Project Photos and Video">
             <p>
-              Photos are optional. If you upload photos, they are used to help understand
-              floor condition, room layout, damage, or project scope before follow-up.
+              Photos and video are optional. If you upload project media, it is used to help
+              understand floor condition, room layout, damage, or project scope before
+              follow-up.
             </p>
           </PolicyBlock>
 
@@ -96,9 +98,9 @@ export default function PrivacyPage() {
 
           <PolicyBlock title="Retention and Deletion">
             <p>
-              Quote request information and uploaded photos may be retained as long as needed
-              to respond to the request, maintain business records, and improve lead handling.
-              To request deletion or correction, contact Noble Hardwoods directly.
+              Quote request information and uploaded project media may be retained as long as
+              needed to respond to the request, maintain business records, and improve lead
+              handling. To request deletion or correction, contact Noble Hardwoods directly.
             </p>
           </PolicyBlock>
 
