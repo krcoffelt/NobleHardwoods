@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnalyticsScripts, TrackInteractions } from "@/components/Tracking";
 import { business } from "@/data/site";
 
@@ -52,8 +53,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <AnalyticsScripts />
         <TrackInteractions />
+        <ScrollReveal />
         <Header />
-        <main>{children}</main>
+        <main className="page-shell">{children}</main>
         <Footer />
         <MobileStickyCTA />
       </body>

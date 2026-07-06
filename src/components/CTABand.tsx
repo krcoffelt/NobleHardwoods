@@ -1,5 +1,4 @@
 import { business } from "@/data/site";
-import Image from "next/image";
 import { ButtonLink } from "./ButtonLink";
 
 type CTABandProps = {
@@ -12,30 +11,22 @@ export function CTABand({
   text = "Send a few details about your project and the Noble Hardwoods team will follow up."
 }: CTABandProps) {
   return (
-    <section className="relative overflow-hidden bg-noble-ink py-16 text-white sm:py-20">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/textures/wood-grain.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="size-full object-cover opacity-55"
-        />
-        <div className="absolute inset-0 bg-noble-ink/55" />
-      </div>
-      <div className="relative mx-auto grid max-w-7xl gap-8 px-5 sm:px-6 lg:grid-cols-[1fr_auto_0.9fr] lg:items-center lg:px-8">
-        <div>
-          <h2 className="max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] sm:text-5xl">
+    <section className="relative overflow-hidden bg-noble-ink py-0 text-white">
+      <div className="absolute inset-0 carpenter-line-art opacity-90" />
+      <div className="relative mx-auto grid min-h-[36rem] max-w-[76.25rem] gap-8 px-5 py-20 sm:px-6 lg:grid-cols-[1fr_auto_0.82fr] lg:items-center lg:px-8 xl:px-0">
+        <div className="max-w-2xl">
+          <p className="carpenter-eyebrow mb-6 text-white/82">Get a free quote</p>
+          <h2 className="carpenter-title text-5xl font-bold sm:text-6xl lg:text-7xl">
             {title}
           </h2>
-          <p className="mt-4 max-w-md text-base leading-7 text-white/82">{text}</p>
+          <p className="mt-6 max-w-md text-base leading-8 text-white/78">{text}</p>
         </div>
-        <div className="hidden h-28 w-px bg-white/42 lg:block" />
+        <div className="hidden h-40 w-px bg-white/35 lg:block" />
         <div className="flex max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row lg:justify-end">
-          <ButtonLink href="/contact" variant="primary" className="min-h-16 px-10 active:translate-y-px">
+          <ButtonLink href="/contact" variant="primary" className="px-10">
             Get a free quote
           </ButtonLink>
-          <ButtonLink href={business.phoneHref} variant="light" className="active:translate-y-px">
+          <ButtonLink href={business.phoneHref} variant="light">
             Call {business.phone}
           </ButtonLink>
         </div>

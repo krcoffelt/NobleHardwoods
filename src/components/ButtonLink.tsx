@@ -16,11 +16,11 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   const variants = {
     primary:
-      "bg-noble-orange text-white shadow-soft hover:bg-noble-orange-dark focus-visible:outline-noble-orange",
+      "bg-white text-noble-ink shadow-[0_18px_50px_rgba(0,0,0,0.12)] hover:bg-noble-orange hover:text-white focus-visible:outline-noble-orange",
     secondary:
-      "border border-noble-ink/15 bg-white text-noble-ink hover:border-noble-orange hover:text-noble-orange focus-visible:outline-noble-orange",
+      "border border-noble-ink bg-transparent text-noble-ink hover:border-noble-orange hover:bg-noble-orange hover:text-white focus-visible:outline-noble-orange",
     light:
-      "border border-white/35 bg-white/12 text-white backdrop-blur hover:bg-white/20 focus-visible:outline-white"
+      "border-2 border-white/90 bg-transparent text-white hover:border-white hover:bg-transparent focus-visible:outline-white"
   };
   const trackingEvent = href.startsWith("tel:")
     ? "phone_click"
@@ -34,7 +34,7 @@ export function ButtonLink({
     <Link
       href={href}
       data-track={trackingEvent}
-      className={`inline-flex min-h-12 items-center justify-center rounded px-6 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${variants[variant]} ${className}`}
+      className={`inline-flex min-h-[4.625rem] items-center justify-center rounded-full px-8 text-base font-bold uppercase tracking-normal transition duration-300 hover:-translate-y-1 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-lg ${variants[variant]} ${className}`}
     >
       {children}
     </Link>

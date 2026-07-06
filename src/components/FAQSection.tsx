@@ -35,7 +35,7 @@ export function FAQSection({
           <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
             {eyebrow}
           </p>
-          <h2 className="mt-4 max-w-lg text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+          <h2 className="mt-4 max-w-lg text-4xl font-bold uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
             {title}
           </h2>
         </div>
