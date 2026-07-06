@@ -43,11 +43,22 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const homeStats = [
-    ["15+", "Years of experience"],
-    ["6", "Hardwood services"],
-    ["KC", "Metro area"],
-    ["5.0", "Google rating"]
+  const trustPoints = [
+    {
+      value: "15+ years",
+      label: "Experienced crews",
+      detail: "Seasoned hardwood work for homes across the Kansas City metro."
+    },
+    {
+      value: "5.0 rating",
+      label: "Homeowner trust",
+      detail: "Review-backed communication, workmanship, and follow-through."
+    },
+    {
+      value: "Free estimates",
+      label: "Clear next step",
+      detail: "Straightforward quote requests before an in-home consultation."
+    }
   ];
   const serviceVisuals = [
     {
@@ -137,17 +148,47 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="relative z-10 bg-white pb-14 pt-0 sm:pb-20">
         <div className="carpenter-container">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {homeStats.map(([value, label]) => (
-              <div key={label} className="bg-cream-50 px-4 py-7 text-center sm:px-6 sm:py-9">
-                <p className="text-4xl font-bold leading-none text-noble-ink sm:text-5xl">
-                  {value}
+          <div className="relative -mt-7 overflow-hidden border border-noble-ink/10 bg-cream-50 shadow-[0_24px_70px_rgba(37,31,27,0.11)] sm:-mt-10 lg:-mt-16">
+            <div className="grid xl:grid-cols-[0.36fr_0.64fr]">
+              <div className="bg-noble-orange px-5 py-7 text-white sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/76">
+                  Trusted locally
                 </p>
-                <p className="mt-3 text-sm font-semibold text-noble-ink/62">{label}</p>
+                <h2 className="carpenter-title mt-4 max-w-md text-[2.2rem] font-bold leading-[0.98] text-white sm:text-[2.75rem]">
+                  Craftsmanship you can feel underfoot.
+                </h2>
+                <p className="mt-5 max-w-md text-base font-medium leading-7 text-white/82">
+                  A cleaner quote process, careful prep, and hardwood details handled by a Kansas City crew.
+                </p>
               </div>
-            ))}
+
+              <div className="grid divide-y divide-noble-ink/10 bg-white md:grid-cols-3 md:divide-x md:divide-y-0">
+                {trustPoints.map((point) => (
+                  <div key={point.label} className="px-5 py-7 sm:px-7 lg:px-8 lg:py-10">
+                    <p className="text-sm font-bold uppercase tracking-[0.12em] text-noble-orange">
+                      {point.value}
+                    </p>
+                    <h3 className="mt-4 text-xl font-bold leading-tight text-noble-ink">
+                      {point.label}
+                    </h3>
+                    <p className="mt-3 text-sm font-medium leading-6 text-noble-ink/64">
+                      {point.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 border-t border-noble-ink/10 bg-white px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-noble-ink">
+                5.0 Google rating
+              </p>
+              <p className="max-w-2xl text-sm font-medium leading-6 text-noble-ink/62">
+                Local roots. Local pride. Clear communication from quote request to final walkthrough.
+              </p>
+            </div>
           </div>
         </div>
       </section>
