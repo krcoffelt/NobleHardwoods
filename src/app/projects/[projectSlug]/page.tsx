@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABand } from "@/components/CTABand";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl } from "@/data/launch";
-import { featuredProjects, services } from "@/data/site";
+import { featuredProjects, services, socialShareImage } from "@/data/site";
 
 type ProjectPageProps = {
   params: Promise<{ projectSlug: string }>;
@@ -33,7 +33,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       title: `${project.title} | Noble Hardwoods`,
       description: project.summary,
       url: project.href,
-      images: [{ url: project.image }]
+      images: [socialShareImage]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Noble Hardwoods`,
+      description: project.summary,
+      images: [socialShareImage]
     }
   };
 }

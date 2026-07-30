@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABand } from "@/components/CTABand";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl } from "@/data/launch";
-import { blogPosts, services } from "@/data/site";
+import { blogPosts, services, socialShareImage } from "@/data/site";
 
 type BlogPostPageProps = {
   params: Promise<{ postSlug: string }>;
@@ -33,7 +33,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       title: `${post.title} | Noble Hardwoods`,
       description: post.excerpt,
       url: post.href,
-      images: [{ url: post.image }]
+      images: [socialShareImage]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Noble Hardwoods`,
+      description: post.excerpt,
+      images: [socialShareImage]
     }
   };
 }

@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AnalyticsScripts, TrackInteractions } from "@/components/Tracking";
-import { business } from "@/data/site";
+import { business, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.siteUrl),
@@ -25,25 +25,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Noble Hardwoods",
     url: business.siteUrl,
-    images: [
-      {
-        url: "/images/noble-hardwoods-hero.jpg",
-        width: 1672,
-        height: 941,
-        alt: "Premium hardwood floors in a warm Kansas City home"
-      }
-    ]
+    images: [socialShareImage]
   },
   twitter: {
     card: "summary_large_image",
     title: "Noble Hardwoods",
     description:
       "Kansas City hardwood floor refinishing, installation, repair, stairs, railings, and custom wood floors.",
-    images: ["/images/noble-hardwoods-hero.jpg"]
-  },
-  icons: {
-    icon: "/favicon-noble.png",
-    apple: "/favicon-noble.png"
+    images: [socialShareImage]
   }
 };
 

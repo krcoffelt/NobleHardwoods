@@ -6,7 +6,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { InteriorHero } from "@/components/InteriorHero";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl, getAreaSchema } from "@/data/launch";
-import { business, faqs, serviceAreas, services } from "@/data/site";
+import { business, faqs, serviceAreas, services, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Kansas City Hardwood Flooring Service Areas",
@@ -20,7 +20,14 @@ export const metadata: Metadata = {
     description:
       "Hardwood floor refinishing, installation, repair, stairs, railings, and custom floors across the Kansas City metro.",
     url: "/service-areas",
-    images: [{ url: "/images/noble-hardwoods-hero.jpg" }]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kansas City Hardwood Flooring Service Areas | Noble Hardwoods",
+    description:
+      "Hardwood floor refinishing, installation, repair, stairs, railings, and custom floors across the Kansas City metro.",
+    images: [socialShareImage]
   }
 };
 

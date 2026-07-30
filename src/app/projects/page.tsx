@@ -6,7 +6,7 @@ import { CTABand } from "@/components/CTABand";
 import { InteriorHero } from "@/components/InteriorHero";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl, getFeaturedProjectSchema } from "@/data/launch";
-import { featuredProjects, services } from "@/data/site";
+import { featuredProjects, services, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Hardwood Flooring Projects in Kansas City",
@@ -20,7 +20,14 @@ export const metadata: Metadata = {
     description:
       "Recent hardwood flooring project examples from Noble Hardwoods across Kansas City and nearby areas.",
     url: "/projects",
-    images: [{ url: "/images/project-flooring/apartment-office-hardwood-floor.webp" }]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hardwood Flooring Projects in Kansas City | Noble Hardwoods",
+    description:
+      "Recent hardwood flooring project examples from Noble Hardwoods across Kansas City and nearby areas.",
+    images: [socialShareImage]
   }
 };
 

@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABand } from "@/components/CTABand";
 import { InteriorHero } from "@/components/InteriorHero";
 import { JsonLd } from "@/components/JsonLd";
-import { blogPosts } from "@/data/site";
+import { blogPosts, socialShareImage } from "@/data/site";
 import { getAbsoluteUrl } from "@/data/launch";
 
 export const metadata: Metadata = {
@@ -21,7 +21,14 @@ export const metadata: Metadata = {
     description:
       "Helpful hardwood flooring articles from Noble Hardwoods for Kansas City homeowners.",
     url: "/blog",
-    images: [{ url: "/images/project-flooring/robinson-home-dining-room-hardwood-floor.webp" }]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hardwood Flooring Articles & News | Noble Hardwoods",
+    description:
+      "Helpful hardwood flooring articles from Noble Hardwoods for Kansas City homeowners.",
+    images: [socialShareImage]
   }
 };
 

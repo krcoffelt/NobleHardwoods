@@ -6,7 +6,7 @@ import { CTABand } from "@/components/CTABand";
 import { JsonLd } from "@/components/JsonLd";
 import { StainGallerySelector } from "@/components/StainGallerySelector";
 import { getAbsoluteUrl } from "@/data/launch";
-import { business } from "@/data/site";
+import { business, socialShareImage } from "@/data/site";
 import { durasealSourceUrl, durasealStains } from "@/data/stains";
 
 export const metadata: Metadata = {
@@ -21,7 +21,14 @@ export const metadata: Metadata = {
     description:
       "Compare hardwood floor stain color directions for White Oak and Red Oak before your Kansas City hardwood floor quote.",
     url: "/stain-gallery",
-    images: [{ url: "/images/projects/living-room-hardwood-floors.jpg" }]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DuraSeal Stain Gallery | Noble Hardwoods",
+    description:
+      "Compare hardwood floor stain color directions for White Oak and Red Oak before your Kansas City hardwood floor quote.",
+    images: [socialShareImage]
   }
 };
 

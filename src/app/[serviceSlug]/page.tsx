@@ -17,7 +17,7 @@ import {
   getServicePage,
   servicePages
 } from "@/data/launch";
-import { business, featuredProjects, reviews } from "@/data/site";
+import { business, featuredProjects, reviews, socialShareImage } from "@/data/site";
 
 type ServicePageProps = {
   params: Promise<{ serviceSlug: string }>;
@@ -43,12 +43,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       title: `${page.seoTitle} | Noble Hardwoods`,
       description: page.metaDescription,
       url: page.href,
-      images: [
-        {
-          url: page.image,
-          alt: page.imageAlt
-        }
-      ]
+      images: [socialShareImage]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${page.seoTitle} | Noble Hardwoods`,
+      description: page.metaDescription,
+      images: [socialShareImage]
     }
   };
 }

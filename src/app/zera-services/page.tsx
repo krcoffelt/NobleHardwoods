@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ButtonLink } from "@/components/ButtonLink";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl, getAreaSchema } from "@/data/launch";
-import { business } from "@/data/site";
+import { business, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Zera Services LLC | Kansas City Contracting Services",
@@ -19,7 +19,14 @@ export const metadata: Metadata = {
     description:
       "Painting, drywall, and practical general contracting help for Kansas City homeowners.",
     url: "/zera-services",
-    images: [{ url: "/images/projects/kitchen-hardwood-floors.jpg" }]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zera Services LLC | Kansas City Contracting Services",
+    description:
+      "Painting, drywall, and practical general contracting help for Kansas City homeowners.",
+    images: [socialShareImage]
   }
 };
 

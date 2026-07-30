@@ -13,7 +13,8 @@ import {
   processSteps,
   reviews,
   serviceAreas,
-  services
+  services,
+  socialShareImage
 } from "@/data/site";
 import { getAbsoluteUrl, getAreaSchema, getReviewSchema } from "@/data/launch";
 import { durasealStains, getDurasealStainImage } from "@/data/stains";
@@ -30,14 +31,14 @@ export const metadata: Metadata = {
     description:
       "Hardwood floor refinishing, installation, repair, stairs, railings, and custom wood floor patterns across the Kansas City metro.",
     url: "/",
-    images: [
-      {
-        url: "/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp",
-        width: 2400,
-        height: 1600,
-        alt: "Finished hardwood floor in a modern apartment kitchen completed by Noble Hardwoods"
-      }
-    ]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kansas City Hardwood Flooring Company | Noble Hardwoods",
+    description:
+      "Hardwood floor refinishing, installation, repair, stairs, railings, and custom wood floor patterns across the Kansas City metro.",
+    images: [socialShareImage]
   }
 };
 

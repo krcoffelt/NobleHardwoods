@@ -7,7 +7,15 @@ import { CTABand } from "@/components/CTABand";
 import { InteriorHero } from "@/components/InteriorHero";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl, getAreaSchema } from "@/data/launch";
-import { business, processSteps, proofPoints, reviews, teamMembers, values } from "@/data/site";
+import {
+  business,
+  processSteps,
+  proofPoints,
+  reviews,
+  socialShareImage,
+  teamMembers,
+  values
+} from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About Noble Hardwoods",
@@ -21,7 +29,14 @@ export const metadata: Metadata = {
     description:
       "Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for Kansas City homeowners.",
     url: "/about",
-    images: [{ url: "/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp" }]
+    images: [socialShareImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Noble Hardwoods | Kansas City Hardwood Flooring",
+    description:
+      "Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for Kansas City homeowners.",
+    images: [socialShareImage]
   }
 };
 

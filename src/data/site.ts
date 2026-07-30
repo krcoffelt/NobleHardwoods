@@ -14,6 +14,14 @@ export const business = {
   area: "Kansas City metro"
 };
 
+export const socialShareImage = {
+  url: "/images/social/noble-hardwoods-social.jpg",
+  width: 1200,
+  height: 630,
+  type: "image/jpeg",
+  alt: "Noble Hardwoods — Kansas City hardwood floor refinishing, installation, and repair"
+};
+
 export const navItems = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
