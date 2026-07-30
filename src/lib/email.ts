@@ -8,7 +8,16 @@ type LeadEmailPayload = {
   fileReferences: string[];
 };
 
-export async function sendLeadEmails({ lead, leadId, fileReferences }: LeadEmailPayload) {
+type LeadEmailResult = {
+  customerEmailId: string | null;
+  internalEmailId: string | null;
+};
+
+export async function sendLeadEmails({
+  lead,
+  leadId,
+  fileReferences
+}: LeadEmailPayload): Promise<LeadEmailResult> {
   const resendApiKey = process.env.RESEND_API_KEY;
   const fromEmail = process.env.RESEND_FROM_EMAIL;
   const internalToEmail = process.env.RESEND_INTERNAL_TO_EMAIL || business.email;
@@ -20,20 +29,38 @@ export async function sendLeadEmails({ lead, leadId, fileReferences }: LeadEmail
   const resend = new Resend(resendApiKey);
   const fullName = `${lead.firstName} ${lead.lastName}`;
 
-  await Promise.all([
+  const [customerEmail, internalEmail] = await Promise.all([
     resend.emails.send({
       from: fromEmail,
       to: lead.email,
+      replyTo: business.email,
       subject: "We received your Noble Hardwoods quote request",
       html: customerEmailHtml(lead)
     }),
     resend.emails.send({
       from: fromEmail,
       to: internalToEmail,
+      replyTo: lead.email,
       subject: `New Website Lead: ${lead.projectType} in ${lead.city}`,
       html: internalEmailHtml({ lead, leadId, fullName, fileReferences })
     })
   ]);
+
+  const emailErrors = [customerEmail.error, internalEmail.error].filter(Boolean);
+
+  if (emailErrors.length > 0) {
+    throw new Error(
+      `Resend rejected a lead notification: ${emailErrors
+        .map((error) => error?.message)
+        .filter(Boolean)
+        .join("; ")}`
+    );
+  }
+
+  return {
+    customerEmailId: customerEmail.data?.id ?? null,
+    internalEmailId: internalEmail.data?.id ?? null
+  };
 }
 
 function customerEmailHtml(lead: LeadInput) {
@@ -66,7 +93,12 @@ function internalEmailHtml({
 }) {
   const fileList =
     fileReferences.length > 0
-      ? `<ul>${fileReferences.map((file) => `<li>${escapeHtml(file)}</li>`).join("")}</ul>`
+      ? `<ul>${fileReferences
+          .map(
+            (file, index) =>
+              `<li><a href="${escapeHtml(file)}" style="color:#ef5f3d;font-weight:700;">Project file ${index + 1}</a></li>`
+          )
+          .join("")}</ul>`
       : "<p>No project files uploaded.</p>";
 
   return emailLayout(`

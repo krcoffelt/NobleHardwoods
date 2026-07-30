@@ -23,7 +23,7 @@ export function RelatedServices({
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <div>
-            <h2 className="max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+            <h2 className="max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink sm:text-5xl">
               {title}
             </h2>
           </div>

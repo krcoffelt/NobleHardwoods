@@ -13,7 +13,7 @@ export function SectionHeading({ eyebrow, title, text, align = "left" }: Section
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-3 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink sm:text-5xl">
+      <h2 className="mt-4 text-4xl font-bold leading-[1.02] tracking-normal text-noble-ink sm:text-5xl lg:text-6xl">
         {title}
       </h2>
       {text ? <p className="mt-4 text-base leading-7 text-noble-ink/68">{text}</p> : null}

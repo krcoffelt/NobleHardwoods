@@ -47,12 +47,13 @@ export default function ProjectsPage() {
 
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
             {featuredProjects.map((project, index) => (
               <Link
                 key={project.title}
                 href={project.href}
-                className="group border border-noble-ink/10 bg-white p-4 transition hover:-translate-y-1 hover:border-noble-orange/35 hover:shadow-soft"
+                className="carpenter-card group block"
+                data-reveal
               >
                 <div className="relative aspect-[1.22/1] overflow-hidden bg-noble-mist">
                   <Image
@@ -63,7 +64,7 @@ export default function ProjectsPage() {
                     sizes="(min-width: 768px) 50vw, 100vw"
                   />
                 </div>
-                <div className="mt-5 flex items-start justify-between gap-5">
+                <div className="mt-5 flex items-start justify-between gap-5 border-t border-noble-ink/12 pt-5">
                   <div>
                     <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
                       {project.city} / {project.date}
@@ -72,7 +73,7 @@ export default function ProjectsPage() {
                       {project.title}
                     </h2>
                   </div>
-                  <span className="shrink-0 text-xs font-black uppercase tracking-[0.18em] text-noble-ink/35">
+                  <span className="shrink-0 text-xs font-black uppercase tracking-[0.18em] text-noble-orange">
                     0{index + 1}
                   </span>
                 </div>

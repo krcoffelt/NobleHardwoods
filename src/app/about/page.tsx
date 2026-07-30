@@ -75,6 +75,10 @@ export default function AboutPage() {
               The work is technical, but the goal is personal: craft floors that will last for
               generations and treat the families served with care along the way.
             </p>
+            <p>
+              Noble is supported by a 16-person team that helps keep quote requests, scheduling,
+              project communication, and field work moving with the same careful standard.
+            </p>
           </div>
         </div>
       </section>
@@ -131,7 +135,8 @@ export default function AboutPage() {
               </p>
               <p>
                 Today, the team continues that standard across installation, refinishing,
-                repair, stairs, railings, and custom floors for homeowners throughout the metro.
+                repair, stairs, railings, and custom floors for homeowners throughout the metro
+                with a 16-person team supporting the work.
               </p>
             </div>
           </div>
@@ -188,22 +193,22 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
-              Leadership Team
+              Owner and Team
             </p>
             <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] text-noble-ink sm:text-5xl">
-              Meet the faces of Noble Hardwoods.
+              Meet the people behind Noble Hardwoods.
             </h2>
           </div>
-          <div className="mt-10 grid gap-px bg-noble-ink/12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-px bg-noble-ink/12 lg:grid-cols-2">
             {teamMembers.map((member) => (
               <article key={member.name} className="bg-white p-5">
                 <div className="relative aspect-[1/1] overflow-hidden bg-noble-mist">
                   <Image
                     src={member.image}
-                    alt={`${member.name} of Noble Hardwoods`}
+                    alt={member.imageAlt}
                     fill
                     className="object-cover"
-                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
                 <h3 className="mt-5 text-2xl font-black uppercase leading-tight text-noble-ink">

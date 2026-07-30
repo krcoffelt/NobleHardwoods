@@ -1,57 +1,90 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { business, navItems, serviceAreas, services } from "@/data/site";
+import { ArrowMark } from "./ArrowMark";
 import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#242220] pb-24 pt-16 text-white sm:pb-12 lg:pt-24">
-      <div className="mx-auto grid max-w-[76.25rem] gap-6 px-5 sm:px-6 lg:grid-cols-2 lg:px-8 xl:px-0">
+    <footer className="border-t border-white/10 bg-[#242220] pb-24 pt-0 text-white sm:pb-12">
+      <div className="mx-auto grid max-w-[78rem] border-x border-white/10 sm:grid-cols-2">
         <Link
           href={business.emailHref}
-          className="group grid gap-4 border border-white/12 bg-white/[0.04] p-6 transition hover:border-noble-orange hover:bg-white/[0.07] sm:grid-cols-[auto_1fr]"
+          className="group flex min-w-0 items-center justify-between gap-5 border-b border-white/10 px-5 py-7 transition hover:bg-white/[0.05] sm:border-b-0 sm:border-r sm:px-8"
         >
-          <span className="grid size-14 place-items-center bg-noble-orange text-2xl font-black text-white">
-            @
-          </span>
-          <span>
+          <span className="min-w-0">
             <span className="block text-xs font-black uppercase tracking-[0.16em] text-white/55">
               Send us an email
             </span>
-            <span className="mt-2 block text-xl font-black text-white transition group-hover:text-noble-orange">
+            <span className="mt-2 block break-all text-base font-bold text-white transition group-hover:text-noble-orange sm:text-lg">
               {business.email}
             </span>
           </span>
+          <ArrowMark className="shrink-0 text-noble-orange" />
         </Link>
         <Link
           href={business.phoneHref}
-          className="group grid gap-4 border border-white/12 bg-white/[0.04] p-6 transition hover:border-noble-orange hover:bg-white/[0.07] sm:grid-cols-[auto_1fr]"
+          className="group flex items-center justify-between gap-5 px-5 py-7 transition hover:bg-white/[0.05] sm:px-8"
         >
-          <span className="grid size-14 place-items-center bg-noble-orange text-2xl font-black text-white">
-            #
-          </span>
           <span>
             <span className="block text-xs font-black uppercase tracking-[0.16em] text-white/55">
               Give us a call
             </span>
-            <span className="mt-2 block text-xl font-black text-white transition group-hover:text-noble-orange">
+            <span className="mt-2 block text-base font-bold text-white transition group-hover:text-noble-orange sm:text-lg">
               {business.phone}
             </span>
           </span>
+          <ArrowMark className="shrink-0 text-noble-orange" />
         </Link>
       </div>
 
-      <div className="mx-auto mt-14 grid max-w-[76.25rem] gap-12 px-5 sm:px-6 lg:grid-cols-[1.15fr_2fr] lg:px-8 xl:px-0">
+      <div className="mx-auto mt-10 grid max-w-[78rem] gap-9 px-5 sm:mt-14 sm:gap-12 sm:px-6 lg:grid-cols-[1.15fr_2fr] lg:px-8 xl:px-0">
         <div>
           <Logo />
-          <p className="mt-6 max-w-md text-sm leading-7 text-white/68">
+          <p className="mt-5 max-w-md text-sm leading-7 text-white/68 sm:mt-6">
             Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for
             homes across Kansas City and surrounding areas.
           </p>
-          <p className="mt-6 text-sm font-semibold text-white/55">Serving the {business.area}</p>
+          <p className="mt-4 text-sm font-semibold text-white/55 sm:mt-6">Serving the {business.area}</p>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-3">
+        <div className="grid divide-y divide-white/10 border-y border-white/10 sm:hidden">
+          <FooterDetails title="Services">
+            {services.map((service) => (
+              <Link key={service.href} href={service.href}>
+                {service.title}
+              </Link>
+            ))}
+          </FooterDetails>
+
+          <FooterDetails title="Service Areas">
+            {serviceAreas.slice(0, 8).map((area) => (
+              <Link key={area} href="/service-areas">
+                {area}
+              </Link>
+            ))}
+          </FooterDetails>
+
+          <FooterDetails title="Company">
+            {navItems
+              .filter((item) => ["Projects", "About", "Contact"].includes(item.label))
+              .map((item) => (
+                <Link key={item.href} href={item.href}>
+                  {item.label}
+                </Link>
+              ))}
+            <Link href="/service-areas">Service Areas</Link>
+            <Link href="/stain-gallery">Stain Gallery</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href={business.zeraServicesHref}>Zera Services</Link>
+            <Link href={business.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </Link>
+          </FooterDetails>
+        </div>
+
+        <div className="hidden gap-10 sm:grid sm:grid-cols-3">
           <FooterGroup title="Services">
             {services.map((service) => (
               <Link key={service.href} href={service.href}>
@@ -80,9 +113,7 @@ export function Footer() {
             <Link href="/stain-gallery">Stain Gallery</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href={business.zeraServicesHref} target="_blank" rel="noreferrer">
-              Zera Services
-            </Link>
+            <Link href={business.zeraServicesHref}>Zera Services</Link>
             <Link href={business.instagram} target="_blank" rel="noreferrer">
               Instagram
             </Link>
@@ -90,9 +121,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-16 max-w-[76.25rem] border-t border-white/10 px-5 pt-6 text-center text-xs text-white/52 sm:px-6 lg:px-8 xl:px-0">
+      <div className="mx-auto mt-10 max-w-[78rem] border-t border-white/10 px-5 pt-6 text-center text-xs text-white/52 sm:mt-14 sm:px-6 lg:px-8 xl:px-0">
         <p>Copyright {new Date().getFullYear()} Noble Hardwoods. All rights reserved.</p>
-        <p className="mt-2">Noble Hardwoods is owned by Zera Flooring.</p>
+        <p className="mt-2">Noble Hardwoods is owned by {business.ownershipName}.</p>
         <p className="mt-2">
           Website created by{" "}
           <Link
@@ -105,6 +136,22 @@ export function Footer() {
         </p>
       </div>
     </footer>
+  );
+}
+
+function FooterDetails({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <details className="group py-1">
+      <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between text-xs font-bold uppercase tracking-[0.16em] text-white">
+        {title}
+        <span className="text-xl font-normal text-noble-orange transition group-open:rotate-45" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <div className="grid gap-3 pb-5 text-sm text-white/68 [&_a]:py-1 [&_a]:transition [&_a:hover]:text-noble-orange">
+        {children}
+      </div>
+    </details>
   );
 }
 

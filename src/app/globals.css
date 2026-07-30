@@ -43,7 +43,7 @@ body::before {
 }
 
 .page-shell {
-  overflow: hidden;
+  overflow: clip;
 }
 
 body:has(.fixed.bottom-0) {
@@ -93,7 +93,7 @@ h2 {
 }
 
 .hero-curve {
-  clip-path: none;
+  clip-path: ellipse(92% 118% at 96% 50%);
 }
 
 .noble-shadow {
@@ -101,15 +101,15 @@ h2 {
 }
 
 .carpenter-section {
-  padding-block: clamp(5.5rem, 16.67vw, 15rem);
+  padding-block: clamp(5rem, 10vw, 9rem);
 }
 
 .carpenter-section-tight {
-  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  padding-block: clamp(4rem, 7vw, 6.5rem);
 }
 
 .carpenter-container {
-  width: min(100% - 2.5rem, 76.25rem);
+  width: min(100% - 2.5rem, 78rem);
   margin-inline: auto;
 }
 
@@ -135,13 +135,13 @@ h2 {
 }
 
 .carpenter-title {
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.02;
 }
 
 .home-hero-title {
-  line-height: 1.14;
+  line-height: 0.94;
 }
 
 .carpenter-line-art {
@@ -162,17 +162,8 @@ h2 {
     border-color 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.carpenter-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 90px rgba(87, 51, 31, 0.14);
-}
-
 .carpenter-card img {
   transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.carpenter-card:hover img {
-  transform: scale(1.06);
 }
 
 .carpenter-scroll-row {
@@ -197,45 +188,127 @@ h2 {
   background: rgba(37, 31, 27, 0.24);
 }
 
-.carpenter-scroll-cue {
-  animation: cue-bob 1.8s ease-in-out infinite;
+.cta-woodgrain {
+  background-image:
+    linear-gradient(rgba(36, 34, 32, 0.84), rgba(36, 34, 32, 0.9)),
+    url("/images/textures/wood-grain.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero-enter-copy {
+    animation: hero-copy-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-enter-media {
+    animation: hero-media-in 1100ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: right center;
+  }
+
+  .carpenter-scroll-cue {
+    animation: cue-bob 1.8s ease-in-out infinite;
+  }
+
+  body.reveal-ready [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  body.reveal-ready [data-reveal].is-visible {
+    animation: noble-reveal 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  .carpenter-card:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 30px 90px rgba(87, 51, 31, 0.12);
+  }
+
+  .carpenter-card:hover img {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2.5rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-media-in {
+  from {
+    opacity: 0;
+    transform: translate3d(2rem, 0, 0) scale(1.03);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes noble-reveal {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes cue-bob {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   50% {
-    transform: translateY(10px);
-  }
-}
-
-body.reveal-ready [data-reveal] {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-body.reveal-ready [data-reveal].is-visible {
-  animation: noble-reveal 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--reveal-delay, 0ms);
-}
-
-@keyframes noble-reveal {
-  from {
-    opacity: 0.88;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0.6rem, 0);
   }
 }
 
 details summary::-webkit-details-marker {
   display: none;
+}
+
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.25rem;
+  }
+
+  .overflow-x-auto {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar {
+    display: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
+
+  .carpenter-card:hover,
+  .carpenter-card:hover img {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

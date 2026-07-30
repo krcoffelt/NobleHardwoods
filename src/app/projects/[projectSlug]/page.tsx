@@ -73,7 +73,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <p className="w-fit border border-noble-orange/30 bg-white/55 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               {project.city} / {project.category} / {project.date}
             </p>
-            <h1 className="mt-6 max-w-3xl text-[2.65rem] font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink min-[390px]:text-5xl sm:text-6xl">
+            <h1 className="mt-6 max-w-3xl text-[2.65rem] font-black uppercase leading-[0.96] tracking-normal text-noble-ink min-[390px]:text-5xl sm:text-6xl">
               {project.title}
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-noble-ink/68">

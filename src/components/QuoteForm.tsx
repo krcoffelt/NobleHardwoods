@@ -3,7 +3,9 @@
 import type { FormEvent, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import {
+  getLeadFiles,
   getLeadUploadFiles,
+  getLeadUploadMetadata,
   preferredContactOptions,
   projectSizeOptions,
   projectTypeOptions,
@@ -16,13 +18,17 @@ import { trackEvent } from "./Tracking";
 
 type FormErrors = Record<string, string>;
 type FormBlockId = "contact" | "project" | "notes" | "uploads";
+type PreparedUpload = {
+  path: string;
+  token: string;
+};
 
 const fieldClass =
-  "min-h-[4.125rem] w-full rounded-lg border border-noble-ink/16 bg-white px-4 text-base font-medium text-noble-ink outline-none transition duration-300 placeholder:text-noble-ink/38 focus:border-noble-orange focus:ring-4 focus:ring-noble-orange/14 sm:min-h-[4.35rem] sm:px-5";
+  "min-h-12 w-full rounded-md border border-noble-ink/15 bg-white px-3.5 text-[0.95rem] font-medium text-noble-ink shadow-[0_1px_2px_rgba(37,31,27,0.04)] outline-none transition duration-200 placeholder:text-noble-ink/35 hover:border-noble-ink/25 focus:border-noble-orange focus:ring-[3px] focus:ring-noble-orange/12 sm:px-4";
 
-const labelClass = "text-[0.95rem] font-bold leading-tight text-noble-ink";
-const helperClass = "text-xs font-medium leading-5 text-noble-ink/58";
-const errorClass = "text-sm font-bold leading-5 text-[#9f2d1c]";
+const labelClass = "text-sm font-semibold leading-tight text-noble-ink";
+const helperClass = "text-xs font-normal leading-5 text-noble-ink/55";
+const errorClass = "text-xs font-semibold leading-5 text-[#9f2d1c]";
 
 const blockErrorFields: Record<FormBlockId, string[]> = {
   contact: ["first_name", "last_name", "phone", "email", "city"],
@@ -42,7 +48,7 @@ export function QuoteForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isCompactForm, setIsCompactForm] = useState(false);
+  const [submitLabel, setSubmitLabel] = useState("Request quote");
   const [openBlock, setOpenBlock] = useState<FormBlockId | "">("contact");
   const [tracking, setTracking] = useState({
     sourcePage: "",
@@ -61,16 +67,6 @@ export function QuoteForm() {
       utmCampaign: url.searchParams.get("utm_campaign") || "",
       startedAt: String(Date.now())
     });
-  }, []);
-
-  useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 639px)");
-    const updateMode = () => setIsCompactForm(mobileQuery.matches);
-
-    updateMode();
-    mobileQuery.addEventListener("change", updateMode);
-
-    return () => mobileQuery.removeEventListener("change", updateMode);
   }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -94,9 +90,53 @@ export function QuoteForm() {
     }
 
     setIsSubmitting(true);
+    setSubmitLabel("Preparing request...");
     setErrors({});
 
     try {
+      const files = getLeadFiles(uploadFiles);
+
+      if (files.length > 0) {
+        const uploadResponse = await fetch("/api/leads/upload-urls", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            files: getLeadUploadMetadata(uploadFiles)
+          })
+        });
+        const uploadResult = (await uploadResponse.json()) as {
+          ok?: boolean;
+          bucket?: string;
+          uploads?: PreparedUpload[];
+          uploadManifest?: string;
+          errors?: FormErrors;
+        };
+
+        if (
+          !uploadResponse.ok ||
+          !uploadResult.ok ||
+          !uploadResult.bucket ||
+          !uploadResult.uploadManifest ||
+          !uploadResult.uploads
+        ) {
+          const nextErrors = uploadResult.errors || {
+            form: "We could not prepare your project files. Please try again."
+          };
+          setErrors(nextErrors);
+          setOpenBlock(getFirstErrorBlock(nextErrors) || "uploads");
+          return;
+        }
+
+        setSubmitLabel("Uploading files...");
+        await uploadProjectFiles(files, uploadResult.uploads, uploadResult.bucket);
+        formData.delete("photos");
+        formData.delete("videos");
+        formData.set("upload_manifest", uploadResult.uploadManifest);
+      }
+
+      setSubmitLabel("Sending request...");
       const response = await fetch("/api/leads", {
         method: "POST",
         body: formData
@@ -120,17 +160,22 @@ export function QuoteForm() {
       });
       window.location.assign(result.redirectUrl || "/thank-you");
     } catch {
-      setErrors({ form: "Something went wrong. Please call Noble Hardwoods or try again." });
+      setErrors({
+        form: "We could not upload your project files or send the request. Please try again, submit without files, or call Noble Hardwoods."
+      });
+      setOpenBlock("uploads");
     } finally {
       setIsSubmitting(false);
+      setSubmitLabel("Request quote");
     }
   }
 
   return (
     <form
+      id="quote-request-form"
       ref={formRef}
       onSubmit={handleSubmit}
-      className="relative mx-auto w-full max-w-full overflow-hidden border border-noble-orange-dark/35 bg-noble-orange shadow-[0_34px_95px_rgba(239,95,61,0.24)] sm:max-w-xl lg:max-w-none"
+      className="relative mx-auto w-full max-w-full overflow-hidden rounded-md border border-noble-ink/12 bg-white shadow-[0_12px_36px_rgba(60,42,29,0.08)] sm:max-w-xl lg:max-w-none"
       noValidate
     >
       <input type="hidden" name="source_page" value={tracking.sourcePage} />
@@ -144,21 +189,21 @@ export function QuoteForm() {
         <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="bg-noble-ink px-5 py-7 text-white sm:px-8 sm:py-8 lg:px-10">
-        <p className="text-xs font-bold uppercase tracking-[0.16em] text-noble-orange">
-          Project request
-        </p>
-        <h2 className="carpenter-title mt-4 text-[2.35rem] font-bold text-white sm:text-5xl">
+      <div className="border-b border-noble-ink/10 bg-white px-5 py-6 sm:px-8 sm:py-7">
+        <h2 className="text-[1.75rem] font-bold leading-tight text-noble-ink sm:text-[2rem]">
           Tell us about your floors.
         </h2>
-        <p className="mt-4 max-w-2xl text-sm font-medium leading-7 text-white/70 sm:text-base">
-          Share the basics now. Photos, a short video, and rough square footage help us give a more useful first response.
+        <p className="mt-2 max-w-2xl text-sm font-normal leading-6 text-noble-ink/58">
+          Share a few details so we can prepare a useful first response.
         </p>
       </div>
 
-      <div className="grid gap-5 px-4 py-5 sm:gap-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+      <div className="divide-y divide-noble-ink/10">
         {errors.form ? (
-          <div className="border border-[#9f2d1c]/30 bg-white px-5 py-4 text-sm font-bold leading-6 text-[#9f2d1c]">
+          <div
+            role="alert"
+            className="m-5 rounded-md border border-[#9f2d1c]/25 bg-[#fff7f5] px-4 py-3 text-sm font-semibold leading-6 text-[#9f2d1c] sm:m-6"
+          >
             {errors.form}
           </div>
         ) : null}
@@ -166,8 +211,7 @@ export function QuoteForm() {
         <FormBlock
           id="contact"
           title="Contact details"
-          text="Use the best phone number and email for project follow-up."
-          isCompact={isCompactForm}
+          text="Where should we follow up?"
           isOpen={openBlock === "contact"}
           hasError={Boolean(getFirstErrorBlock(errors) === "contact")}
           onToggle={() => setOpenBlock(openBlock === "contact" ? "" : "contact")}
@@ -190,8 +234,7 @@ export function QuoteForm() {
         <FormBlock
           id="project"
           title="Project details"
-          text="A rough scope is enough. We can clarify details during follow-up."
-          isCompact={isCompactForm}
+          text="A rough scope is enough."
           isOpen={openBlock === "project"}
           hasError={Boolean(getFirstErrorBlock(errors) === "project")}
           onToggle={() => setOpenBlock(openBlock === "project" ? "" : "project")}
@@ -218,10 +261,10 @@ export function QuoteForm() {
               columns="sm:grid-cols-3"
               footer={
                 <a
-                  href="https://www.youtube.com/results?search_query=how+to+measure+square+footage+for+flooring"
+                  href="https://www.youtube.com/watch?v=F1QYnVqkeCY"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-bold uppercase text-noble-orange-dark transition hover:text-noble-ink"
+                  className="text-xs font-semibold text-noble-orange-dark underline decoration-noble-orange/30 underline-offset-4 transition hover:text-noble-ink"
                 >
                   Watch how to measure square footage
                 </a>
@@ -253,13 +296,12 @@ export function QuoteForm() {
         <FormBlock
           id="notes"
           title="Project notes"
-          text="Tell us what you are seeing, which rooms are involved, and any timing goals."
-          isCompact={isCompactForm}
+          text="Rooms, condition, and timing."
           isOpen={openBlock === "notes"}
           hasError={Boolean(getFirstErrorBlock(errors) === "notes")}
           onToggle={() => setOpenBlock(openBlock === "notes" ? "" : "notes")}
         >
-          <label className="grid gap-2.5">
+          <label className="grid gap-2">
             <span className={labelClass}>Message</span>
             <textarea
               name="message"
@@ -276,8 +318,7 @@ export function QuoteForm() {
         <FormBlock
           id="uploads"
           title="Photos and video"
-          text="Optional uploads help us understand the floor condition before the first call."
-          isCompact={isCompactForm}
+          text="Optional, but helpful."
           isOpen={openBlock === "uploads"}
           hasError={Boolean(getFirstErrorBlock(errors) === "uploads")}
           onToggle={() => setOpenBlock(openBlock === "uploads" ? "" : "uploads")}
@@ -301,16 +342,16 @@ export function QuoteForm() {
           </div>
         </FormBlock>
 
-        <div className="bg-noble-ink p-5 text-white sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
-          <p className="text-sm font-medium leading-6 text-white/68">
-            Your information stays with Noble Hardwoods and is used only to follow up on your project.
+        <div className="bg-white p-5 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+          <p className="max-w-md text-xs font-normal leading-5 text-noble-ink/55">
+            Your details are used only to follow up about this project.
           </p>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mt-5 inline-flex min-h-[4.25rem] w-full items-center justify-center rounded-full bg-[#b93d25] px-8 text-sm font-bold uppercase text-white transition duration-300 hover:-translate-y-1 hover:bg-noble-orange-dark active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 sm:mt-0 sm:w-auto"
+            className="mt-4 inline-flex min-h-12 w-full items-center justify-center rounded-md bg-noble-orange px-6 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(239,95,61,0.18)] transition duration-200 hover:bg-noble-orange-dark active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 sm:mt-0 sm:w-auto"
           >
-            {isSubmitting ? "Sending..." : "Send request"}
+            {isSubmitting ? submitLabel : "Request quote"}
             <ArrowMark className="ml-4" />
           </button>
         </div>
@@ -319,66 +360,93 @@ export function QuoteForm() {
   );
 }
 
+async function uploadProjectFiles(
+  files: File[],
+  uploads: PreparedUpload[],
+  bucket: string
+) {
+  if (files.length !== uploads.length) {
+    throw new Error("Project file upload preparation did not match the selected files.");
+  }
+
+  const { createClient } = await import("@/utils/supabase/client");
+  const supabase = createClient();
+  const batchSize = 3;
+
+  for (let index = 0; index < files.length; index += batchSize) {
+    const fileBatch = files.slice(index, index + batchSize);
+    const uploadBatch = uploads.slice(index, index + batchSize);
+
+    await Promise.all(
+      fileBatch.map(async (file, batchIndex) => {
+        const upload = uploadBatch[batchIndex];
+        const { error } = await supabase.storage
+          .from(bucket)
+          .uploadToSignedUrl(upload.path, upload.token, file, {
+            contentType: file.type,
+            cacheControl: "3600"
+          });
+
+        if (error) {
+          throw new Error(error.message);
+        }
+      })
+    );
+  }
+}
+
 type FormBlockProps = {
   id: FormBlockId;
   title: string;
   text?: string;
   children: ReactNode;
-  isCompact: boolean;
   isOpen: boolean;
   hasError: boolean;
   onToggle: () => void;
 };
 
-function FormBlock({ id, title, text, children, isCompact, isOpen, hasError, onToggle }: FormBlockProps) {
-  if (isCompact) {
-    return (
-      <section
-        className={`overflow-hidden rounded-lg border bg-white shadow-[0_16px_48px_rgba(37,31,27,0.08)] ${
-          hasError ? "border-[#9f2d1c] ring-4 ring-white/35" : "border-white/55"
-        }`}
-      >
-        <button
-          type="button"
-          className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left"
-          aria-expanded={isOpen}
-          aria-controls={`quote-form-${id}`}
-          onClick={onToggle}
-        >
-          <span className="min-w-0">
-            <span className="block text-lg font-bold leading-tight text-noble-ink">{title}</span>
-            {text ? (
-              <span className="mt-1.5 block text-sm font-medium leading-6 text-noble-ink/58">
-                {text}
-              </span>
-            ) : null}
-          </span>
-          <span
-            className={`grid size-10 shrink-0 place-items-center rounded-full bg-noble-orange text-2xl font-bold leading-none text-white transition duration-300 ${
-              isOpen ? "rotate-45" : ""
-            }`}
-            aria-hidden="true"
-          >
-            +
-          </span>
-        </button>
-        <div
-          id={`quote-form-${id}`}
-          className={`${isOpen ? "grid" : "hidden"} gap-5 border-t border-noble-ink/10 px-4 py-5`}
-        >
-          {children}
-        </div>
-      </section>
-    );
-  }
-
+function FormBlock({ id, title, text, children, isOpen, hasError, onToggle }: FormBlockProps) {
   return (
-    <section className="rounded-lg border border-white/55 bg-white p-4 shadow-[0_16px_48px_rgba(37,31,27,0.08)] sm:p-6">
-      <div className="mb-5 grid gap-2">
-        <h3 className="text-xl font-bold leading-tight text-noble-ink">{title}</h3>
-        {text ? <p className="text-sm font-medium leading-6 text-noble-ink/60">{text}</p> : null}
+    <section
+      className={`bg-white md:grid md:grid-cols-[9.5rem_minmax(0,1fr)] md:gap-8 md:p-8 ${
+        hasError ? "bg-[#fff7f5] shadow-[inset_3px_0_0_#9f2d1c] md:bg-white" : ""
+      }`}
+    >
+      <button
+        type="button"
+        className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-noble-orange md:hidden"
+        aria-expanded={isOpen}
+        aria-controls={`quote-form-${id}`}
+        onClick={onToggle}
+      >
+        <span className="min-w-0">
+          <span className="block text-base font-semibold leading-tight text-noble-ink">{title}</span>
+        </span>
+        <span
+          className={`size-8 shrink-0 rounded-md border border-noble-ink/12 bg-[#faf9f7] ${
+            isOpen ? "bg-noble-orange/[0.07]" : ""
+          }`}
+          aria-hidden="true"
+        >
+          <span
+            className={`mx-auto block size-2.5 border-b-2 border-r-2 border-noble-ink/55 ${
+              isOpen ? "mt-3.5 rotate-[225deg]" : "mt-2.5 rotate-45"
+            }`}
+          />
+        </span>
+      </button>
+
+      <div className="hidden md:block">
+        <h3 className="text-base font-semibold leading-tight text-noble-ink">{title}</h3>
+        {text ? <p className="mt-2 text-xs font-normal leading-5 text-noble-ink/52">{text}</p> : null}
       </div>
-      {children}
+
+      <div
+        id={`quote-form-${id}`}
+        className={`${isOpen ? "grid" : "hidden"} min-w-0 gap-5 border-t border-noble-ink/10 bg-[#fcfbf9] px-5 py-6 md:grid md:border-t-0 md:bg-white md:p-0`}
+      >
+        {children}
+      </div>
     </section>
   );
 }
@@ -394,7 +462,7 @@ type FieldProps = {
 
 function Field({ label, name, type = "text", error, autoComplete, className = "" }: FieldProps) {
   return (
-    <label className={`grid gap-2.5 ${className}`}>
+    <label className={`grid gap-2 ${className}`}>
       <span className={labelClass}>{label}</span>
       <input
         name={name}
@@ -417,7 +485,7 @@ type SelectFieldProps = {
 
 function SelectField({ label, name, error, children }: SelectFieldProps) {
   return (
-    <label className="grid gap-2.5">
+    <label className="grid gap-2">
       <span className={labelClass}>{label}</span>
       <select
         name={name}
@@ -458,7 +526,7 @@ function ChoiceGroup({
   columns
 }: ChoiceGroupProps) {
   return (
-    <fieldset className="grid gap-3">
+    <fieldset className="grid gap-3.5">
       <div className="grid gap-1.5">
         <legend className={labelClass}>
           {legend}
@@ -471,11 +539,11 @@ function ChoiceGroup({
           </div>
         ) : null}
       </div>
-      <div className={`grid gap-2.5 ${columns}`}>
+      <div className={`grid gap-2 ${columns}`}>
         {options.map((option) => (
           <label
             key={option}
-            className="flex min-h-[3.75rem] cursor-pointer items-center gap-3 rounded-lg border border-noble-ink/14 bg-white px-4 text-sm font-bold text-noble-ink transition duration-300 hover:border-noble-orange/70 hover:bg-noble-orange/6 has-[:checked]:border-[#b93d25] has-[:checked]:bg-[#b93d25] has-[:checked]:text-white"
+            className="flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-noble-ink/12 bg-white px-3.5 text-sm font-medium text-noble-ink shadow-[0_1px_2px_rgba(37,31,27,0.03)] transition duration-200 hover:border-noble-orange/45 hover:bg-noble-orange/[0.025] has-[:checked]:border-noble-orange has-[:checked]:bg-noble-orange/[0.07] has-[:checked]:ring-1 has-[:checked]:ring-noble-orange/20"
           >
             <input
               type={type}
@@ -504,7 +572,7 @@ type UploadFieldProps = {
 
 function UploadField({ label, name, accept, multiple, helper, error }: UploadFieldProps) {
   return (
-    <label className="grid gap-2.5">
+    <label className="grid gap-2">
       <span className={labelClass}>
         {label} <span className="font-medium text-noble-ink/48">(optional)</span>
       </span>
@@ -513,7 +581,7 @@ function UploadField({ label, name, accept, multiple, helper, error }: UploadFie
         type="file"
         accept={accept}
         multiple={multiple}
-        className="w-full cursor-pointer rounded-lg border border-dashed border-noble-ink/24 bg-white px-4 py-5 text-sm font-medium text-noble-ink outline-none transition duration-300 file:mr-4 file:rounded-full file:border-0 file:bg-noble-ink file:px-5 file:py-3 file:text-sm file:font-bold file:text-white hover:border-noble-orange/70 hover:bg-noble-orange/6 focus:border-noble-orange focus:bg-white focus:ring-4 focus:ring-noble-orange/14"
+        className="w-full cursor-pointer rounded-md border border-dashed border-noble-ink/20 bg-[#fcfbf9] px-3 py-4 text-xs font-normal text-noble-ink/60 outline-none transition duration-200 file:mr-3 file:rounded-md file:border file:border-noble-ink/12 file:bg-white file:px-3.5 file:py-2.5 file:text-sm file:font-semibold file:text-noble-ink hover:border-noble-orange/45 hover:bg-noble-orange/[0.025] focus:border-noble-orange focus:bg-white focus:ring-[3px] focus:ring-noble-orange/12"
         aria-invalid={Boolean(error)}
       />
       <p className={helperClass}>{helper}</p>

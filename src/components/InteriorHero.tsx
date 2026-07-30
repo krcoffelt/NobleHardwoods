@@ -22,31 +22,29 @@ export function InteriorHero({
   ctaLabel = "Get a free quote"
 }: InteriorHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-noble-ink text-white">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(239,95,61,0.35),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(239,95,61,0.16),transparent_28%)]" />
-      </div>
-      <div className="relative mx-auto grid max-w-[76.25rem] gap-12 px-5 py-16 sm:px-6 sm:py-20 lg:min-h-[48rem] lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8 lg:py-24 xl:px-0">
-        <div className="min-w-0">
+    <section className="relative overflow-hidden bg-cream-50 text-noble-ink">
+      <div className="absolute inset-y-0 right-0 hidden w-[46%] bg-noble-mist lg:block" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-[78rem] gap-8 px-5 pb-10 pt-11 sm:gap-10 sm:px-6 sm:py-20 lg:min-h-[38rem] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:px-8 xl:px-0">
+        <div className="hero-enter-copy min-w-0">
           <div className="carpenter-eyebrow max-w-full text-noble-orange">
             <span>{eyebrow}</span>
           </div>
-          <h1 className="carpenter-title mt-7 max-w-4xl text-[3.25rem] font-bold uppercase text-white min-[390px]:text-6xl sm:text-7xl">
+          <h1 className="carpenter-title mt-5 max-w-4xl text-[2.55rem] font-bold text-noble-ink min-[390px]:text-[2.85rem] sm:mt-6 sm:text-6xl lg:text-[4.25rem]">
             {title}
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70">{text}</p>
-          <div className="mt-8 flex max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:items-center">
-            <ButtonLink href={ctaHref} className="px-8">
+          <p className="mt-5 max-w-2xl text-[0.98rem] leading-7 text-noble-ink/68 sm:mt-6 sm:text-base sm:leading-8">{text}</p>
+          <div className="mt-7 flex max-w-sm gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-center">
+            <ButtonLink href={ctaHref} className="w-full px-6 sm:w-auto sm:px-8">
               {ctaLabel}
             </ButtonLink>
-            <ButtonLink href={business.phoneHref} variant="light" className="px-8">
+            <ButtonLink href={business.phoneHref} variant="secondary" className="hidden px-8 sm:inline-flex">
               Call {business.phone}
             </ButtonLink>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-          <div className="relative aspect-[0.96/1] overflow-hidden bg-noble-mist shadow-[0_36px_100px_rgba(0,0,0,0.28)] lg:min-h-[35rem]">
+        <div className="hero-enter-media relative mx-auto w-full max-w-xl lg:max-w-none">
+          <div className="relative aspect-[1.42/1] overflow-hidden bg-noble-mist shadow-[0_24px_70px_rgba(87,51,31,0.14)] sm:aspect-[1.35/1] lg:min-h-[31rem]">
             <Image
               src={image}
               alt={imageAlt}

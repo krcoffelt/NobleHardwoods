@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <div>
-            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink sm:text-5xl">
               Hardwood work planned around the home, not a generic checklist.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68">
@@ -118,7 +118,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="bg-noble-mist py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               Built for real Kansas City homes.
             </h2>
             <div className="mt-8 grid gap-4">
@@ -130,7 +130,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
           </div>
           <div>
-            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               Clear steps before work begins.
             </h2>
             <div className="mt-8 grid gap-5">
@@ -152,7 +152,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
+              <h2 className="max-w-xl text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
                 Recent hardwood work across the Kansas City metro.
               </h2>
             </div>
@@ -189,7 +189,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="bg-noble-mist py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
-            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink">
+            <h2 className="text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink">
               Trusted by homeowners who care about the details.
             </h2>
           </div>

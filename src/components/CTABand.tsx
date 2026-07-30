@@ -11,22 +11,20 @@ export function CTABand({
   text = "Send a few details about your project and the Noble Hardwoods team will follow up."
 }: CTABandProps) {
   return (
-    <section className="relative overflow-hidden bg-noble-ink py-0 text-white">
-      <div className="absolute inset-0 carpenter-line-art opacity-90" />
-      <div className="relative mx-auto grid min-h-[36rem] max-w-[76.25rem] gap-8 px-5 py-20 sm:px-6 lg:grid-cols-[1fr_auto_0.82fr] lg:items-center lg:px-8 xl:px-0">
-        <div className="max-w-2xl">
-          <p className="carpenter-eyebrow mb-6 text-white/82">Get a free quote</p>
-          <h2 className="carpenter-title text-5xl font-bold sm:text-6xl lg:text-7xl">
+    <section className="cta-woodgrain relative overflow-hidden text-white">
+      <div className="relative mx-auto grid min-h-[20rem] max-w-[78rem] gap-7 px-5 py-12 sm:min-h-[26rem] sm:gap-10 sm:px-6 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:px-8 xl:px-0">
+        <div className="max-w-2xl" data-reveal>
+          <p className="carpenter-eyebrow mb-5 text-white/82 sm:mb-6">Get a free quote</p>
+          <h2 className="carpenter-title text-[2.25rem] font-bold sm:text-6xl lg:text-[4.25rem]">
             {title}
           </h2>
-          <p className="mt-6 max-w-md text-base leading-8 text-white/78">{text}</p>
+          <p className="mt-5 max-w-md text-[0.95rem] leading-7 text-white/78 sm:mt-6 sm:text-base sm:leading-8">{text}</p>
         </div>
-        <div className="hidden h-40 w-px bg-white/35 lg:block" />
-        <div className="flex max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row lg:justify-end">
-          <ButtonLink href="/contact" variant="primary" className="px-10">
+        <div className="flex max-w-md flex-col gap-3 sm:max-w-none sm:flex-row lg:justify-end" data-reveal>
+          <ButtonLink href="/contact" variant="primary" className="w-full px-8 sm:w-auto sm:px-10">
             Get a free quote
           </ButtonLink>
-          <ButtonLink href={business.phoneHref} variant="light">
+          <ButtonLink href={business.phoneHref} variant="light" className="hidden sm:inline-flex">
             Call {business.phone}
           </ButtonLink>
         </div>

@@ -19,7 +19,11 @@ create table if not exists public.leads (
   utm_campaign text,
   status text not null default 'New',
   assigned_to text,
-  notes text
+  notes text,
+  notification_status text not null default 'Pending',
+  customer_email_id text,
+  internal_email_id text,
+  notification_error text
 );
 
 alter table if exists public.leads
@@ -27,6 +31,18 @@ alter table if exists public.leads
 
 alter table if exists public.leads
   add column if not exists work_options text[] not null default '{}';
+
+alter table if exists public.leads
+  add column if not exists notification_status text not null default 'Pending';
+
+alter table if exists public.leads
+  add column if not exists customer_email_id text;
+
+alter table if exists public.leads
+  add column if not exists internal_email_id text;
+
+alter table if exists public.leads
+  add column if not exists notification_error text;
 
 create table if not exists public.lead_files (
   id uuid primary key default gen_random_uuid(),
@@ -38,8 +54,32 @@ create table if not exists public.lead_files (
 
 create index if not exists leads_created_at_idx on public.leads(created_at desc);
 create index if not exists leads_status_idx on public.leads(status);
+create index if not exists leads_notification_status_idx
+  on public.leads(notification_status);
 create index if not exists lead_files_lead_id_idx on public.lead_files(lead_id);
+
+alter table public.leads enable row level security;
+alter table public.lead_files enable row level security;
+
+revoke all on table public.leads from anon, authenticated;
+revoke all on table public.lead_files from anon, authenticated;
 
 insert into storage.buckets (id, name, public)
 values ('lead-uploads', 'lead-uploads', false)
 on conflict (id) do nothing;
+
+update storage.buckets
+set
+  public = false,
+  file_size_limit = 26214400,
+  allowed_mime_types = array[
+    'image/jpeg',
+    'image/png',
+    'image/webp',
+    'image/heic',
+    'image/heif',
+    'video/mp4',
+    'video/quicktime',
+    'video/webm'
+  ]
+where id = 'lead-uploads';

@@ -48,18 +48,18 @@ export default function StainGalleryPage() {
       <JsonLd data={schema} />
       <Breadcrumbs items={[{ label: "Stain Gallery", href: "/stain-gallery" }]} />
 
-      <section className="bg-[linear-gradient(115deg,#fffdf8_0%,#f7f4ef_58%,#efe0c7_100%)] py-16 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-end lg:px-8">
+      <section className="bg-[linear-gradient(115deg,#fffdf8_0%,#f7f4ef_58%,#efe0c7_100%)] py-12 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-7 px-5 sm:gap-10 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-end lg:px-8">
           <div>
             <p className="w-fit border border-noble-orange/30 bg-white/55 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               DuraSeal Stain Gallery
             </p>
-            <h1 className="mt-6 max-w-3xl text-[2.65rem] font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink min-[390px]:text-5xl sm:text-6xl">
+            <h1 className="mt-5 max-w-3xl text-[2.35rem] font-black uppercase leading-[0.96] tracking-normal text-noble-ink min-[390px]:text-[2.65rem] sm:mt-6 sm:text-6xl">
               Hardwood stain colors for Kansas City homes.
             </h1>
           </div>
-          <div className="bg-white/72 p-6 shadow-soft backdrop-blur">
-            <p className="text-base leading-8 text-noble-ink/70">
+          <div className="bg-white/72 p-5 shadow-soft backdrop-blur sm:p-6">
+            <p className="text-[0.95rem] leading-7 text-noble-ink/70 sm:text-base sm:leading-8">
               Use this selector to compare common DuraSeal stain directions on White Oak and
               Red Oak before your quote or consultation. Final stain color can vary by wood
               species, age, sanding, finish system, lighting, and screen display.
@@ -72,11 +72,24 @@ export default function StainGalleryPage() {
             >
               View official DuraSeal gallery <ArrowMark />
             </Link>
+            <details className="group mt-5 border-t border-noble-ink/10 pt-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-xs font-extrabold uppercase tracking-[0.12em] text-noble-ink">
+                About these digital swatches
+                <span className="text-lg font-normal text-noble-orange group-open:rotate-45" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-7 text-noble-ink/62">
+                Until written permission is obtained, Noble does not republish DuraSeal&apos;s
+                manufacturer photography. The selector below uses original approximate swatches
+                and product names for comparison.
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
-      <section className="bg-cream-50 py-16 sm:py-20">
+      <section id="stain-selector" className="bg-cream-50 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <StainGallerySelector />
         </div>
@@ -88,7 +101,7 @@ export default function StainGalleryPage() {
             <p className="w-fit border border-noble-orange/30 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
               Choosing a stain
             </p>
-            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-[-0.035em] text-noble-ink sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] tracking-normal text-noble-ink sm:text-5xl">
               Samples in your home still matter.
             </h2>
           </div>
@@ -96,12 +109,19 @@ export default function StainGalleryPage() {
             <p>
               Online swatches are useful for narrowing a direction, but hardwood stain needs
               to be reviewed with the actual floor, room light, species, and finish plan.
+              In-home samples are the best way to confirm the final stain choice before work
+              begins.
             </p>
             <p>
               If stain color matters to the project, mention your favorite colors in the quote
               form and Noble Hardwoods can talk through practical sample options.
             </p>
           </div>
+          <p className="mx-auto mt-10 max-w-4xl border-t border-noble-ink/12 pt-5 text-xs leading-6 text-noble-ink/52 lg:col-span-2">
+            DuraSeal is a trademark of its respective owner. Noble Hardwoods is not affiliated
+            with or endorsed by DuraSeal or Sherwin-Williams. Product names are shown only to help
+            homeowners identify colors for an in-home consultation.
+          </p>
         </div>
       </section>
 

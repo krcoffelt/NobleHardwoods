@@ -354,6 +354,7 @@ export const publicRoutes = [
   "/projects",
   "/blog",
   "/stain-gallery",
+  "/zera-services",
   "/service-areas",
   "/about",
   "/privacy",

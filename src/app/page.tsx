@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowMark } from "@/components/ArrowMark";
 import { ButtonLink } from "@/components/ButtonLink";
-import { CTABand } from "@/components/CTABand";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/images/noble-hardwoods-hero.jpg",
+        url: "/images/projects/living-room-hardwood-floors.jpg",
         width: 1600,
         height: 814,
         alt: "Finished hardwood floor completed by Noble Hardwoods"
@@ -43,21 +42,19 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const serviceRail = [services[1], services[0], services[2], services[3]];
   const trustPoints = [
     {
-      value: "15+ years",
-      label: "Experienced crews",
-      detail: "Seasoned hardwood work for homes across the Kansas City metro."
+      value: "15+",
+      label: "Years"
     },
     {
-      value: "5.0 rating",
-      label: "Homeowner trust",
-      detail: "Review-backed communication, workmanship, and follow-through."
+      value: "5.0",
+      label: "Google rating"
     },
     {
-      value: "Free estimates",
-      label: "Clear next step",
-      detail: "Straightforward quote requests before an in-home consultation."
+      value: "Free",
+      label: "Estimates"
     }
   ];
   const serviceVisuals = [
@@ -86,7 +83,7 @@ export default function Home() {
     telephone: business.phone,
     email: business.email,
     areaServed: getAreaSchema(),
-    image: getAbsoluteUrl("/images/noble-hardwoods-hero.jpg"),
+    image: getAbsoluteUrl("/images/projects/living-room-hardwood-floors.jpg"),
     priceRange: "$$",
     description:
       "Kansas City hardwood flooring company offering refinishing, installation, repair, dustless sanding, stairs, railings, and custom hardwood floors.",
@@ -97,39 +94,44 @@ export default function Home() {
     <>
       <JsonLd data={jsonLd} />
 
-      <section className="relative isolate overflow-hidden bg-noble-ink text-white">
-        <div className="absolute -top-[7.5rem] bottom-0 right-0 hidden w-[45vw] overflow-hidden bg-noble-mist lg:block">
+      <section className="relative isolate overflow-hidden bg-cream-50">
+        <div className="hero-curve hero-enter-media absolute inset-y-0 right-0 hidden w-[50%] overflow-hidden bg-noble-mist lg:block xl:w-[56%]">
           <Image
-            src="/images/noble-hardwoods-hero.jpg"
+            src="/images/projects/living-room-hardwood-floors.jpg"
             alt="Finished hardwood floor completed by Noble Hardwoods"
             fill
             priority
             className="object-cover"
-            sizes="45vw"
+            sizes="(min-width: 1280px) 56vw, 50vw"
           />
         </div>
 
-        <div className="relative mx-auto grid max-w-[76.25rem] items-center px-5 pb-12 pt-16 sm:px-6 sm:pb-14 sm:pt-20 lg:min-h-[57.75rem] lg:grid-cols-[0.56fr_0.44fr] lg:items-start lg:px-8 lg:pb-0 lg:pt-[7.8125rem] xl:px-0">
-          <div className="relative z-10 min-w-0">
-            <h1 className="carpenter-title home-hero-title max-w-[42rem] text-[3.45rem] font-bold text-white min-[390px]:text-6xl sm:text-7xl lg:text-[5.4rem]">
-              Hardwood floors built to last.
+        <div className="mx-auto grid max-w-[78rem] items-center px-5 pb-8 pt-10 sm:px-6 sm:pb-12 sm:pt-14 lg:min-h-[38rem] lg:grid-cols-[0.46fr_0.54fr] lg:px-8 lg:py-16 xl:grid-cols-[0.48fr_0.52fr] xl:px-0">
+          <div className="hero-enter-copy relative z-10 min-w-0">
+            <div className="inline-flex items-center gap-4 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-noble-orange sm:text-xs">
+              <span>Kansas City Hardwood</span>
+            </div>
+            <h1 className="home-hero-title mt-5 max-w-[31rem] text-[2.8rem] font-black uppercase tracking-normal text-noble-ink min-[390px]:text-[3.2rem] sm:mt-7 sm:text-7xl lg:text-[4.15rem] xl:max-w-xl xl:text-7xl">
+              Hardwood floors
+              <span className="mt-1 block text-noble-orange sm:mt-2">built to last.</span>
             </h1>
-            <p className="mt-7 max-w-lg text-lg font-medium leading-8 text-white/74">
+            <p className="mt-5 max-w-md text-[0.98rem] font-medium leading-7 text-noble-ink/70 sm:mt-7 sm:text-base sm:leading-8">
               Refinishing, installation, repair, stairs, and custom hardwood work for Kansas City homes.
             </p>
-            <div className="mt-10 flex max-w-sm flex-col gap-4 sm:max-w-none sm:flex-row">
-              <ButtonLink href="/contact" className="px-10 text-base">
-                Get a quote
+            <div className="mt-6 grid max-w-md grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:max-w-none sm:gap-3">
+              <ButtonLink href="#quote" className="min-h-14 px-4 text-sm sm:min-h-16 sm:px-8 sm:text-base">
+                Get a quote <ArrowMark className="ml-5" />
               </ButtonLink>
-              <ButtonLink href={business.phoneHref} variant="light" className="px-10">
-                Call {business.phone}
+              <ButtonLink href={business.phoneHref} variant="secondary" className="min-h-14 px-4 sm:min-h-16 sm:px-8">
+                <span className="sm:hidden">Call now</span>
+                <span className="hidden sm:inline">Call {business.phone}</span>
               </ButtonLink>
             </div>
           </div>
 
-          <div className="relative mt-10 h-80 overflow-hidden bg-noble-mist min-[390px]:h-[22rem] lg:hidden">
+          <div className="relative mt-8 aspect-[1.32/1] overflow-hidden rounded-sm bg-noble-mist sm:mt-10 sm:aspect-[1.6/1] lg:hidden">
             <Image
-              src="/images/noble-hardwoods-hero.jpg"
+              src="/images/projects/living-room-hardwood-floors.jpg"
               alt="Finished hardwood floor completed by Noble Hardwoods"
               fill
               priority
@@ -140,62 +142,77 @@ export default function Home() {
         </div>
 
         <Link
-          href="#services"
-          className="carpenter-scroll-cue absolute bottom-[9.75rem] right-[8vw] z-20 hidden h-[8.75rem] w-[8.75rem] place-items-center rounded-full border border-white/28 bg-noble-orange text-4xl font-bold text-white shadow-[0_24px_80px_rgba(0,0,0,0.28)] lg:grid"
-          aria-label="Scroll to services"
+          href="#quote"
+          className="carpenter-scroll-cue absolute bottom-20 right-[4vw] z-20 hidden size-20 place-items-center rounded-full border border-white/65 bg-noble-orange text-white shadow-[0_20px_60px_rgba(37,31,27,0.24)] lg:grid xl:right-[6vw]"
+          aria-label="Scroll to the quote form"
         >
           <ArrowMark className="rotate-90" />
         </Link>
       </section>
 
-      <section className="relative z-10 bg-white pb-14 pt-0 sm:pb-20">
-        <div className="carpenter-container">
-          <div className="relative -mt-7 overflow-hidden border border-noble-ink/10 bg-cream-50 shadow-[0_24px_70px_rgba(37,31,27,0.11)] sm:-mt-10 lg:-mt-16">
-            <div className="grid xl:grid-cols-[0.36fr_0.64fr]">
-              <div className="bg-noble-orange px-5 py-7 text-white sm:px-8 sm:py-9 lg:px-10 lg:py-10">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/76">
-                  Trusted locally
-                </p>
-                <h2 className="carpenter-title mt-4 max-w-md text-[2.2rem] font-bold leading-[0.98] text-white sm:text-[2.75rem]">
-                  Craftsmanship you can feel underfoot.
-                </h2>
-                <p className="mt-5 max-w-md text-base font-medium leading-7 text-white/82">
-                  A cleaner quote process, careful prep, and hardwood details handled by a Kansas City crew.
-                </p>
-              </div>
-
-              <div className="grid divide-y divide-noble-ink/10 bg-white md:grid-cols-3 md:divide-x md:divide-y-0">
-                {trustPoints.map((point) => (
-                  <div key={point.label} className="px-5 py-7 sm:px-7 lg:px-8 lg:py-10">
-                    <p className="text-sm font-bold uppercase tracking-[0.12em] text-noble-orange">
-                      {point.value}
-                    </p>
-                    <h3 className="mt-4 text-xl font-bold leading-tight text-noble-ink">
-                      {point.label}
-                    </h3>
-                    <p className="mt-3 text-sm font-medium leading-6 text-noble-ink/64">
-                      {point.detail}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3 border-t border-noble-ink/10 bg-white px-5 py-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between">
-              <p className="text-sm font-bold uppercase tracking-[0.12em] text-noble-ink">
-                5.0 Google rating
-              </p>
-              <p className="max-w-2xl text-sm font-medium leading-6 text-noble-ink/62">
-                Local roots. Local pride. Clear communication from quote request to final walkthrough.
-              </p>
-            </div>
+      <section className="relative z-10 bg-white" aria-label="Featured hardwood flooring services">
+        <div className="mx-auto max-w-[74rem] px-5 sm:px-6 lg:-mt-14 lg:px-8 xl:px-0">
+          <div className="noble-shadow grid grid-cols-2 overflow-hidden border border-noble-ink/8 bg-white lg:grid-cols-4">
+            {serviceRail.map((service, index) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                data-track="service_card_click"
+                data-reveal
+                className="group flex min-h-28 flex-col items-start justify-center gap-3 border-b border-r border-noble-ink/10 p-4 transition duration-300 even:border-r-0 hover:bg-cream-50 sm:min-h-32 sm:flex-row sm:items-center sm:gap-4 sm:p-6 lg:border-b-0 lg:border-r lg:even:border-r"
+              >
+                <Image
+                  src={service.icon}
+                  alt=""
+                  width={54}
+                  height={54}
+                  className="size-9 object-contain sm:size-12"
+                />
+                <div className="flex flex-1 items-center justify-between gap-4">
+                  <h2 className="text-[0.68rem] font-extrabold uppercase leading-4 text-noble-ink sm:text-sm">
+                    <span className="sr-only">Service {index + 1}: </span>
+                    {service.eyebrow}
+                  </h2>
+                  <ArrowMark className="hidden text-noble-ink transition group-hover:translate-x-1 group-hover:text-noble-orange sm:block" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="about" className="bg-white py-20 sm:py-32 lg:py-40">
-        <div className="carpenter-container grid gap-12 lg:grid-cols-[0.92fr_1fr] lg:items-center">
-          <div className="relative aspect-[0.88/1] overflow-hidden bg-noble-mist lg:min-h-[44.9375rem]">
+      <section aria-label="Noble Hardwoods trust highlights" className="border-y border-noble-ink/8 bg-cream-50">
+        <div className="carpenter-container grid md:grid-cols-[1.1fr_1.9fr] md:items-center">
+          <div className="py-5 md:pr-8" data-reveal>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-noble-orange">
+              Trusted locally
+            </p>
+            <p className="mt-1 text-base font-bold leading-tight text-noble-ink sm:text-lg">
+              Kansas City craftsmanship, clearly delivered.
+            </p>
+          </div>
+          <dl className="grid grid-cols-3 border-t border-noble-ink/10 md:border-l md:border-t-0">
+                {trustPoints.map((point) => (
+                  <div
+                    key={point.label}
+                    className="border-l border-noble-ink/10 px-3 py-4 first:border-l-0 min-[430px]:px-4 sm:px-5 md:py-6 lg:flex lg:items-center lg:gap-3 lg:px-7"
+                    data-reveal
+                  >
+                    <dt className="text-lg font-bold leading-none text-noble-orange sm:text-xl">
+                      {point.value}
+                    </dt>
+                    <dd className="mt-1 text-xs font-bold uppercase leading-4 tracking-[0.08em] text-noble-ink/72 lg:mt-0">
+                      {point.label}
+                    </dd>
+                  </div>
+                ))}
+          </dl>
+        </div>
+      </section>
+
+      <section id="about" className="bg-white py-16 sm:py-28 lg:py-36">
+        <div className="carpenter-container grid gap-8 sm:gap-12 lg:grid-cols-[0.92fr_1fr] lg:items-center">
+          <div className="relative aspect-[1.3/1] overflow-hidden bg-noble-mist sm:aspect-[0.95/1] lg:min-h-[40rem]" data-reveal>
             <Image
               src="/images/projects/kitchen-hardwood-floors.jpg"
               alt="Natural hardwood floors in a bright kitchen"
@@ -204,19 +221,19 @@ export default function Home() {
               sizes="(min-width: 1024px) 50vw, 100vw"
             />
           </div>
-          <div className="relative z-10 bg-white pt-2 lg:-ml-28 lg:p-14">
+          <div className="relative z-10 bg-white pt-1 lg:-ml-24 lg:p-12" data-reveal>
             <p className="carpenter-eyebrow text-noble-ink">About us</p>
-            <h2 className="carpenter-title mt-5 max-w-3xl text-[2.6rem] font-bold text-noble-ink sm:text-6xl lg:text-7xl">
+            <h2 className="carpenter-title mt-5 max-w-3xl text-[2.3rem] font-bold text-noble-ink sm:text-6xl lg:text-[4rem]">
               Noble floors crafted by noble people.
             </h2>
-            <p className="mt-7 max-w-xl text-lg leading-9 text-noble-ink/68">
+            <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
               Detail matters because the floor becomes part of daily life. Noble Hardwoods keeps the work careful, clear, and grounded in the home.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <ButtonLink href="/contact" variant="secondary" className="px-10">
+            <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:flex sm:gap-4">
+              <ButtonLink href="#quote" className="px-4 sm:px-10">
                 Get a quote
               </ButtonLink>
-              <ButtonLink href="/about" variant="secondary" className="px-10">
+              <ButtonLink href="/about" variant="secondary" className="px-4 sm:px-10">
                 Learn more
               </ButtonLink>
             </div>
@@ -224,29 +241,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="bg-noble-ink pb-0 pt-20 text-white sm:pt-32 lg:pt-[16.25rem]">
+      <section id="services" className="bg-cream-100 pb-0 pt-16 text-noble-ink sm:pt-28 lg:pt-36">
         <div className="carpenter-container">
-          <div className="grid gap-8 pb-12 sm:pb-16 lg:grid-cols-[0.92fr_1fr] lg:items-end lg:border-b lg:border-white/14">
+          <div className="grid gap-6 pb-10 sm:gap-8 sm:pb-16 lg:grid-cols-[0.92fr_1fr] lg:items-end lg:border-b lg:border-noble-ink/12" data-reveal>
             <div>
-              <p className="carpenter-eyebrow text-white">Our services</p>
-              <h2 className="carpenter-title mt-5 max-w-3xl text-[2.6rem] font-bold text-white sm:text-6xl lg:text-7xl">
+              <p className="carpenter-eyebrow text-noble-ink">Our services</p>
+              <h2 className="carpenter-title mt-5 max-w-3xl text-[2.3rem] font-bold text-noble-ink sm:text-6xl lg:text-[4rem]">
                 A comprehensive set of services
               </h2>
             </div>
-            <p className="max-w-xl text-lg leading-9 text-white/72 lg:justify-self-end">
+            <p className="max-w-xl text-base leading-8 text-noble-ink/68 sm:text-lg sm:leading-9 lg:justify-self-end">
               Installation, refinishing, repairs, stairs, and custom hardwood work handled with careful communication and jobsite respect.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-10 pb-20 sm:mt-16 sm:pb-24 lg:grid-cols-3 lg:pb-32">
+          <div className="mt-8 grid auto-cols-[82vw] grid-flow-col gap-4 overflow-x-auto pb-16 snap-x snap-mandatory sm:mt-12 sm:auto-cols-[55vw] sm:gap-6 sm:pb-24 lg:mt-16 lg:grid-flow-row lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:pb-32">
             {serviceVisuals.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="carpenter-card group block bg-noble-ink text-white"
+                className="carpenter-card group block snap-start bg-white text-noble-ink shadow-[0_18px_48px_rgba(87,51,31,0.08)]"
                 data-track="service_card_click"
+                data-reveal
               >
-                <div className="relative h-80 overflow-hidden bg-noble-mist sm:h-[28.875rem]">
+                <div className="relative h-56 overflow-hidden bg-noble-mist sm:h-72 lg:h-[28.875rem]">
                   <Image
                     src={service.image}
                     alt={service.alt}
@@ -255,15 +273,15 @@ export default function Home() {
                     sizes="(min-width: 1024px) 33vw, 90vw"
                   />
                 </div>
-                <div className="pt-7">
+                <div className="p-5 sm:p-7">
                   <p className="text-sm font-bold uppercase tracking-[0.14em] text-noble-orange">
                     {service.eyebrow}
                   </p>
-                  <h3 className="mt-3 text-3xl font-bold leading-tight text-white">
+                  <h3 className="mt-3 text-2xl font-bold leading-tight text-noble-ink sm:text-3xl">
                     {service.title}
                   </h3>
-                  <p className="mt-4 text-base leading-7 text-white/64">{service.description}</p>
-                  <span className="mt-6 inline-flex items-center gap-4 text-sm font-bold uppercase text-white transition group-hover:text-noble-orange">
+                  <p className="mt-3 text-sm leading-7 text-noble-ink/64 sm:mt-4 sm:text-base">{service.description}</p>
+                  <span className="mt-5 inline-flex items-center gap-4 text-sm font-bold uppercase text-noble-ink transition group-hover:text-noble-orange sm:mt-6">
                     View service <ArrowMark />
                   </span>
                 </div>
@@ -273,25 +291,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="bg-white pb-24 pt-20 sm:pb-40 sm:pt-32 lg:pb-60">
+      <section id="projects" className="bg-white pb-20 pt-16 sm:pb-32 sm:pt-28 lg:pb-40">
         <div className="carpenter-container">
-          <div className="grid gap-20 lg:grid-cols-2 lg:items-start">
-            <div>
+          <div className="grid gap-10 sm:gap-16 lg:grid-cols-2 lg:items-start lg:gap-20">
+            <div data-reveal>
               <p className="carpenter-eyebrow text-noble-ink">Gallery</p>
-              <h2 className="carpenter-title mt-5 max-w-xl text-[2.6rem] font-bold text-noble-ink sm:text-6xl lg:text-7xl">
+              <h2 className="carpenter-title mt-5 max-w-xl text-[2.3rem] font-bold text-noble-ink sm:text-6xl lg:text-[4rem]">
                 Take a look at our recent projects
               </h2>
-              <p className="mt-7 max-w-xl text-lg leading-9 text-noble-ink/68">
+              <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
                 Project proof matters. These homes show the warmth, clean lines, and finish quality Noble is built around.
               </p>
               <Link
                 href="/projects"
                 data-track="projects_index_click"
-                className="mt-10 inline-flex min-h-[4.625rem] items-center justify-center rounded-full bg-noble-ink px-10 text-sm font-bold uppercase text-white transition hover:-translate-y-1 hover:bg-noble-orange"
+                className="mt-7 inline-flex min-h-12 items-center justify-center rounded-sm bg-noble-ink px-6 text-sm font-bold uppercase text-white transition duration-300 hover:-translate-y-0.5 hover:bg-noble-orange sm:mt-9 sm:min-h-14 sm:px-8"
               >
                 View all projects
               </Link>
-              <Link href={featuredProjects[1].href} className="carpenter-card mt-24 hidden lg:block">
+              <Link href={featuredProjects[1].href} className="carpenter-card group mt-20 hidden lg:block" data-reveal>
                 <div className="relative aspect-square overflow-hidden bg-noble-mist">
                   <Image
                     src={featuredProjects[1].image}
@@ -301,83 +319,75 @@ export default function Home() {
                     sizes="(min-width: 1024px) 38vw, 90vw"
                   />
                 </div>
+                <ProjectCaption project={featuredProjects[1]} />
               </Link>
             </div>
-            <div className="grid gap-10 pt-0 sm:gap-20 lg:pt-0">
-              <Link href={featuredProjects[0].href} className="carpenter-card group block">
-                <div className="relative aspect-square overflow-hidden bg-noble-mist">
-                  <Image
-                    src={featuredProjects[0].image}
-                    alt={featuredProjects[0].alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 38vw, 90vw"
-                  />
-                </div>
-              </Link>
-              <Link href={featuredProjects[2].href} className="carpenter-card group block">
-                <div className="relative aspect-square overflow-hidden bg-noble-mist">
-                  <Image
-                    src={featuredProjects[2].image}
-                    alt={featuredProjects[2].alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 38vw, 90vw"
-                  />
-                </div>
-              </Link>
+            <div className="grid auto-cols-[82vw] grid-flow-col gap-5 overflow-x-auto pb-3 snap-x snap-mandatory sm:auto-cols-[55vw] lg:grid-flow-row lg:grid-cols-1 lg:gap-20 lg:overflow-visible lg:pb-0">
+              {featuredProjects.map((project, index) => (
+                <Link
+                  key={project.href}
+                  href={project.href}
+                  className={`carpenter-card group block snap-start ${index === 1 ? "lg:hidden" : ""}`}
+                  data-reveal
+                >
+                  <div className="relative aspect-[1.12/1] overflow-hidden bg-noble-mist sm:aspect-square">
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 38vw, 82vw"
+                    />
+                  </div>
+                  <ProjectCaption project={project} />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <CTABand
-        title="Ready to bring your hardwood floors back to life?"
-        text="Get a quote today and tell us what your floors need."
-      />
-
-      <section id="quote" className="relative overflow-hidden bg-white py-24 sm:py-32 lg:py-40">
-        <div className="carpenter-container grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
-          <div className="lg:sticky lg:top-10">
+      <section id="quote" className="relative overflow-hidden bg-noble-mist py-16 sm:py-28 lg:py-36">
+        <div className="carpenter-container grid gap-8 sm:gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
+          <div className="lg:sticky lg:top-28" data-reveal>
             <p className="carpenter-eyebrow text-noble-ink">Get a quote</p>
-            <h2 className="carpenter-title mt-6 max-w-xl text-5xl font-bold text-noble-ink sm:text-6xl lg:text-7xl">
+            <h2 className="carpenter-title mt-5 max-w-xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
               Tell us what your floors need.
             </h2>
-            <p className="mt-7 max-w-xl text-lg leading-9 text-noble-ink/68">
+            <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
               Add your project type, contact preference, work options, message, and optional photos or video so the first response is more useful.
             </p>
-            <div className="mt-9 grid gap-4">
-              <Link href={business.emailHref} className="border border-noble-ink/14 p-6 transition hover:border-noble-orange">
+            <div className="mt-8 hidden border-y border-noble-ink/12 sm:grid">
+              <Link href={business.emailHref} className="py-5 transition hover:text-noble-orange">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-noble-ink/55">Send us an email</span>
                 <span className="mt-2 block text-lg font-bold text-noble-ink">{business.email}</span>
               </Link>
-              <Link href={business.phoneHref} className="border border-noble-ink/14 p-6 transition hover:border-noble-orange">
+              <Link href={business.phoneHref} className="border-t border-noble-ink/12 py-5 transition hover:text-noble-orange">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-noble-ink/55">Give us a call</span>
                 <span className="mt-2 block text-lg font-bold text-noble-ink">{business.phone}</span>
               </Link>
             </div>
           </div>
-          <QuoteForm />
+          <div data-reveal>
+            <QuoteForm />
+          </div>
         </div>
       </section>
 
-      <section id="process" className="carpenter-section bg-cream-50">
-        <div className="carpenter-container grid gap-14 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
+      <section id="process" className="bg-cream-50 py-16 sm:py-28 lg:py-36">
+        <div className="carpenter-container grid gap-9 sm:gap-14 lg:grid-cols-[0.75fr_1.25fr]">
+          <div data-reveal>
             <p className="carpenter-eyebrow text-noble-ink">Process</p>
-            <h2 className="carpenter-title mt-6 max-w-xl text-5xl font-bold text-noble-ink sm:text-6xl lg:text-7xl">
+            <h2 className="carpenter-title mt-5 max-w-xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
               A clear path from first look to final walkthrough.
             </h2>
           </div>
-          <div className="divide-y divide-noble-ink/12 border-y border-noble-ink/12">
+          <div className="divide-y divide-noble-ink/12 border-y border-noble-ink/12" data-reveal>
             {processSteps.map((step, index) => (
-              <div key={step} className="grid gap-5 py-7 sm:grid-cols-[5rem_1fr]">
-                <span className="text-5xl font-bold leading-none text-noble-orange">{index + 1}</span>
+              <div key={step} className="grid grid-cols-[2.25rem_1fr] items-start gap-4 py-5 sm:grid-cols-[5rem_1fr] sm:gap-5 sm:py-7">
+                <span className="text-2xl font-bold leading-none tabular-nums text-noble-orange sm:text-5xl">{index + 1}</span>
                 <div>
-                  <h3 className="text-2xl font-bold text-noble-ink">{step}</h3>
-                  <p className="mt-2 text-base leading-8 text-noble-ink/64">
-                    Clear communication, careful planning, and detailed hardwood work at each step.
-                  </p>
+                  <h3 className="text-lg font-bold leading-snug text-noble-ink sm:text-2xl">{step}</h3>
                 </div>
               </div>
             ))}
@@ -385,27 +395,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="carpenter-section bg-white">
+      <section className="bg-white py-16 sm:py-28 lg:py-36">
         <div className="carpenter-container">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1fr] lg:items-end">
             <div>
               <p className="carpenter-eyebrow text-noble-ink">Testimonials</p>
-              <h2 className="carpenter-title mt-6 max-w-3xl text-5xl font-bold text-noble-ink sm:text-6xl lg:text-7xl">
+              <h2 className="carpenter-title mt-5 max-w-3xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
                 What Kansas City homeowners say
               </h2>
             </div>
-            <div className="border-y border-noble-ink/12 py-8 lg:px-8">
+            <div className="border-y border-noble-ink/12 py-6 sm:py-8 lg:px-8">
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-                <p className="text-3xl font-normal text-noble-ink">
+                <p className="text-2xl font-normal text-noble-ink sm:text-3xl">
                   <span className="font-bold text-noble-orange">Google</span> Rating
                 </p>
-                <span className="text-3xl font-bold text-noble-ink">5.0</span>
-                <span className="text-3xl leading-none text-noble-orange" aria-label="5 star rating">★★★★★</span>
+                <span className="text-2xl font-bold text-noble-ink sm:text-3xl">5.0</span>
+                <span className="text-2xl leading-none text-noble-orange sm:text-3xl" aria-label="5 star rating">★★★★★</span>
                 <Link
                   href="https://g.page/r/CVDjg6Cs_lh_EAE/review"
                   target="_blank"
                   rel="noreferrer"
-                  className="ml-auto inline-flex min-h-12 items-center justify-center rounded-full bg-noble-ink px-6 text-sm font-bold uppercase text-white transition hover:bg-noble-orange"
+                  className="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-noble-ink px-6 text-sm font-bold uppercase text-white transition hover:bg-noble-orange sm:ml-auto sm:w-auto"
                 >
                   Write A Review
                 </Link>
@@ -413,10 +423,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+          <div className="mt-10 grid auto-cols-[82vw] grid-flow-col gap-4 overflow-x-auto pb-3 snap-x snap-mandatory sm:mt-14 sm:auto-cols-[55vw] sm:gap-6 lg:grid-flow-row lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:pb-0">
             {reviews.map((review) => (
-              <figure key={review.name} className="border border-noble-ink/12 bg-white p-8">
-                <blockquote className="text-2xl font-bold leading-tight text-noble-ink">
+              <figure key={review.name} className="snap-start border-t-4 border-noble-orange bg-cream-50 p-6 sm:p-8" data-reveal>
+                <blockquote className="text-xl font-bold leading-snug text-noble-ink sm:text-2xl sm:leading-tight">
                   {review.quote}
                 </blockquote>
                 <figcaption className="mt-8 border-t border-noble-ink/12 pt-5">
@@ -431,51 +441,51 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-noble-ink py-24 text-white sm:py-32 lg:py-40">
+      <section className="overflow-hidden bg-cream-100 py-16 text-noble-ink sm:py-28 lg:py-32">
         <div className="carpenter-container text-center">
-          <p className="carpenter-eyebrow justify-center text-white">Stain gallery</p>
-          <h2 className="carpenter-title mx-auto mt-6 max-w-4xl text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
+          <p className="carpenter-eyebrow justify-center text-noble-ink">Stain gallery</p>
+          <h2 className="carpenter-title mx-auto mt-5 max-w-4xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
             Compare DuraSeal stain directions before your consultation
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-9 text-white/72">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-noble-ink/68 sm:mt-6 sm:text-lg sm:leading-9">
             Browse common colors for White Oak and Red Oak, then use the quote form to tell us if you already have a direction in mind.
           </p>
-          <div className="carpenter-scroll-row mt-16">
+          <div className="carpenter-scroll-row mt-10 sm:mt-16">
             {["Natural", "Golden Brown", "Dark Walnut", "Jacobean"].map((color, index) => (
-              <Link key={color} href="/stain-gallery" className="block min-h-[24rem] bg-white/[0.05] p-8 text-left">
-                <span className="inline-flex rounded-full border border-white/60 px-6 py-3 text-sm font-bold uppercase text-white">
+              <Link key={color} href="/stain-gallery" className="block min-h-[17rem] border border-noble-ink/10 bg-white p-6 text-left shadow-[0_16px_44px_rgba(87,51,31,0.08)] sm:min-h-[22rem] sm:p-7">
+                <span className="inline-flex border border-noble-ink/18 px-4 py-2 text-xs font-bold uppercase text-noble-ink sm:px-5 sm:py-2.5 sm:text-sm">
                   {index === 0 ? "Preview" : `0${index + 1}`}
                 </span>
-                <div className="mt-12 h-36 bg-[linear-gradient(135deg,#d7a76b,#6f3f24)]" />
-                <h3 className="mt-8 text-3xl font-bold text-white">{color}</h3>
+                <div className="mt-8 h-28 bg-[linear-gradient(135deg,#d7a76b,#6f3f24)] sm:mt-12 sm:h-36" />
+                <h3 className="mt-6 text-2xl font-bold text-noble-ink sm:mt-8 sm:text-3xl">{color}</h3>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="carpenter-section bg-noble-mist">
+      <section className="bg-noble-mist py-16 sm:py-28 lg:py-36">
         <div className="carpenter-container">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-end">
             <div>
               <p className="carpenter-eyebrow text-noble-ink">Resources</p>
-              <h2 className="carpenter-title mt-6 max-w-2xl text-5xl font-bold text-noble-ink sm:text-6xl lg:text-7xl">
+              <h2 className="carpenter-title mt-5 max-w-2xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
                 Browse our hardwood articles and resources
               </h2>
             </div>
-            <Link href="/blog" className="inline-flex min-h-[4.625rem] w-fit items-center justify-center rounded-full bg-noble-ink px-10 text-sm font-bold uppercase text-white transition hover:bg-noble-orange lg:justify-self-end">
+            <Link href="/blog" className="inline-flex min-h-14 w-fit items-center justify-center rounded-sm bg-noble-ink px-8 text-sm font-bold uppercase text-white transition hover:bg-noble-orange lg:justify-self-end">
               View all articles
             </Link>
           </div>
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+          <div className="mt-10 grid auto-cols-[82vw] grid-flow-col gap-4 overflow-x-auto pb-3 snap-x snap-mandatory sm:mt-14 sm:auto-cols-[55vw] sm:gap-6 lg:grid-flow-row lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:pb-0">
             {resourceCards.map((post) => (
-              <Link key={post.href} href={post.href} className="carpenter-card group block bg-white">
+              <Link key={post.href} href={post.href} className="carpenter-card group block snap-start bg-white">
                 <div className="relative aspect-[1.22/1] overflow-hidden bg-noble-mist">
                   <Image src={post.image} alt="" fill className="object-cover" sizes="(min-width: 1024px) 33vw, 90vw" />
                 </div>
-                <div className="p-7">
+                <div className="p-5 sm:p-7">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-noble-orange">{post.category}</p>
-                  <h3 className="mt-3 text-2xl font-bold leading-tight text-noble-ink">{post.title}</h3>
+                  <h3 className="mt-3 text-xl font-bold leading-tight text-noble-ink sm:text-2xl">{post.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-noble-ink/64">{post.excerpt}</p>
                 </div>
               </Link>
@@ -484,43 +494,43 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-16 sm:py-28">
         <div className="carpenter-container grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
           <div>
             <p className="carpenter-eyebrow text-noble-ink">Other Contracting Services</p>
-            <h2 className="carpenter-title mt-6 max-w-xl text-4xl font-bold text-noble-ink sm:text-5xl">
+            <h2 className="carpenter-title mt-5 max-w-xl text-[2.15rem] font-bold text-noble-ink sm:mt-6 sm:text-5xl">
               Need painting, drywall, or other home work?
             </h2>
           </div>
-          <div className="grid gap-5 border border-noble-ink/12 bg-white p-8 shadow-soft sm:grid-cols-[auto_1fr_auto] sm:items-center">
-            <div className="grid size-20 place-items-center bg-noble-orange text-3xl font-bold text-white">Z</div>
+          <div className="grid grid-cols-[3.5rem_1fr] gap-4 border-y border-noble-ink/12 py-6 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-5 sm:py-7">
+            <div className="grid size-14 place-items-center bg-noble-orange text-2xl font-bold text-white sm:size-20 sm:text-3xl">Z</div>
             <div>
               <h3 className="text-xl font-bold leading-tight text-noble-ink">Zera Services, LLC</h3>
               <p className="mt-2 text-sm leading-7 text-noble-ink/68">
                 For painting, drywall, and other contracting services outside of hardwood flooring, connect with the Zera Services team.
               </p>
             </div>
-            <Link href={business.zeraServicesHref} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-noble-ink px-5 text-sm font-extrabold uppercase text-white transition hover:bg-noble-orange">
-              Visit Zera
+            <Link href={business.zeraServicesHref} className="col-span-2 inline-flex min-h-12 items-center justify-center rounded-sm bg-noble-ink px-5 text-sm font-extrabold uppercase text-white transition hover:bg-noble-orange sm:col-span-1">
+              View Zera Services
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="carpenter-section-tight bg-white">
+      <section className="bg-white py-16 sm:py-24 lg:py-28">
         <div className="carpenter-container">
           <div className="mx-auto max-w-3xl text-center">
             <p className="carpenter-eyebrow justify-center text-noble-ink">Service Areas</p>
-            <h2 className="carpenter-title mt-6 text-5xl font-bold text-noble-ink sm:text-6xl">
+            <h2 className="carpenter-title mt-5 text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl">
               Proudly serving the Kansas City metro area.
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-noble-ink/68">
               Local hardwood work for Kansas City homes, from Brookside to Leawood and beyond.
             </p>
           </div>
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-9 grid grid-cols-2 gap-2 sm:mt-12 sm:grid-cols-3 lg:grid-cols-4">
             {serviceAreas.map((area) => (
-              <Link key={area} href="/service-areas" className="group flex min-h-24 items-end border border-noble-ink/10 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-noble-orange hover:bg-noble-orange sm:min-h-28">
+              <Link key={area} href="/service-areas" className="group flex min-h-16 items-end border-t-2 border-noble-orange bg-cream-50 p-3.5 transition duration-300 hover:-translate-y-0.5 hover:bg-noble-orange sm:min-h-24 sm:p-5">
                 <span className="text-sm font-bold uppercase leading-tight text-noble-ink transition group-hover:text-white">{area}</span>
               </Link>
             ))}
@@ -530,5 +540,19 @@ export default function Home() {
 
       <FAQSection faqs={faqs.slice(0, 5)} />
     </>
+  );
+}
+
+function ProjectCaption({ project }: { project: (typeof featuredProjects)[number] }) {
+  return (
+    <div className="flex items-end justify-between gap-5 pt-5">
+      <div>
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-noble-orange">
+          {project.city}
+        </p>
+        <h3 className="mt-2 text-xl font-bold leading-tight text-noble-ink">{project.title}</h3>
+      </div>
+      <ArrowMark className="mb-1 shrink-0 text-noble-ink transition group-hover:translate-x-1 group-hover:text-noble-orange" />
+    </div>
   );
 }

@@ -5,7 +5,11 @@ export const business = {
   email: "info@noblehardwoods.co",
   emailHref: "mailto:info@noblehardwoods.co",
   instagram: "https://www.instagram.com/noblehardwoodskcmo/",
-  zeraServicesHref: "https://zeraservicesllc.com/",
+  zeraServicesHref: "/zera-services",
+  zeraPhone: "(913) 318-3373",
+  zeraPhoneHref: "tel:+19133183373",
+  ownershipLabel: "Owned by Zera Services",
+  ownershipName: "Zera Services",
   siteUrl: "https://www.noblehardwoods.co",
   area: "Kansas City metro"
 };
@@ -73,7 +77,7 @@ export const reviews = [
   {
     name: "Adam Chiarelli",
     quote:
-      "This crew was incredible. Josiah was professional, kind, and he and his team gave us excellent quality. They made our dream a reality.",
+      "This crew was incredible. The Noble team was professional, kind, and gave us excellent quality. They made our dream a reality.",
     detail: "Original red oak refinishing with a natural finish"
   },
   {
@@ -115,8 +119,8 @@ export const proofPoints = [
     text: "Seasoned hardwood floor craftsmen with deep Kansas City project experience."
   },
   {
-    title: "Comprehensive services",
-    text: "Installation, refinishing, repair, stairs, railings, and custom hardwood details."
+    title: "A 16-person team",
+    text: "Noble is supported by a 16-person team built for clear communication, careful scheduling, and dependable project support."
   },
   {
     title: "Exceptional work quality",
@@ -126,32 +130,20 @@ export const proofPoints = [
 
 export const teamMembers = [
   {
-    name: "Josiah",
-    role: "Owner, Operator",
-    image: "/images/noble-hardwoods-hero.jpg",
-    bio:
-      "Josiah is a co-owner and founder of Noble Hardwoods. He brings a craftsman's eye for accuracy, a calm process, and a sincere desire to help homeowners understand each step of their hardwood floor project."
-  },
-  {
-    name: "Ben",
-    role: "Owner, Quality Control",
+    name: "Clayton Rookstool",
+    role: "Owner-Operator",
     image: "/images/projects/living-room-hardwood-floors.jpg",
+    imageAlt: "Finished hardwood floors by Noble Hardwoods",
     bio:
-      "Ben helps lead quality control for Noble Hardwoods. His practical field experience, problem-solving, and steady attention to detail help the team deliver floors that look right and last."
+      "Clayton helps lead Noble Hardwoods as an owner-operator, keeping the work focused on clear communication, careful planning, and hardwood floors Kansas City homeowners are proud to live with."
   },
   {
-    name: "Simeon",
-    role: "Floor Technician, Media Manager",
-    image: "/images/projects/kitchen-hardwood-floors.jpg",
-    bio:
-      "Simeon supports the craft and the creative voice behind Noble Hardwoods. His growing trade skill and natural eye for the work help show Kansas City homeowners what careful hardwood work can become."
-  },
-  {
-    name: "Ethen",
-    role: "Floor Technician",
+    name: "Noble Team",
+    role: "16-person support team",
     image: "/images/projects/hardwood-stairs.jpg",
+    imageAlt: "Hardwood stairs and flooring completed by the Noble Hardwoods team",
     bio:
-      "Ethen brings consistency, care, and a steady jobsite presence to the Noble Hardwoods team. His work helps keep projects moving while protecting the standard homeowners expect."
+      "Noble is supported by a 16-person team that helps coordinate estimates, scheduling, project communication, and detailed field work from the first quote request through final walkthrough."
   }
 ];
 
@@ -161,7 +153,7 @@ export const processSteps = [
   "Schedule an in-home consultation",
   "Review flooring options, stain, and finish",
   "Receive a clear estimate",
-  "Prep and schedule the project"
+  "Prepare for and schedule the project"
 ];
 
 export const featuredProjects = [
@@ -259,7 +251,7 @@ export const blogPosts = [
     href: "/blog/how-to-care-for-your-hardwood-floors",
     date: "October 30, 2023",
     category: "Maintenance",
-    author: "Simeon P.",
+    author: "Noble Hardwoods",
     image: "/images/projects/kitchen-hardwood-floors.jpg",
     excerpt:
       "Hardwood floor maintenance directly impacts the lifespan and health of the floor. Avoid these common mistakes and build a simple care routine.",

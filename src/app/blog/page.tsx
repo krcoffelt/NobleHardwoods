@@ -52,12 +52,13 @@ export default function BlogPage() {
       />
 
       <section className="bg-white py-20 sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-6 px-5 sm:px-6 md:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-x-6 gap-y-12 px-5 sm:px-6 md:grid-cols-2 lg:gap-x-8 lg:gap-y-16 lg:px-8">
           {blogPosts.map((post) => (
             <Link
               key={post.href}
               href={post.href}
-              className="group border border-noble-ink/10 bg-white p-4 transition hover:-translate-y-1 hover:border-noble-orange/35 hover:shadow-soft"
+              className="carpenter-card group block"
+              data-reveal
             >
               <div className="relative aspect-[1.32/1] overflow-hidden bg-noble-mist">
                 <Image
@@ -68,7 +69,7 @@ export default function BlogPage() {
                   sizes="(min-width: 768px) 50vw, 100vw"
                 />
               </div>
-              <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
+              <p className="mt-5 border-t border-noble-ink/12 pt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
                 {post.category} / {post.date}
               </p>
               <h2 className="mt-3 text-2xl font-black uppercase leading-tight text-noble-ink">

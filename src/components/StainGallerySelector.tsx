@@ -18,13 +18,13 @@ export function StainGallerySelector() {
   }, []);
 
   return (
-    <div className="grid gap-8">
-      <div className="flex flex-col gap-4 border border-noble-ink/10 bg-white p-5 shadow-soft sm:flex-row sm:items-center sm:justify-between">
+    <div className="grid gap-7 sm:gap-8">
+      <div className="flex flex-col gap-4 border border-noble-ink/10 bg-white p-4 shadow-soft sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
             Wood species
           </p>
-          <h2 className="mt-2 text-2xl font-black uppercase leading-tight text-noble-ink">
+          <h2 className="mt-2 text-xl font-black uppercase leading-tight text-noble-ink sm:text-2xl">
             View colors on {species}
           </h2>
         </div>
@@ -52,22 +52,22 @@ export function StainGallerySelector() {
             <h3 className="border-b border-noble-ink/12 pb-3 text-sm font-black uppercase tracking-[0.16em] text-noble-ink">
               {family}
             </h3>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-3">
               {stains.map((stain) => (
                 <article
                   key={stain.name}
-                  className="grid grid-cols-[5.5rem_1fr] overflow-hidden border border-noble-ink/10 bg-white"
+                  className="grid min-w-0 grid-rows-[4.5rem_1fr] overflow-hidden border border-noble-ink/10 bg-white sm:grid-cols-[5.5rem_1fr] sm:grid-rows-1"
                 >
                   <div
-                    className="min-h-24 border-r border-noble-ink/10 bg-[var(--stain-color)]"
+                    className="border-b border-noble-ink/10 bg-[var(--stain-color)] sm:min-h-24 sm:border-b-0 sm:border-r"
                     style={{ "--stain-color": stain[colorKey] } as CSSProperties}
                     aria-hidden="true"
                   />
-                  <div className="p-4">
-                    <h4 className="text-base font-black uppercase leading-tight text-noble-ink">
+                  <div className="min-w-0 p-3 sm:p-4">
+                    <h4 className="break-words text-sm font-black uppercase leading-tight text-noble-ink sm:text-base">
                       {stain.name}
                     </h4>
-                    <p className="mt-2 text-xs font-bold uppercase tracking-[0.12em] text-noble-orange">
+                    <p className="mt-2 text-[0.64rem] font-bold uppercase tracking-[0.1em] text-noble-orange sm:text-xs sm:tracking-[0.12em]">
                       {species}
                     </p>
                   </div>

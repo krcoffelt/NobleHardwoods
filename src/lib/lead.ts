@@ -10,7 +10,7 @@ export const projectTypeOptions = [
 ] as const;
 
 export const preferredContactOptions = ["Phone", "Email", "Either"] as const;
-export const projectSizeOptions = ["Under 500 sq ft", "500 sq ft or more", "Not sure yet"] as const;
+export const projectSizeOptions = ["Under 500 sq ft", "Over 500 sq ft", "Not sure yet"] as const;
 export const workOptionOptions = [
   "Base shoe / quarter round",
   "Baseboards",
@@ -23,13 +23,39 @@ export const workOptionOptions = [
   "Railings",
   "Lace-in repair",
   "Flush vents",
-  "Stain samples"
+  "Stain samples",
+  "Other preparation / finish work"
 ] as const;
 
 export type ProjectType = (typeof projectTypeOptions)[number];
 export type PreferredContactMethod = (typeof preferredContactOptions)[number];
 export type ProjectSize = (typeof projectSizeOptions)[number];
 export type WorkOption = (typeof workOptionOptions)[number];
+export type LeadUploadKind = "photo" | "video";
+
+export type LeadUploadMetadata = {
+  name: string;
+  type: string;
+  size: number;
+  kind: LeadUploadKind;
+};
+
+export const leadUploadLimits = {
+  maxPhotos: 12,
+  maxVideos: 1,
+  maxPhotoSize: 8 * 1024 * 1024,
+  maxVideoSize: 25 * 1024 * 1024
+} as const;
+
+export const allowedPhotoTypes = [
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/heic",
+  "image/heif"
+] as const;
+
+export const allowedVideoTypes = ["video/mp4", "video/quicktime", "video/webm"] as const;
 
 export type LeadInput = {
   firstName: string;
@@ -121,47 +147,20 @@ export type LeadUploadFiles = {
 };
 
 export function validateLeadFiles({ photos, videos }: LeadUploadFiles) {
-  const errors: Record<string, string> = {};
-  const allowedPhotoTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/heic", "image/heif"]);
-  const allowedVideoTypes = new Set(["video/mp4", "video/quicktime", "video/webm"]);
-  const maxPhotoSize = 8 * 1024 * 1024;
-  const maxVideoSize = 25 * 1024 * 1024;
-  const maxPhotos = 12;
-  const maxVideos = 1;
-
-  if (photos.length > maxPhotos) {
-    errors.photos = `Upload up to ${maxPhotos} photos.`;
-  }
-
-  for (const file of photos) {
-    if (!file.name || file.size === 0) continue;
-    if (!allowedPhotoTypes.has(file.type)) {
-      errors.photos = "Photos must be JPG, PNG, WebP, HEIC, or HEIF files.";
-      break;
-    }
-    if (file.size > maxPhotoSize) {
-      errors.photos = "Each photo must be 8 MB or smaller.";
-      break;
-    }
-  }
-
-  if (videos.length > maxVideos) {
-    errors.videos = `Upload up to ${maxVideos} video.`;
-  }
-
-  for (const file of videos) {
-    if (!file.name || file.size === 0) continue;
-    if (!allowedVideoTypes.has(file.type)) {
-      errors.videos = "Video must be MP4, MOV, or WebM.";
-      break;
-    }
-    if (file.size > maxVideoSize) {
-      errors.videos = "Video must be 25 MB or smaller.";
-      break;
-    }
-  }
-
-  return errors;
+  return validateLeadUploadMetadata([
+    ...photos.map((file) => ({
+      name: file.name,
+      type: file.type,
+      size: file.size,
+      kind: "photo" as const
+    })),
+    ...videos.map((file) => ({
+      name: file.name,
+      type: file.type,
+      size: file.size,
+      kind: "video" as const
+    }))
+  ]);
 }
 
 export function getLeadUploadFiles(formData: FormData): LeadUploadFiles {
@@ -177,6 +176,75 @@ export function getLeadUploadFiles(formData: FormData): LeadUploadFiles {
 
 export function getLeadFiles(uploadFiles: LeadUploadFiles) {
   return [...uploadFiles.photos, ...uploadFiles.videos];
+}
+
+export function getLeadUploadMetadata({ photos, videos }: LeadUploadFiles): LeadUploadMetadata[] {
+  return [
+    ...photos.map((file) => ({
+      name: file.name,
+      type: file.type,
+      size: file.size,
+      kind: "photo" as const
+    })),
+    ...videos.map((file) => ({
+      name: file.name,
+      type: file.type,
+      size: file.size,
+      kind: "video" as const
+    }))
+  ];
+}
+
+export function validateLeadUploadMetadata(files: LeadUploadMetadata[]) {
+  const errors: Record<string, string> = {};
+  const photoTypes = new Set<string>(allowedPhotoTypes);
+  const videoTypes = new Set<string>(allowedVideoTypes);
+  const photos = files.filter((file) => file.kind === "photo");
+  const videos = files.filter((file) => file.kind === "video");
+
+  if (photos.length > leadUploadLimits.maxPhotos) {
+    errors.photos = `Upload up to ${leadUploadLimits.maxPhotos} photos.`;
+  }
+
+  for (const file of photos) {
+    if (!file.name || !Number.isFinite(file.size) || file.size <= 0) {
+      errors.photos = "Choose valid photo files.";
+      break;
+    }
+    if (!photoTypes.has(file.type)) {
+      errors.photos = "Photos must be JPG, PNG, WebP, HEIC, or HEIF files.";
+      break;
+    }
+    if (file.size > leadUploadLimits.maxPhotoSize) {
+      errors.photos = "Each photo must be 8 MB or smaller.";
+      break;
+    }
+  }
+
+  if (videos.length > leadUploadLimits.maxVideos) {
+    errors.videos = `Upload up to ${leadUploadLimits.maxVideos} video.`;
+  }
+
+  for (const file of videos) {
+    if (!file.name || !Number.isFinite(file.size) || file.size <= 0) {
+      errors.videos = "Choose a valid video file.";
+      break;
+    }
+    if (!videoTypes.has(file.type)) {
+      errors.videos = "Video must be MP4, MOV, or WebM.";
+      break;
+    }
+    if (file.size > leadUploadLimits.maxVideoSize) {
+      errors.videos = "Video must be 25 MB or smaller.";
+      break;
+    }
+  }
+
+  if (files.some((file) => file.kind !== "photo" && file.kind !== "video")) {
+    errors.form = "Choose valid project files.";
+  }
+
+  return errors;
 }
 
 function getText(formData: FormData, key: string) {

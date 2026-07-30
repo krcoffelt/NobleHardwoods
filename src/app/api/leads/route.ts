@@ -1,13 +1,15 @@
-import { randomUUID } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { sendLeadEmails } from "@/lib/email";
+import { validateLeadFields } from "@/lib/lead";
 import {
-  getLeadFiles,
-  getLeadUploadFiles,
-  validateLeadFields,
-  validateLeadFiles
-} from "@/lib/lead";
-import { createSupabaseAdminClient, getLeadUploadBucket } from "@/lib/supabaseAdmin";
+  verifyLeadUploadManifest,
+  type PendingLeadUpload
+} from "@/lib/leadUploadManifest";
+import {
+  createSupabaseAdminClient,
+  ensureLeadUploadBucket,
+  getLeadUploadBucket
+} from "@/lib/supabaseAdmin";
 
 export const runtime = "nodejs";
 
@@ -31,17 +33,18 @@ export async function POST(request: NextRequest) {
   }
 
   const fieldValidation = validateLeadFields(formData);
-  const uploadFiles = getLeadUploadFiles(formData);
-  const files = getLeadFiles(uploadFiles);
-  const fileErrors = validateLeadFiles(uploadFiles);
+  const uploadManifestToken = getText(formData, "upload_manifest");
+  const uploadManifest = uploadManifestToken
+    ? verifyLeadUploadManifest(uploadManifestToken)
+    : { ok: true as const, uploads: [] as PendingLeadUpload[] };
 
-  if (!fieldValidation.ok || Object.keys(fileErrors).length > 0) {
+  if (!fieldValidation.ok || !uploadManifest.ok) {
     return NextResponse.json(
       {
         ok: false,
         errors: {
           ...(!fieldValidation.ok ? fieldValidation.errors : {}),
-          ...fileErrors
+          ...(!uploadManifest.ok ? { form: uploadManifest.error } : {})
         }
       },
       { status: 400 }
@@ -54,6 +57,23 @@ export async function POST(request: NextRequest) {
   try {
     const supabase = createSupabaseAdminClient();
     const bucket = getLeadUploadBucket();
+    await ensureLeadUploadBucket(supabase);
+    const pendingUploads = uploadManifest.uploads;
+
+    await Promise.all(
+      pendingUploads.map(async (upload) => {
+        const { data, error } = await supabase.storage.from(bucket).info(upload.pendingPath);
+
+        if (
+          error ||
+          !data ||
+          data.size !== upload.size ||
+          data.contentType !== upload.type
+        ) {
+          throw new Error(error?.message || "A project file did not finish uploading correctly.");
+        }
+      })
+    );
 
     const { data: insertedLead, error: leadError } = await supabase
       .from("leads")
@@ -84,44 +104,108 @@ export async function POST(request: NextRequest) {
     const leadId = String(insertedLead.id);
     const fileReferences: string[] = [];
 
-    if (files.length > 0) {
-      const leadFileRows = [];
+    try {
+      if (pendingUploads.length > 0) {
+        const uploadedFiles = await Promise.all(
+          pendingUploads.map(async (upload) => {
+            const filename = upload.pendingPath.split("/").at(-1);
 
-      for (const file of files) {
-        const objectPath = `leads/${leadId}/${randomUUID()}-${safeFilename(file.name)}`;
-        const { error: uploadError } = await supabase.storage.from(bucket).upload(objectPath, file, {
-          contentType: file.type,
-          upsert: false
-        });
+            if (!filename) {
+              throw new Error("A project file path was invalid.");
+            }
 
-        if (uploadError) {
-          throw new Error(uploadError.message);
+            const objectPath = `leads/${leadId}/${filename}`;
+            const { error: moveError } = await supabase.storage
+              .from(bucket)
+              .move(upload.pendingPath, objectPath);
+
+            if (moveError) {
+              throw new Error(moveError.message);
+            }
+
+            const { data: signedFile, error: signedFileError } = await supabase.storage
+              .from(bucket)
+              .createSignedUrl(objectPath, 7 * 24 * 60 * 60, {
+                download: upload.name
+              });
+
+            if (signedFileError || !signedFile?.signedUrl) {
+              throw new Error(
+                signedFileError?.message || "Could not create a project file link."
+              );
+            }
+
+            return {
+              reference: signedFile.signedUrl,
+              row: {
+                lead_id: leadId,
+                file_url: `${bucket}/${objectPath}`,
+                file_type: upload.type,
+                uploaded_at: new Date().toISOString()
+              }
+            };
+          })
+        );
+        const leadFileRows = uploadedFiles.map((file) => file.row);
+
+        const { error: fileInsertError } = await supabase
+          .from("lead_files")
+          .insert(leadFileRows);
+
+        if (fileInsertError) {
+          throw new Error(fileInsertError.message);
         }
 
-        const publicUrl = supabase.storage.from(bucket).getPublicUrl(objectPath).data.publicUrl;
-        const fileReference = publicUrl || `${bucket}/${objectPath}`;
-
-        fileReferences.push(fileReference);
-        leadFileRows.push({
-          lead_id: leadId,
-          file_url: fileReference,
-          file_type: file.type,
-          uploaded_at: new Date().toISOString()
-        });
+        fileReferences.push(...uploadedFiles.map((file) => file.reference));
       }
-
-      const { error: fileInsertError } = await supabase.from("lead_files").insert(leadFileRows);
-
-      if (fileInsertError) {
-        throw new Error(fileInsertError.message);
-      }
+    } catch (fileError) {
+      console.error(`Lead ${leadId} was saved, but file processing failed`, fileError);
     }
 
-    await sendLeadEmails({
-      lead: { ...lead, sourcePage },
-      leadId,
-      fileReferences
-    });
+    try {
+      const emailResult = await sendLeadEmails({
+        lead: { ...lead, sourcePage },
+        leadId,
+        fileReferences
+      });
+
+      const { error: notificationUpdateError } = await supabase
+        .from("leads")
+        .update({
+          notification_status: "Sent",
+          customer_email_id: emailResult.customerEmailId,
+          internal_email_id: emailResult.internalEmailId,
+          notification_error: null
+        })
+        .eq("id", leadId);
+
+      if (notificationUpdateError) {
+        console.error(
+          `Lead ${leadId} emails sent, but notification status was not recorded`,
+          notificationUpdateError
+        );
+      }
+    } catch (emailError) {
+      console.error(`Lead ${leadId} was saved, but email notification failed`, emailError);
+
+      const notificationError =
+        emailError instanceof Error ? emailError.message : "Unknown email notification error.";
+
+      const { error: notificationUpdateError } = await supabase
+        .from("leads")
+        .update({
+          notification_status: "Failed",
+          notification_error: notificationError.slice(0, 2000)
+        })
+        .eq("id", leadId);
+
+      if (notificationUpdateError) {
+        console.error(
+          `Lead ${leadId} notification failure was not recorded`,
+          notificationUpdateError
+        );
+      }
+    }
 
     return NextResponse.json({ ok: true, redirectUrl: "/thank-you" });
   } catch (error) {
@@ -142,8 +226,4 @@ export async function POST(request: NextRequest) {
 function getText(formData: FormData, key: string) {
   const value = formData.get(key);
   return typeof value === "string" ? value.trim() : "";
-}
-
-function safeFilename(filename: string) {
-  return filename.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "");
 }

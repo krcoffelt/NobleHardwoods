@@ -4,15 +4,17 @@ import { useEffect } from "react";
 
 export function ScrollReveal() {
   useEffect(() => {
-    const elements = Array.from(
-      document.querySelectorAll<HTMLElement>(
-        "main section, footer, .carpenter-card, figure, .carpenter-scroll-row > *"
-      )
+    const desktopMotion = window.matchMedia(
+      "(min-width: 768px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)"
     );
+
+    if (!desktopMotion.matches) return;
+
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
 
     elements.forEach((element, index) => {
       element.dataset.reveal = element.dataset.reveal || "true";
-      element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
     });
 
     document.body.classList.add("reveal-ready");
@@ -26,7 +28,7 @@ export function ScrollReveal() {
           }
         });
       },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
     );
 
     elements.forEach((element) => observer.observe(element));
