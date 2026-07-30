@@ -36,7 +36,7 @@ body::before {
   content: "";
   opacity: 0.026;
   background-image:
-    radial-gradient(circle at 20% 20%, #251f1b 0 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, #1b1917 0 1px, transparent 1px),
     radial-gradient(circle at 80% 10%, #9b6438 0 1px, transparent 1px);
   background-size: 26px 26px, 38px 38px;
   mix-blend-mode: multiply;
@@ -185,12 +185,12 @@ h2 {
 }
 
 .carpenter-scroll-row::-webkit-scrollbar-thumb {
-  background: rgba(37, 31, 27, 0.24);
+  background: rgba(27, 25, 23, 0.24);
 }
 
 .cta-woodgrain {
   background-image:
-    linear-gradient(rgba(36, 34, 32, 0.84), rgba(36, 34, 32, 0.9)),
+    linear-gradient(rgba(27, 25, 23, 0.86), rgba(27, 25, 23, 0.92)),
     url("/images/textures/wood-grain.jpg");
   background-position: center;
   background-size: cover;

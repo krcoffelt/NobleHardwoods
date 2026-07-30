@@ -24,7 +24,7 @@ type PreparedUpload = {
 };
 
 const fieldClass =
-  "min-h-12 w-full rounded-md border border-noble-ink/15 bg-white px-3.5 text-[0.95rem] font-medium text-noble-ink shadow-[0_1px_2px_rgba(37,31,27,0.04)] outline-none transition duration-200 placeholder:text-noble-ink/35 hover:border-noble-ink/25 focus:border-noble-orange focus:ring-[3px] focus:ring-noble-orange/12 sm:px-4";
+  "min-h-12 w-full rounded-md border border-noble-ink/15 bg-white px-3.5 text-[0.95rem] font-medium text-noble-ink shadow-[0_1px_2px_rgba(27,25,23,0.04)] outline-none transition duration-200 placeholder:text-noble-ink/35 hover:border-noble-ink/25 focus:border-noble-orange focus:ring-[3px] focus:ring-noble-orange/12 sm:px-4";
 
 const labelClass = "text-sm font-semibold leading-tight text-noble-ink";
 const helperClass = "text-xs font-normal leading-5 text-noble-ink/55";
@@ -490,7 +490,7 @@ function SelectField({ label, name, error, children }: SelectFieldProps) {
       <select
         name={name}
         defaultValue=""
-        className={`${fieldClass} appearance-none bg-[linear-gradient(45deg,transparent_50%,#251f1b_50%),linear-gradient(135deg,#251f1b_50%,transparent_50%)] bg-[length:6px_6px,6px_6px] bg-[position:calc(100%-24px)_50%,calc(100%-18px)_50%] bg-no-repeat pr-12`}
+        className={`${fieldClass} appearance-none bg-[linear-gradient(45deg,transparent_50%,#1b1917_50%),linear-gradient(135deg,#1b1917_50%,transparent_50%)] bg-[length:6px_6px,6px_6px] bg-[position:calc(100%-24px)_50%,calc(100%-18px)_50%] bg-no-repeat pr-12`}
         aria-invalid={Boolean(error)}
       >
         {children}
@@ -543,7 +543,7 @@ function ChoiceGroup({
         {options.map((option) => (
           <label
             key={option}
-            className="flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-noble-ink/12 bg-white px-3.5 text-sm font-medium text-noble-ink shadow-[0_1px_2px_rgba(37,31,27,0.03)] transition duration-200 hover:border-noble-orange/45 hover:bg-noble-orange/[0.025] has-[:checked]:border-noble-orange has-[:checked]:bg-noble-orange/[0.07] has-[:checked]:ring-1 has-[:checked]:ring-noble-orange/20"
+            className="flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-noble-ink/12 bg-white px-3.5 text-sm font-medium text-noble-ink shadow-[0_1px_2px_rgba(27,25,23,0.03)] transition duration-200 hover:border-noble-orange/45 hover:bg-noble-orange/[0.025] has-[:checked]:border-noble-orange has-[:checked]:bg-noble-orange/[0.07] has-[:checked]:ring-1 has-[:checked]:ring-noble-orange/20"
           >
             <input
               type={type}

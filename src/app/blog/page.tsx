@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Helpful hardwood flooring articles from Noble Hardwoods for Kansas City homeowners.",
     url: "/blog",
-    images: [{ url: "/images/projects/kitchen-hardwood-floors.jpg" }]
+    images: [{ url: "/images/project-flooring/robinson-home-dining-room-hardwood-floor.webp" }]
   }
 };
 
@@ -47,8 +47,8 @@ export default function BlogPage() {
         eyebrow="Articles & News"
         title="Hardwood floor guidance for Kansas City homes."
         text="Read practical notes on care, maintenance, refinishing, value, and hardwood floor ideas from the Noble Hardwoods team."
-        image="/images/projects/kitchen-hardwood-floors.jpg"
-        imageAlt="Natural hardwood floors in a bright Kansas City kitchen"
+        image="/images/project-flooring/robinson-home-dining-room-hardwood-floor.webp"
+        imageAlt="Natural hardwood floors extending through the Robinson home dining room"
       />
 
       <section className="bg-white py-20 sm:py-24">

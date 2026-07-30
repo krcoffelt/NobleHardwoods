@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#242220] pb-24 pt-0 text-white sm:pb-12">
+    <footer className="border-t border-white/10 bg-noble-ink pb-24 pt-0 text-white sm:pb-12">
       <div className="mx-auto grid max-w-[78rem] border-x border-white/10 sm:grid-cols-2">
         <Link
           href={business.emailHref}

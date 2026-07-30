@@ -26,7 +26,7 @@ const config: Config = {
         noble: {
           orange: "#ef5f3d",
           "orange-dark": "#d84b2d",
-          ink: "#251f1b",
+          ink: "#1b1917",
           mist: "#f7f4ef"
         },
         brass: {
@@ -73,7 +73,7 @@ const config: Config = {
         98: "0.98"
       },
       boxShadow: {
-        soft: "0 20px 80px rgba(38, 35, 32, 0.12)"
+        soft: "0 20px 80px rgba(27, 25, 23, 0.12)"
       }
     }
   },

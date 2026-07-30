@@ -10,7 +10,6 @@ import {
   business,
   blogPosts,
   faqs,
-  featuredProjects,
   processSteps,
   reviews,
   serviceAreas,
@@ -32,10 +31,10 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/images/projects/living-room-hardwood-floors.jpg",
-        width: 1600,
-        height: 814,
-        alt: "Finished hardwood floor completed by Noble Hardwoods"
+        url: "/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp",
+        width: 2400,
+        height: 1600,
+        alt: "Finished hardwood floor in a modern apartment kitchen completed by Noble Hardwoods"
       }
     ]
   }
@@ -60,18 +59,41 @@ export default function Home() {
   const serviceVisuals = [
     {
       ...services[1],
-      image: "/images/projects/living-room-hardwood-floors.jpg",
-      alt: "Hardwood floor installation in a Kansas City living room"
+      image: "/images/project-flooring/apartment-kitchen-hardwood-floor-1.webp",
+      alt: "Natural hardwood floor installation in a modern apartment kitchen"
     },
     {
       ...services[0],
-      image: "/images/projects/kitchen-hardwood-floors.jpg",
-      alt: "Freshly refinished hardwood floors in a bright kitchen"
+      image: "/images/project-flooring/guillen-home-kitchen-hardwood-floor-3.webp",
+      alt: "Richly finished hardwood floors throughout a bright open kitchen"
     },
     {
-      ...services[4],
-      image: "/images/projects/hardwood-stairs.jpg",
-      alt: "Hardwood stairs and railings completed by Noble Hardwoods"
+      ...services[2],
+      image: "/images/project-flooring/robinson-home-galley-kitchen-hardwood-floor.webp",
+      alt: "Restored hardwood floor running through a remodeled galley kitchen"
+    }
+  ];
+  const homeProjectGallery = [
+    {
+      title: "Warm hardwood throughout an apartment living room",
+      href: "/projects",
+      label: "Recent work",
+      image: "/images/project-flooring/apartment-living-room-hardwood-floor.webp",
+      alt: "Warm hardwood flooring throughout a furnished apartment living room"
+    },
+    {
+      title: "Natural hardwood in a light-filled dining room",
+      href: "/projects",
+      label: "Recent work",
+      image: "/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp",
+      alt: "Natural hardwood flooring in the Guillen home dining room"
+    },
+    {
+      title: "Restored hardwood in a comfortable bedroom",
+      href: "/projects",
+      label: "Recent work",
+      image: "/images/project-flooring/robinson-home-bedroom-hardwood-floor-2.webp",
+      alt: "Restored hardwood flooring in a bright Robinson home bedroom"
     }
   ];
   const resourceCards = blogPosts.slice(0, 3);
@@ -83,7 +105,7 @@ export default function Home() {
     telephone: business.phone,
     email: business.email,
     areaServed: getAreaSchema(),
-    image: getAbsoluteUrl("/images/projects/living-room-hardwood-floors.jpg"),
+    image: getAbsoluteUrl("/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"),
     priceRange: "$$",
     description:
       "Kansas City hardwood flooring company offering refinishing, installation, repair, dustless sanding, stairs, railings, and custom hardwood floors.",
@@ -97,8 +119,8 @@ export default function Home() {
       <section className="relative isolate overflow-hidden bg-cream-50">
         <div className="hero-curve hero-enter-media absolute inset-y-0 right-0 hidden w-[50%] overflow-hidden bg-noble-mist lg:block xl:w-[56%]">
           <Image
-            src="/images/projects/living-room-hardwood-floors.jpg"
-            alt="Finished hardwood floor completed by Noble Hardwoods"
+            src="/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"
+            alt="Finished hardwood floor in a modern apartment kitchen completed by Noble Hardwoods"
             fill
             priority
             className="object-cover"
@@ -131,8 +153,8 @@ export default function Home() {
 
           <div className="relative mt-8 aspect-[1.32/1] overflow-hidden rounded-sm bg-noble-mist sm:mt-10 sm:aspect-[1.6/1] lg:hidden">
             <Image
-              src="/images/projects/living-room-hardwood-floors.jpg"
-              alt="Finished hardwood floor completed by Noble Hardwoods"
+              src="/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"
+              alt="Finished hardwood floor in a modern apartment kitchen completed by Noble Hardwoods"
               fill
               priority
               className="object-cover"
@@ -143,7 +165,7 @@ export default function Home() {
 
         <Link
           href="#quote"
-          className="carpenter-scroll-cue absolute bottom-20 right-[4vw] z-20 hidden size-20 place-items-center rounded-full border border-white/65 bg-noble-orange text-white shadow-[0_20px_60px_rgba(37,31,27,0.24)] lg:grid xl:right-[6vw]"
+          className="carpenter-scroll-cue absolute bottom-20 right-[4vw] z-20 hidden size-20 place-items-center rounded-full border border-white/65 bg-noble-orange text-white shadow-[0_20px_60px_rgba(27,25,23,0.24)] lg:grid xl:right-[6vw]"
           aria-label="Scroll to the quote form"
         >
           <ArrowMark className="rotate-90" />
@@ -214,8 +236,8 @@ export default function Home() {
         <div className="carpenter-container grid gap-8 sm:gap-12 lg:grid-cols-[0.92fr_1fr] lg:items-center">
           <div className="relative aspect-[1.3/1] overflow-hidden bg-noble-mist sm:aspect-[0.95/1] lg:min-h-[40rem]" data-reveal>
             <Image
-              src="/images/projects/kitchen-hardwood-floors.jpg"
-              alt="Natural hardwood floors in a bright kitchen"
+              src="/images/project-flooring/robinson-home-kitchen-hardwood-floor-2.webp"
+              alt="Natural hardwood floors in the remodeled Robinson home kitchen"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -309,23 +331,23 @@ export default function Home() {
               >
                 View all projects
               </Link>
-              <Link href={featuredProjects[1].href} className="carpenter-card group mt-20 hidden lg:block" data-reveal>
+              <Link href={homeProjectGallery[1].href} className="carpenter-card group mt-20 hidden lg:block" data-reveal>
                 <div className="relative aspect-square overflow-hidden bg-noble-mist">
                   <Image
-                    src={featuredProjects[1].image}
-                    alt={featuredProjects[1].alt}
+                    src={homeProjectGallery[1].image}
+                    alt={homeProjectGallery[1].alt}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 38vw, 90vw"
                   />
                 </div>
-                <ProjectCaption project={featuredProjects[1]} />
+                <ProjectCaption project={homeProjectGallery[1]} />
               </Link>
             </div>
             <div className="grid auto-cols-[82vw] grid-flow-col gap-5 overflow-x-auto pb-3 snap-x snap-mandatory sm:auto-cols-[55vw] lg:grid-flow-row lg:grid-cols-1 lg:gap-20 lg:overflow-visible lg:pb-0">
-              {featuredProjects.map((project, index) => (
+              {homeProjectGallery.map((project, index) => (
                 <Link
-                  key={project.href}
+                  key={project.image}
                   href={project.href}
                   className={`carpenter-card group block snap-start ${index === 1 ? "lg:hidden" : ""}`}
                   data-reveal
@@ -543,12 +565,19 @@ export default function Home() {
   );
 }
 
-function ProjectCaption({ project }: { project: (typeof featuredProjects)[number] }) {
+function ProjectCaption({
+  project
+}: {
+  project: {
+    title: string;
+    label: string;
+  };
+}) {
   return (
     <div className="flex items-end justify-between gap-5 pt-5">
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-noble-orange">
-          {project.city}
+          {project.label}
         </p>
         <h3 className="mt-2 text-xl font-bold leading-tight text-noble-ink">{project.title}</h3>
       </div>

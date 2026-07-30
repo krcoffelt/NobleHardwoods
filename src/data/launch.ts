@@ -46,8 +46,8 @@ export const servicePages: ServicePage[] = [
     h1: "Hardwood Floor Refinishing in Kansas City",
     intro:
       "Bring scratched, dull, or worn hardwood floors back to life with a careful refinishing process built around craftsmanship, clean work, and a finish that fits your home.",
-    image: "/images/projects/living-room-hardwood-floors.jpg",
-    imageAlt: "Refinished hardwood floors in a bright Kansas City living room",
+    image: "/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp",
+    imageAlt: "Refinished hardwood floors in the bright Guillen home dining room",
     includes: [
       "Full sanding and refinishing",
       "Screen and recoat guidance",
@@ -95,8 +95,8 @@ export const servicePages: ServicePage[] = [
     h1: "Hardwood Floor Installation in Kansas City",
     intro:
       "Upgrade your home with hardwood floors installed by a Kansas City team focused on detail, beauty, and long-term durability.",
-    image: "/images/projects/kitchen-hardwood-floors.jpg",
-    imageAlt: "New hardwood flooring installed in a bright Kansas City kitchen",
+    image: "/images/project-flooring/apartment-kitchen-hardwood-floor-1.webp",
+    imageAlt: "New hardwood flooring installed in a modern apartment kitchen",
     includes: [
       "Unfinished hardwood installation",
       "Prefinished hardwood installation",
@@ -151,8 +151,8 @@ export const servicePages: ServicePage[] = [
     h1: "Hardwood Floor Repair in Kansas City",
     intro:
       "From damaged boards to water spots and lace-in repairs, Noble Hardwoods helps Kansas City homeowners restore hardwood floors without replacing more than necessary.",
-    image: "/images/projects/hardwood-stairs.jpg",
-    imageAlt: "Detailed hardwood repair and stair work in a Kansas City home",
+    image: "/images/project-flooring/robinson-home-galley-kitchen-hardwood-floor.webp",
+    imageAlt: "Restored hardwood flooring through a remodeled galley kitchen",
     includes: [
       "Board replacement",
       "Water damage review",
@@ -199,8 +199,8 @@ export const servicePages: ServicePage[] = [
     h1: "Dustless Hardwood Floor Refinishing in Kansas City",
     intro:
       "A cleaner sanding process helps protect the home while worn hardwood floors are prepared for stain, finish, and renewed everyday use.",
-    image: "/images/noble-hardwoods-hero.jpg",
-    imageAlt: "Clean hardwood floors in a warm Kansas City living room",
+    image: "/images/project-flooring/apartment-office-hardwood-floor.webp",
+    imageAlt: "Clean natural hardwood floors in a bright apartment office",
     includes: [
       "Professional sanding equipment",
       "Cleaner worksite planning",
@@ -299,8 +299,8 @@ export const servicePages: ServicePage[] = [
     h1: "Custom Hardwood Floors in Kansas City",
     intro:
       "For homes that need something distinctive, Noble Hardwoods plans and installs custom hardwood patterns with careful layout, proportion, and finish detail.",
-    image: "/images/projects/kitchen-hardwood-floors.jpg",
-    imageAlt: "Custom hardwood floors in a bright Kansas City kitchen",
+    image: "/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp",
+    imageAlt: "Custom hardwood floors in a modern apartment kitchen",
     includes: [
       "Herringbone hardwood floors",
       "Chevron hardwood floors",

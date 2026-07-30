@@ -20,9 +20,22 @@ export const metadata: Metadata = {
     description:
       "Recent hardwood flooring project examples from Noble Hardwoods across Kansas City and nearby areas.",
     url: "/projects",
-    images: [{ url: "/images/projects/living-room-hardwood-floors.jpg" }]
+    images: [{ url: "/images/project-flooring/apartment-office-hardwood-floor.webp" }]
   }
 };
+
+const completedRoomPhotos = [
+  {
+    src: "/images/project-flooring/apartment-bedroom-hardwood-floor.webp",
+    alt: "Natural hardwood flooring in a bright apartment bedroom",
+    label: "Apartment bedroom"
+  },
+  {
+    src: "/images/project-flooring/guillen-home-kitchen-hardwood-floor-2.webp",
+    alt: "Warm hardwood flooring running through the Guillen home kitchen",
+    label: "Guillen home kitchen"
+  }
+];
 
 export default function ProjectsPage() {
   const pageSchema = {
@@ -41,8 +54,8 @@ export default function ProjectsPage() {
         eyebrow="Project Proof"
         title="Real floors. Real Kansas City homes."
         text="Browse a few recent hardwood flooring projects from Noble Hardwoods, including installation, refinishing, stairs, and custom details."
-        image="/images/projects/living-room-hardwood-floors.jpg"
-        imageAlt="Finished hardwood floors in a bright Kansas City living room"
+        image="/images/project-flooring/apartment-office-hardwood-floor.webp"
+        imageAlt="Finished hardwood floors in a bright apartment office"
       />
 
       <section className="bg-white py-20 sm:py-24">
@@ -82,6 +95,35 @@ export default function ProjectsPage() {
                 </p>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-16 border-t border-noble-ink/12 pt-10 sm:mt-20 sm:pt-12">
+            <div className="max-w-2xl">
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-noble-orange">
+                More completed spaces
+              </p>
+              <h2 className="mt-4 text-3xl font-black uppercase leading-tight text-noble-ink sm:text-4xl">
+                The floor changes how the whole room feels.
+              </h2>
+            </div>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {completedRoomPhotos.map((photo) => (
+                <figure key={photo.src}>
+                  <div className="relative aspect-[1.5/1] overflow-hidden bg-noble-mist">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-xs font-extrabold uppercase tracking-[0.14em] text-noble-ink/60">
+                    {photo.label}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>

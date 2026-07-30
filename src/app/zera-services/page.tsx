@@ -81,7 +81,7 @@ export default function ZeraServicesPage() {
             </div>
           </div>
 
-          <aside className="relative z-10 hidden border-t-4 border-noble-orange bg-noble-ink p-7 text-white shadow-[0_30px_90px_rgba(37,31,27,0.24)] sm:block sm:p-10 lg:ml-8">
+          <aside className="relative z-10 hidden border-t-4 border-noble-orange bg-noble-ink p-7 text-white shadow-[0_30px_90px_rgba(27,25,23,0.24)] sm:block sm:p-10 lg:ml-8">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-noble-orange">
               Call to discuss your project
             </p>

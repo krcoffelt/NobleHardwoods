@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "Kansas City hardwood flooring services from Noble Hardwoods, including installation, refinishing, repair, stairs, railings, and custom floors.",
     url: "/services",
-    images: [{ url: "/images/projects/living-room-hardwood-floors.jpg" }]
+    images: [{ url: "/images/project-flooring/apartment-living-room-hardwood-floor.webp" }]
   }
 };
 
@@ -48,8 +48,8 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title="Kansas City's hardwood flooring team."
         text="Noble Hardwoods offers a comprehensive set of hardwood services for homeowners who want careful work, clear communication, and floors that feel right for the home."
-        image="/images/projects/living-room-hardwood-floors.jpg"
-        imageAlt="Finished hardwood floors in a bright Kansas City living room"
+        image="/images/project-flooring/apartment-living-room-hardwood-floor.webp"
+        imageAlt="Finished hardwood floors throughout a bright apartment living room"
       />
 
       <section className="bg-white py-20 sm:py-24">

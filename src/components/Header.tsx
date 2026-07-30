@@ -14,7 +14,7 @@ export function Header() {
   const isZeraPage = pathname === business.zeraServicesHref;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-noble-ink/8 bg-cream-50/94 text-noble-ink shadow-[0_10px_32px_rgba(37,31,27,0.05)] backdrop-blur-2xl backdrop-saturate-150">
+    <header className="sticky top-0 z-50 border-b border-noble-ink/8 bg-cream-50/94 text-noble-ink shadow-[0_10px_32px_rgba(27,25,23,0.05)] backdrop-blur-2xl backdrop-saturate-150">
       <div className="mx-auto flex h-[4.75rem] max-w-[78rem] items-center justify-between px-5 sm:h-24 sm:px-6 lg:px-8 xl:px-0">
         <div className="grid gap-1">
           <Logo />

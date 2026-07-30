@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for Kansas City homeowners.",
     url: "/about",
-    images: [{ url: "/images/noble-hardwoods-hero.jpg" }]
+    images: [{ url: "/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp" }]
   }
 };
 
@@ -38,7 +38,7 @@ export default function AboutPage() {
       telephone: business.phone,
       email: business.email,
       areaServed: getAreaSchema(),
-      image: getAbsoluteUrl("/images/noble-hardwoods-hero.jpg"),
+      image: getAbsoluteUrl("/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp"),
       priceRange: "$$"
     }
   };
@@ -51,8 +51,8 @@ export default function AboutPage() {
         eyebrow="About Noble"
         title="Noble floors crafted by noble people."
         text="Noble Hardwoods is a Kansas City hardwood flooring company built around craftsmanship, integrity, family, and the beauty of work done with care."
-        image="/images/noble-hardwoods-hero.jpg"
-        imageAlt="Warm hardwood floors in a Kansas City home"
+        image="/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp"
+        imageAlt="Warm hardwood floors in the light-filled Guillen home dining room"
       />
 
       <section className="bg-white py-20 sm:py-24">
@@ -113,8 +113,8 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="relative aspect-[1.22/1] overflow-hidden border-[10px] border-white bg-white noble-shadow">
             <Image
-              src="/images/projects/living-room-hardwood-floors.jpg"
-              alt="Finished hardwood floors in a Kansas City home"
+              src="/images/project-flooring/guillen-home-kitchen-hardwood-floor-1.webp"
+              alt="Finished hardwood floors flowing through the Guillen home kitchen"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -161,8 +161,8 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="relative aspect-[1.22/1] overflow-hidden border-[10px] border-white bg-white noble-shadow">
             <Image
-              src="/images/projects/kitchen-hardwood-floors.jpg"
-              alt="Natural hardwood floors in a bright Kansas City kitchen"
+              src="/images/project-flooring/robinson-home-kitchen-hardwood-floor-1.webp"
+              alt="Natural hardwood floors in the remodeled Robinson home kitchen"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"

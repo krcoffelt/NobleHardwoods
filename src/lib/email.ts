@@ -125,9 +125,9 @@ function internalEmailHtml({
 
 function emailLayout(content: string) {
   return `
-    <div style="font-family:Arial,sans-serif;background:#f7f4ef;padding:32px;color:#251f1b;">
+    <div style="font-family:Arial,sans-serif;background:#f7f4ef;padding:32px;color:#1b1917;">
       <div style="max-width:620px;margin:0 auto;background:#fff;padding:32px;border-top:6px solid #ef5f3d;">
-        <h1 style="font-size:24px;margin:0 0 20px;color:#251f1b;">Noble Hardwoods</h1>
+        <h1 style="font-size:24px;margin:0 0 20px;color:#1b1917;">Noble Hardwoods</h1>
         ${content}
       </div>
     </div>

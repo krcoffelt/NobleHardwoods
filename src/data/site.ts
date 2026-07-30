@@ -132,16 +132,16 @@ export const teamMembers = [
   {
     name: "Clayton Rookstool",
     role: "Owner-Operator",
-    image: "/images/projects/living-room-hardwood-floors.jpg",
-    imageAlt: "Finished hardwood floors by Noble Hardwoods",
+    image: "/images/project-flooring/apartment-office-hardwood-floor.webp",
+    imageAlt: "Natural hardwood flooring in a bright apartment office",
     bio:
       "Clayton helps lead Noble Hardwoods as an owner-operator, keeping the work focused on clear communication, careful planning, and hardwood floors Kansas City homeowners are proud to live with."
   },
   {
     name: "Noble Team",
     role: "16-person support team",
-    image: "/images/projects/hardwood-stairs.jpg",
-    imageAlt: "Hardwood stairs and flooring completed by the Noble Hardwoods team",
+    image: "/images/project-flooring/robinson-home-bedroom-hardwood-floor-1.webp",
+    imageAlt: "Restored hardwood flooring in a Robinson home bedroom",
     bio:
       "Noble is supported by a 16-person team that helps coordinate estimates, scheduling, project communication, and detailed field work from the first quote request through final walkthrough."
   }
@@ -185,7 +185,7 @@ export const featuredProjects = [
     city: "Lawrence, KS",
     category: "Remodeling",
     date: "Jul 2022",
-    image: "/images/projects/kitchen-hardwood-floors.jpg",
+    image: "/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp",
     alt: "Natural hardwood floors in a bright kitchen",
     summary:
       "Whole-home installation of unfinished hardwood floors, stairs, and railings.",
@@ -280,7 +280,7 @@ export const blogPosts = [
     date: "October 30, 2023",
     category: "Planning",
     author: "Noble Hardwoods",
-    image: "/images/projects/living-room-hardwood-floors.jpg",
+    image: "/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp",
     excerpt:
       "Hardwood floors are one of the most durable and desirable upgrades homeowners can make when beauty, longevity, and resale appeal all matter.",
     sections: [
@@ -308,7 +308,7 @@ export const blogPosts = [
     date: "October 30, 2023",
     category: "Design",
     author: "Noble Hardwoods",
-    image: "/images/noble-hardwoods-hero.jpg",
+    image: "/images/project-flooring/apartment-kitchen-hardwood-floor-1.webp",
     excerpt:
       "From natural white oak to custom pattern work, wood floor trends are strongest when they still feel timeless inside the home.",
     sections: [
@@ -336,7 +336,7 @@ export const blogPosts = [
     date: "October 27, 2023",
     category: "Maintenance",
     author: "Noble Hardwoods",
-    image: "/images/projects/hardwood-stairs.jpg",
+    image: "/images/project-flooring/robinson-home-bedroom-hardwood-floor-1.webp",
     excerpt:
       "Polishing can help some floors look better, but only when the finish is ready for it and the product matches the floor system.",
     sections: [
