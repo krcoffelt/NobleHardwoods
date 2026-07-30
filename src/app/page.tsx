@@ -16,6 +16,7 @@ import {
   services
 } from "@/data/site";
 import { getAbsoluteUrl, getAreaSchema, getReviewSchema } from "@/data/launch";
+import { durasealStains, getDurasealStainImage } from "@/data/stains";
 
 export const metadata: Metadata = {
   title: "Kansas City Hardwood Flooring Company",
@@ -42,6 +43,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const serviceRail = [services[1], services[0], services[2], services[3]];
+  const featuredStains = ["neutral", "golden-brown", "dark-walnut", "jacobean"]
+    .map((slug) => durasealStains.find((stain) => stain.slug === slug))
+    .filter((stain): stain is (typeof durasealStains)[number] => Boolean(stain));
   const trustPoints = [
     {
       value: "15+",
@@ -473,13 +477,32 @@ export default function Home() {
             Browse common colors for White Oak and Red Oak, then use the quote form to tell us if you already have a direction in mind.
           </p>
           <div className="carpenter-scroll-row mt-10 sm:mt-16">
-            {["Natural", "Golden Brown", "Dark Walnut", "Jacobean"].map((color, index) => (
-              <Link key={color} href="/stain-gallery" className="block min-h-[17rem] border border-noble-ink/10 bg-white p-6 text-left shadow-[0_16px_44px_rgba(87,51,31,0.08)] sm:min-h-[22rem] sm:p-7">
-                <span className="inline-flex border border-noble-ink/18 px-4 py-2 text-xs font-bold uppercase text-noble-ink sm:px-5 sm:py-2.5 sm:text-sm">
-                  {index === 0 ? "Preview" : `0${index + 1}`}
-                </span>
-                <div className="mt-8 h-28 bg-[linear-gradient(135deg,#d7a76b,#6f3f24)] sm:mt-12 sm:h-36" />
-                <h3 className="mt-6 text-2xl font-bold text-noble-ink sm:mt-8 sm:text-3xl">{color}</h3>
+            {featuredStains.map((stain, index) => (
+              <Link
+                key={stain.slug}
+                href="/stain-gallery"
+                className="group block overflow-hidden border border-noble-ink/10 bg-white text-left shadow-[0_16px_44px_rgba(87,51,31,0.08)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(87,51,31,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-noble-orange"
+              >
+                <div className="relative aspect-square overflow-hidden bg-noble-mist">
+                  <Image
+                    src={getDurasealStainImage(stain.slug, "White Oak")}
+                    alt={`${stain.name} DuraSeal stain shown on White Oak`}
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-[1.035]"
+                    sizes="(min-width: 1024px) 25rem, 82vw"
+                  />
+                  <span className="absolute left-4 top-4 border border-white/55 bg-noble-ink/78 px-3 py-2 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm sm:left-5 sm:top-5 sm:text-xs">
+                    {index === 0 ? "Featured" : `0${index + 1}`}
+                  </span>
+                </div>
+                <div className="p-5 sm:p-7">
+                  <p className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-noble-orange sm:text-xs">
+                    DuraSeal · White Oak
+                  </p>
+                  <h3 className="mt-2 text-2xl font-bold text-noble-ink sm:text-3xl">
+                    {stain.name}
+                  </h3>
+                </div>
               </Link>
             ))}
           </div>

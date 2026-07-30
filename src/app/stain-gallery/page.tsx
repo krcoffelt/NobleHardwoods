@@ -39,7 +39,7 @@ export default function StainGalleryPage() {
     hasPart: durasealStains.map((stain) => ({
       "@type": "Thing",
       name: stain.name,
-      description: `${stain.name} hardwood floor stain color direction`
+      description: `${stain.name} DuraSeal hardwood floor stain shown on White Oak and Red Oak`
     }))
   };
 
@@ -60,9 +60,9 @@ export default function StainGalleryPage() {
           </div>
           <div className="bg-white/72 p-5 shadow-soft backdrop-blur sm:p-6">
             <p className="text-[0.95rem] leading-7 text-noble-ink/70 sm:text-base sm:leading-8">
-              Use this selector to compare common DuraSeal stain directions on White Oak and
-              Red Oak before your quote or consultation. Final stain color can vary by wood
-              species, age, sanding, finish system, lighting, and screen display.
+              Compare DuraSeal&apos;s manufacturer samples on White Oak and Red Oak before your
+              quote or consultation. Select any color to see both species side by side, then
+              narrow the gallery by tone or name.
             </p>
             <Link
               href={durasealSourceUrl}
@@ -80,9 +80,9 @@ export default function StainGalleryPage() {
                 </span>
               </summary>
               <p className="mt-3 text-sm leading-7 text-noble-ink/62">
-                Until written permission is obtained, Noble does not republish DuraSeal&apos;s
-                manufacturer photography. The selector below uses original approximate swatches
-                and product names for comparison.
+                These are DuraSeal&apos;s official digital sample images, locally optimized for
+                faster browsing. Natural wood, sanding, application, finish, room lighting, and
+                your screen can all change how the final color appears.
               </p>
             </details>
           </div>
@@ -118,9 +118,10 @@ export default function StainGalleryPage() {
             </p>
           </div>
           <p className="mx-auto mt-10 max-w-4xl border-t border-noble-ink/12 pt-5 text-xs leading-6 text-noble-ink/52 lg:col-span-2">
-            DuraSeal is a trademark of its respective owner. Noble Hardwoods is not affiliated
-            with or endorsed by DuraSeal or Sherwin-Williams. Product names are shown only to help
-            homeowners identify colors for an in-home consultation.
+            Sample photography and product names are sourced from the official DuraSeal stain
+            gallery. DuraSeal is a trademark of its respective owner. Noble Hardwoods is not
+            affiliated with or endorsed by DuraSeal or Sherwin-Williams. This gallery is for color
+            planning; an in-home sample should be used for final approval.
           </p>
         </div>
       </section>
