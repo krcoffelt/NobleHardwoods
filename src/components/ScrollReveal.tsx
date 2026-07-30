@@ -1,8 +1,11 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export function ScrollReveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const desktopMotion = window.matchMedia(
       "(min-width: 768px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)"
@@ -37,7 +40,7 @@ export function ScrollReveal() {
       observer.disconnect();
       document.body.classList.remove("reveal-ready");
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
