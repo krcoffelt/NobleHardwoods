@@ -8,7 +8,7 @@ export const business = {
   zeraServicesHref: "/zera-services",
   zeraPhone: "(913) 318-3373",
   zeraPhoneHref: "tel:+19133183373",
-  ownershipLabel: "Owned by Zera Services",
+  ownershipLabel: "A Zera Company",
   ownershipName: "Zera Services",
   siteUrl: "https://www.noblehardwoods.co",
   area: "Kansas City metro"
