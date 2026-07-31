@@ -1,0 +1,60 @@
+Total messages: 4 (Errors: 2, Warnings: 0)
+Returning 2 messages for level "error"
+
+[ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3002/:0
+Error: Cannot find module './331.js'
+Require stack:
+- /Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/webpack-runtime.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/pages/_document.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/require.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/load-components.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/build/utils.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/build/swc/options.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/build/swc/index.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/build/next-config-ts/transpile-config.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/config.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/next.js
+- /Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/lib/start-server.js
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1401:15)
+    at <unknown> (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/require-hook.js:57:36)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (file:///Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/webpack-runtime.js:190:28)
+    at <unknown> (file:///Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/webpack-runtime.js:103:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/webpack-runtime.js:102:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/webpack-runtime.js:154:22)
+    at <unknown> (file:///Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/app/page.js:2:28009)
+    at Object.<anonymous> (file:///Users/kylecoffelt/Downloads/NobleHardwoods/.next/server/app/page.js:2:28066)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1487:12)
+    at mod.require (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/require.js:99:80)
+    at loadComponentsImpl (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/load-components.js:132:57)
+    at async DevServer.findPageComponentsImpl (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/next-server.js:900:36)
+    at async DevServer.findPageComponents (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/dev/next-dev-server.js:706:16)
+    at async DevServer.renderPageComponent (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/base-server.js:1468:24)
+    at async DevServer.renderToResponseImpl (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/base-server.js:1522:32)
+    at async DevServer.pipeImpl (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/base-server.js:1026:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/next-server.js:394:17)
+    at async DevServer.handleRequestImpl (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/base-server.js:917:17)
+    at async (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/dev/next-dev-server.js:400:20)
+    at async Span.traceAsyncFn (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/trace/trace.js:157:20)
+    at async DevServer.handleRequest (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/dev/next-dev-server.js:396:24)
+    at async invokeRender (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/lib/router-server.js:240:21)
+    at async handleRequest (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/lib/router-server.js:437:24)
+    at async requestHandlerImpl (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/lib/router-server.js:485:13)
+    at async Server.requestListener (file:///Users/kylecoffelt/Downloads/NobleHardwoods/node_modules/next/dist/server/lib/start-server.js:226:13)
