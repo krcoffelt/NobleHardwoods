@@ -128,6 +128,8 @@ export function Footer() {
           Website created by{" "}
           <Link
             href="https://hometownkc.agency"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold text-white transition hover:text-noble-orange"
           >
             Hometown Marketing Agency

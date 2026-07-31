@@ -208,6 +208,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="quote" className="relative overflow-hidden bg-noble-mist py-16 sm:py-28 lg:py-36">
+        <div className="carpenter-container grid gap-8 sm:gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
+          <div className="lg:sticky lg:top-28" data-reveal>
+            <p className="carpenter-eyebrow text-noble-ink">Get a quote</p>
+            <h2 className="carpenter-title mt-5 max-w-xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
+              Tell us what your floors need.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
+              Add your project type, contact preference, work options, message, and optional photos or video so the first response is more useful.
+            </p>
+            <div className="mt-8 hidden border-y border-noble-ink/12 sm:grid">
+              <Link href={business.emailHref} className="py-5 transition hover:text-noble-orange">
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-noble-ink/55">Send us an email</span>
+                <span className="mt-2 block text-lg font-bold text-noble-ink">{business.email}</span>
+              </Link>
+              <Link href={business.phoneHref} className="border-t border-noble-ink/12 py-5 transition hover:text-noble-orange">
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-noble-ink/55">Give us a call</span>
+                <span className="mt-2 block text-lg font-bold text-noble-ink">{business.phone}</span>
+              </Link>
+            </div>
+          </div>
+          <div data-reveal>
+            <QuoteForm />
+          </div>
+        </div>
+      </section>
+
       <section aria-label="Noble Hardwoods trust highlights" className="border-y border-noble-ink/8 bg-cream-50">
         <div className="carpenter-container grid md:grid-cols-[1.1fr_1.9fr] md:items-center">
           <div className="py-5 md:pr-8" data-reveal>
@@ -370,33 +397,6 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="quote" className="relative overflow-hidden bg-noble-mist py-16 sm:py-28 lg:py-36">
-        <div className="carpenter-container grid gap-8 sm:gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
-          <div className="lg:sticky lg:top-28" data-reveal>
-            <p className="carpenter-eyebrow text-noble-ink">Get a quote</p>
-            <h2 className="carpenter-title mt-5 max-w-xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]">
-              Tell us what your floors need.
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
-              Add your project type, contact preference, work options, message, and optional photos or video so the first response is more useful.
-            </p>
-            <div className="mt-8 hidden border-y border-noble-ink/12 sm:grid">
-              <Link href={business.emailHref} className="py-5 transition hover:text-noble-orange">
-                <span className="text-xs font-bold uppercase tracking-[0.16em] text-noble-ink/55">Send us an email</span>
-                <span className="mt-2 block text-lg font-bold text-noble-ink">{business.email}</span>
-              </Link>
-              <Link href={business.phoneHref} className="border-t border-noble-ink/12 py-5 transition hover:text-noble-orange">
-                <span className="text-xs font-bold uppercase tracking-[0.16em] text-noble-ink/55">Give us a call</span>
-                <span className="mt-2 block text-lg font-bold text-noble-ink">{business.phone}</span>
-              </Link>
-            </div>
-          </div>
-          <div data-reveal>
-            <QuoteForm />
           </div>
         </div>
       </section>
