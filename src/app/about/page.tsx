@@ -94,6 +94,9 @@ export default function AboutPage() {
               Noble is supported by a 16-person team that helps keep quote requests, scheduling,
               project communication, and field work moving with the same careful standard.
             </p>
+            <p className="border-t border-noble-ink/12 pt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-noble-ink/48">
+              {business.ownershipLabel}
+            </p>
           </div>
         </div>
       </section>

@@ -49,6 +49,9 @@ export default function PrivacyPage() {
             website. It is written for homeowners requesting hardwood flooring help in the
             Kansas City metro area.
           </p>
+          <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-noble-ink/42">
+            {business.ownershipLabel}
+          </p>
         </div>
       </section>
 

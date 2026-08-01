@@ -41,6 +41,9 @@ export function Footer() {
       <div className="mx-auto mt-10 grid max-w-[78rem] gap-9 px-5 sm:mt-14 sm:gap-12 sm:px-6 lg:grid-cols-[1.15fr_2fr] lg:px-8 xl:px-0">
         <div>
           <Logo />
+          <p className="mt-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-white/48">
+            {business.ownershipLabel}
+          </p>
           <p className="mt-5 max-w-md text-sm leading-7 text-white/68 sm:mt-6">
             Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for
             homes across Kansas City and surrounding areas.
@@ -77,7 +80,6 @@ export function Footer() {
             <Link href="/stain-gallery">Stain Gallery</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href={business.zeraServicesHref}>Zera Services</Link>
             <Link href={business.instagram} target="_blank" rel="noreferrer">
               Instagram
             </Link>
@@ -113,7 +115,6 @@ export function Footer() {
             <Link href="/stain-gallery">Stain Gallery</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/privacy">Privacy Policy</Link>
-            <Link href={business.zeraServicesHref}>Zera Services</Link>
             <Link href={business.instagram} target="_blank" rel="noreferrer">
               Instagram
             </Link>
@@ -123,7 +124,6 @@ export function Footer() {
 
       <div className="mx-auto mt-10 max-w-[78rem] border-t border-white/10 px-5 pt-6 text-center text-xs text-white/52 sm:mt-14 sm:px-6 lg:px-8 xl:px-0">
         <p>Copyright {new Date().getFullYear()} Noble Hardwoods. All rights reserved.</p>
-        <p className="mt-2">Noble Hardwoods is owned by {business.ownershipName}.</p>
         <p className="mt-2">
           Website created by{" "}
           <Link

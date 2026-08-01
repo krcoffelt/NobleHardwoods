@@ -9,7 +9,6 @@ export const business = {
   zeraPhone: "(816) 882-0101",
   zeraPhoneHref: "tel:+18168820101",
   ownershipLabel: "A Zera Company",
-  ownershipName: "Zera Services",
   siteUrl: "https://www.noblehardwoods.co",
   area: "Kansas City metro"
 };

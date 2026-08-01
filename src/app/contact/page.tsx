@@ -41,6 +41,9 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
+            <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.16em] text-noble-ink/42">
+              {business.ownershipLabel}
+            </p>
           </div>
 
           <div className="hero-enter-media min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">

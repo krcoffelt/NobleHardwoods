@@ -540,29 +540,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-28">
-        <div className="carpenter-container grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
-          <div>
-            <p className="carpenter-eyebrow text-noble-ink">Other Contracting Services</p>
-            <h2 className="carpenter-title mt-5 max-w-xl text-[2.15rem] font-bold text-noble-ink sm:mt-6 sm:text-5xl">
-              Need painting, drywall, or other home work?
-            </h2>
-          </div>
-          <div className="grid grid-cols-[3.5rem_1fr] gap-4 border-y border-noble-ink/12 py-6 sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-5 sm:py-7">
-            <div className="grid size-14 place-items-center bg-noble-orange text-2xl font-bold text-white sm:size-20 sm:text-3xl">Z</div>
-            <div>
-              <h3 className="text-xl font-bold leading-tight text-noble-ink">Zera Services, LLC</h3>
-              <p className="mt-2 text-sm leading-7 text-noble-ink/68">
-                For painting, drywall, and other contracting services outside of hardwood flooring, connect with the Zera Services team.
-              </p>
-            </div>
-            <Link href={business.zeraServicesHref} className="col-span-2 inline-flex min-h-12 items-center justify-center rounded-sm bg-noble-ink px-5 text-sm font-extrabold uppercase text-white transition hover:bg-noble-orange sm:col-span-1">
-              View Zera Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white py-16 sm:py-24 lg:py-28">
         <div className="carpenter-container">
           <div className="mx-auto max-w-3xl text-center">
