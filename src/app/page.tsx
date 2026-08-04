@@ -113,7 +113,7 @@ export default function Home() {
     image: getAbsoluteUrl("/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"),
     priceRange: "$$",
     description:
-      "Kansas City hardwood flooring company offering refinishing, installation, repair, dustless sanding, stairs, railings, and custom hardwood floors.",
+      "Kansas City hardwood flooring company offering refinishing, installation, repair, stairs, railings, and custom hardwood floors, with dustless sanding available.",
     review: getReviewSchema()
   };
 

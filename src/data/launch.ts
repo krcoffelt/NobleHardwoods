@@ -191,14 +191,14 @@ export const servicePages: ServicePage[] = [
   {
     slug: "dustless-hardwood-floor-refinishing-kansas-city",
     href: "/dustless-hardwood-floor-refinishing-kansas-city",
-    title: "Dustless Sanding",
-    seoTitle: "Dustless Hardwood Floor Refinishing Kansas City",
+    title: "Dustless Sanding Available",
+    seoTitle: "Dustless Floor Sanding Available in Kansas City",
     metaDescription:
-      "Noble Hardwoods offers dustless hardwood floor refinishing and cleaner floor sanding for homes across Kansas City and surrounding areas.",
-    eyebrow: "Dustless Sanding",
-    h1: "Dustless Hardwood Floor Refinishing in Kansas City",
+      "Dustless sanding is available for hardwood floor refinishing projects across Kansas City and surrounding areas.",
+    eyebrow: "Dustless Sanding Available",
+    h1: "Dustless Sanding Available in Kansas City",
     intro:
-      "A cleaner sanding process helps protect the home while worn hardwood floors are prepared for stain, finish, and renewed everyday use.",
+      "Dustless sanding is available for a cleaner process that helps protect the home while worn hardwood floors are prepared for stain, finish, and renewed everyday use.",
     image: "/images/project-flooring/apartment-office-hardwood-floor.webp",
     imageAlt: "Clean natural hardwood floors in a bright apartment office",
     includes: [
@@ -219,15 +219,15 @@ export const servicePages: ServicePage[] = [
     faqs: [
       faqs[2],
       {
-        question: "Is dustless sanding completely dust-free?",
+        question: "Is dustless sanding available, and is it completely dust-free?",
         answer:
-          "No sanding process is completely dust-free, but professional dustless equipment can greatly reduce airborne dust compared with traditional sanding."
+          "Dustless sanding is available, but no sanding process is completely dust-free. Professional dustless equipment can greatly reduce airborne dust compared with traditional sanding."
       },
       faqs[1],
       {
-        question: "Can dustless sanding be used before changing floor color?",
+        question: "Is dustless sanding available before changing floor color?",
         answer:
-          "Yes. Dustless sanding can prepare eligible hardwood floors for stain and finish changes."
+          "Yes. Dustless sanding is available to prepare suitable hardwood floors for stain and finish changes."
       }
     ],
     relatedServices: [

@@ -55,10 +55,10 @@ export const services = [
     icon: "/images/brand/icon-stairs.png"
   },
   {
-    title: "Dustless Sanding",
+    title: "Dustless Sanding Available",
     href: "/dustless-hardwood-floor-refinishing-kansas-city",
     description:
-      "Cleaner hardwood floor sanding with professional-grade equipment and careful home protection.",
+      "Dustless sanding is available for a cleaner refinishing process with professional-grade equipment and careful home protection.",
     eyebrow: "Maintenance",
     icon: "/images/brand/icon-flooring.png"
   },
@@ -395,9 +395,9 @@ export const faqs = [
       "Most refinishing projects take several days, depending on the size of the home, repairs needed, stain selection, and finish cure time."
   },
   {
-    question: "Do you offer dustless sanding?",
+    question: "Is dustless sanding available?",
     answer:
-      "Yes. Dustless sanding helps make the refinishing process cleaner and more manageable, though no sanding process is completely dust-free."
+      "Yes. Dustless sanding is available. It helps make the refinishing process cleaner and more manageable, though no sanding process is completely dust-free."
   },
   {
     question: "Can you match new hardwood to existing hardwood?",

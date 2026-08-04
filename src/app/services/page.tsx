@@ -13,7 +13,7 @@ import { faqs, services, socialShareImage } from "@/data/site";
 export const metadata: Metadata = {
   title: "Hardwood Flooring Services in Kansas City",
   description:
-    "Explore Noble Hardwoods services for hardwood floor installation, refinishing, repair, dustless sanding, stairs, railings, and custom hardwood floors in Kansas City.",
+    "Explore Noble Hardwoods services for installation, refinishing, repair, stairs, railings, and custom hardwood floors in Kansas City, with dustless sanding available.",
   alternates: {
     canonical: "/services"
   },
