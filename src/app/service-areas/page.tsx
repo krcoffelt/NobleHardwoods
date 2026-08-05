@@ -6,7 +6,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { InteriorHero } from "@/components/InteriorHero";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl, getAreaSchema } from "@/data/launch";
-import { business, faqs, serviceAreas, services, socialShareImage } from "@/data/site";
+import { locatedProjectTotal, serviceAreaPages } from "@/data/serviceAreaPages";
+import { business, faqs, services, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Kansas City Hardwood Flooring Service Areas",
@@ -35,12 +36,15 @@ export default function ServiceAreasPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": business.schemaId,
     name: business.name,
     url: getAbsoluteUrl("/service-areas"),
     telephone: business.phone,
     email: business.email,
     areaServed: getAreaSchema(),
     image: getAbsoluteUrl("/images/noble-hardwoods-hero.jpg"),
+    logo: getAbsoluteUrl(business.logo),
+    sameAs: [business.instagram],
     priceRange: "$$"
   };
 
@@ -54,6 +58,10 @@ export default function ServiceAreasPage() {
         text="Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for homeowners throughout Kansas City and nearby communities."
         image="/images/noble-hardwoods-hero.jpg"
         imageAlt="Warm hardwood floors in a Kansas City home"
+        proof={{
+          value: `${locatedProjectTotal}+`,
+          label: "Projects completed across these communities"
+        }}
       />
 
       <section className="bg-white py-20 sm:py-24">
@@ -66,19 +74,24 @@ export default function ServiceAreasPage() {
               Local roots. Careful work. Clear communication.
             </h2>
             <p className="mt-5 text-base leading-8 text-noble-ink/68">
-              This index keeps the launch site simple while creating a strong foundation for
-              future dedicated city pages.
+              Explore local hardwood flooring experience, services, answers, and project proof
+              for communities across the Kansas City region.
             </p>
           </div>
           <div className="grid gap-px bg-noble-ink/12 sm:grid-cols-2">
-            {serviceAreas.map((area) => (
+            {serviceAreaPages.map((area) => (
               <Link
-                key={area}
-                href="/contact"
-                data-track="service_area_quote_click"
-                className="bg-white p-5 text-sm font-extrabold uppercase text-noble-ink transition hover:bg-cream-50 hover:text-noble-orange"
+                key={area.slug}
+                href={area.href}
+                data-track="service_area_page_click"
+                className="group flex items-end justify-between gap-5 bg-white p-5 transition hover:bg-cream-50"
               >
-                {area}
+                <span className="text-sm font-extrabold uppercase text-noble-ink transition group-hover:text-noble-orange">
+                  {area.city}, {area.state}
+                </span>
+                <span className="shrink-0 text-xs font-bold tabular-nums tracking-[0.08em] text-noble-orange">
+                  {area.projectCount}+ projects
+                </span>
               </Link>
             ))}
           </div>

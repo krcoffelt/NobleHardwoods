@@ -7,7 +7,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTABand } from "@/components/CTABand";
 import { JsonLd } from "@/components/JsonLd";
 import { getAbsoluteUrl } from "@/data/launch";
-import { featuredProjects, services, socialShareImage } from "@/data/site";
+import { getServiceAreaByCityLabel } from "@/data/serviceAreaPages";
+import { business, featuredProjects, services, socialShareImage } from "@/data/site";
 
 type ProjectPageProps = {
   params: Promise<{ projectSlug: string }>;
@@ -53,14 +54,29 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const relatedServices = project.relatedServices
     .map((href) => services.find((service) => service.href === href))
     .filter(Boolean);
+  const serviceArea = getServiceAreaByCityLabel(project.city);
   const schema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
+    "@id": `${getAbsoluteUrl(project.href)}#project`,
     name: project.title,
     url: getAbsoluteUrl(project.href),
     image: getAbsoluteUrl(project.image),
     about: "Hardwood flooring project",
-    locationCreated: project.city
+    locationCreated: project.city,
+    creator: {
+      "@id": business.schemaId,
+      "@type": "HomeAndConstructionBusiness",
+      name: business.name
+    },
+    isPartOf: serviceArea
+      ? {
+          "@type": "Service",
+          "@id": `${getAbsoluteUrl(serviceArea.href)}#service`,
+          name: `Hardwood Flooring Services in ${serviceArea.city}, ${serviceArea.state}`,
+          url: getAbsoluteUrl(serviceArea.href)
+        }
+      : undefined
   };
 
   return (
@@ -143,6 +159,14 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] text-noble-ink">
               Services behind this project.
             </h2>
+            {serviceArea ? (
+              <Link
+                href={serviceArea.href}
+                className="mt-6 inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.1em] text-noble-ink transition hover:text-noble-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-noble-orange"
+              >
+                Hardwood flooring in {serviceArea.city} <ArrowMark />
+              </Link>
+            ) : null}
           </div>
           <div className="grid gap-px bg-noble-ink/12 sm:grid-cols-2">
             {relatedServices.map((service) =>

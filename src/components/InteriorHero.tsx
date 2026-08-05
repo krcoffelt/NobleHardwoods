@@ -10,6 +10,11 @@ type InteriorHeroProps = {
   imageAlt: string;
   ctaHref?: string;
   ctaLabel?: string;
+  proof?: {
+    value: string;
+    label: string;
+    note?: string;
+  };
 };
 
 export function InteriorHero({
@@ -19,7 +24,8 @@ export function InteriorHero({
   image,
   imageAlt,
   ctaHref = "/contact",
-  ctaLabel = "Get a free quote"
+  ctaLabel = "Get a free quote",
+  proof
 }: InteriorHeroProps) {
   return (
     <section className="relative overflow-hidden bg-cream-50 text-noble-ink">
@@ -33,6 +39,27 @@ export function InteriorHero({
             {title}
           </h1>
           <p className="mt-5 max-w-2xl text-[0.98rem] leading-7 text-noble-ink/68 sm:mt-6 sm:text-base sm:leading-8">{text}</p>
+          {proof ? (
+            <dl className="mt-6 flex max-w-md items-center gap-4 border-y border-noble-ink/15 py-4 sm:mt-7">
+              <div className="shrink-0 border-r border-noble-ink/15 pr-4">
+                <dt className="sr-only">Completed project count</dt>
+                <dd className="text-3xl font-bold tabular-nums tracking-[-0.04em] text-noble-orange sm:text-4xl">
+                  {proof.value}
+                </dd>
+              </div>
+              <div>
+                <dt className="sr-only">Local experience</dt>
+                <dd className="max-w-[15rem] text-xs font-bold uppercase leading-5 tracking-[0.11em] text-noble-ink/72">
+                  {proof.label}
+                </dd>
+                {proof.note ? (
+                  <dd className="mt-1 text-[0.68rem] font-medium leading-4 text-noble-ink/48">
+                    {proof.note}
+                  </dd>
+                ) : null}
+              </div>
+            </dl>
+          ) : null}
           <div className="mt-7 flex max-w-sm gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-center">
             <ButtonLink href={ctaHref} className="w-full px-6 sm:w-auto sm:px-8">
               {ctaLabel}

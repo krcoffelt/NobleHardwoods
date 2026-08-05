@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     "Thank you for contacting Noble Hardwoods. We received your hardwood flooring quote request.",
   alternates: {
     canonical: "/thank-you"
+  },
+  robots: {
+    index: false,
+    follow: false
   }
 };
 

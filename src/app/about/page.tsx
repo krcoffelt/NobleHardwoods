@@ -48,12 +48,14 @@ export default function AboutPage() {
     url: getAbsoluteUrl("/about"),
     about: {
       "@type": "HomeAndConstructionBusiness",
+      "@id": business.schemaId,
       name: business.name,
       url: business.siteUrl,
       telephone: business.phone,
       email: business.email,
       areaServed: getAreaSchema(),
       image: getAbsoluteUrl("/images/project-flooring/guillen-home-dining-room-hardwood-floor.webp"),
+      logo: getAbsoluteUrl(business.logo),
       priceRange: "$$"
     }
   };

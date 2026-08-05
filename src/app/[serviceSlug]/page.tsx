@@ -70,11 +70,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
     areaServed: getAreaSchema(),
     provider: {
       "@type": "HomeAndConstructionBusiness",
+      "@id": business.schemaId,
       name: business.name,
       url: business.siteUrl,
       telephone: business.phone,
       email: business.email,
       image: getAbsoluteUrl("/images/noble-hardwoods-hero.jpg"),
+      logo: getAbsoluteUrl(business.logo),
       priceRange: "$$"
     },
     review: getReviewSchema()

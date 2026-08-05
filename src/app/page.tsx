@@ -105,12 +105,15 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": business.schemaId,
     name: business.name,
     url: business.siteUrl,
     telephone: business.phone,
     email: business.email,
     areaServed: getAreaSchema(),
     image: getAbsoluteUrl("/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"),
+    logo: getAbsoluteUrl(business.logo),
+    sameAs: [business.instagram],
     priceRange: "$$",
     description:
       "Kansas City hardwood flooring company offering refinishing, installation, repair, stairs, railings, and custom hardwood floors, with dustless sanding available.",

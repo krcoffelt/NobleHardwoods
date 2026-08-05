@@ -8,6 +8,7 @@ import {
   serviceAreas,
   services
 } from "./site";
+import { serviceAreaPages } from "./serviceAreaPages";
 
 export type FAQ = {
   question: string;
@@ -346,10 +347,9 @@ export const servicePages: ServicePage[] = [
   }
 ];
 
-export const publicRoutes = [
+export const sitemapRoutes = [
   "/",
   "/contact",
-  "/thank-you",
   "/services",
   "/projects",
   "/blog",
@@ -396,11 +396,23 @@ export function getReviewSchema() {
     reviewBody: review.quote,
     itemReviewed: {
       "@type": "HomeAndConstructionBusiness",
+      "@id": business.schemaId,
       name: business.name
     }
   }));
 }
 
 export function getAreaSchema() {
-  return serviceAreas.map((area) => ({ "@type": "City", name: area }));
+  const currentCityNames = new Set(serviceAreaPages.map((area) => area.city));
+  const plannedAreas = serviceAreas
+    .filter((area) => !currentCityNames.has(area))
+    .map((area) => ({ "@type": "City", name: area }));
+
+  return [
+    ...serviceAreaPages.map((area) => ({
+      "@type": "City",
+      name: `${area.city}, ${area.state}`
+    })),
+    ...plannedAreas
+  ];
 }

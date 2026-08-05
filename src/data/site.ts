@@ -10,6 +10,8 @@ export const business = {
   zeraPhoneHref: "tel:+18168820101",
   ownershipLabel: "A Zera Company",
   siteUrl: "https://www.noblehardwoods.co",
+  schemaId: "https://www.noblehardwoods.co/#business",
+  logo: "/images/brand/noble-wordmark.png",
   area: "Kansas City metro"
 };
 
@@ -172,7 +174,7 @@ export const featuredProjects = [
     category: "Construction",
     date: "Jul 2022",
     image: "/images/projects/living-room-hardwood-floors.jpg",
-    alt: "Finished hardwood floors in a bright Kansas City living room",
+    alt: "Finished hardwood floors in a bright living room",
     summary:
       "Whole-home hardwood installation and refinishing for a warm, consistent floor plan.",
     scope: [
