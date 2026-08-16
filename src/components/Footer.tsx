@@ -126,14 +126,14 @@ export function Footer() {
         <p>Copyright {new Date().getFullYear()} Noble Hardwoods. All rights reserved.</p>
         <p className="mt-2">
           Website created by{" "}
-          <Link
-            href="https://hometownkc.agency"
+          <a
+            href="https://hometownkc.agency/case-studies/noble-hardwoods"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="font-semibold text-white transition hover:text-noble-orange"
           >
             Hometown Marketing Agency
-          </Link>
+          </a>
           .
         </p>
       </div>

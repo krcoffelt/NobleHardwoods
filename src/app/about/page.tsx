@@ -244,6 +244,63 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-noble-mist py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12 lg:px-8">
+          <div>
+            <p className="w-fit border border-noble-orange/30 bg-white/55 px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+              WEBSITE PARTNERSHIP
+            </p>
+            <h2 className="mt-5 text-4xl font-black leading-[1.02] text-noble-ink sm:text-5xl">
+              A better website built around better project conversations.
+            </h2>
+          </div>
+          <div>
+            <div className="grid gap-5 text-base leading-8 text-noble-ink/70">
+              <p>
+                Noble Hardwoods partnered with Hometown Marketing Agency to rebuild the website
+                around clearer service information, stronger Kansas City search visibility, and a
+                more useful quote experience for homeowners.
+              </p>
+              <p>
+                In the first month after launch, quote submissions increased by 65%. Organic traffic
+                increased by more than 50%, local search impressions tripled, and qualified phone and
+                email leads contributed to a measured revenue increase of more than 30%.
+              </p>
+              <p>
+                The quote-form completion rate also improved, but the larger gain was lead quality.
+                The new form collects more useful information about project type, approximate floor
+                area, work options, contact preferences, and project media before Noble follows up.
+              </p>
+            </div>
+
+            <figure className="mt-8 border-l-4 border-noble-orange bg-white p-6 sm:p-8">
+              <blockquote className="text-lg font-bold leading-8 text-noble-ink">
+                “BEST/Easiest buildout ever. So grateful for the work Kyle did for us. Change our
+                profitablity big time as a company.”
+              </blockquote>
+              <figcaption className="mt-5">
+                <span className="block text-sm font-extrabold uppercase text-noble-ink">
+                  Clayton Rookstool
+                </span>
+                <span className="mt-1 block text-xs font-bold uppercase tracking-[0.12em] text-noble-orange">
+                  Owner-Operator, Noble Hardwoods
+                </span>
+              </figcaption>
+            </figure>
+
+            <a
+              href="https://hometownkc.agency/case-studies/noble-hardwoods"
+              target="_blank"
+              rel="noopener"
+              aria-label="View the Noble Hardwoods website case study by Hometown Marketing Agency"
+              className="mt-7 inline-flex min-h-14 items-center justify-center rounded-sm bg-noble-orange px-7 text-center text-sm font-bold text-white transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-noble-orange-dark active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-noble-orange"
+            >
+              View the Noble Hardwoods Website Case Study
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
