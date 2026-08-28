@@ -1,5 +1,4 @@
 import {
-  blogPosts,
   business,
   faqs,
   featuredProjects,
@@ -8,6 +7,7 @@ import {
   serviceAreas,
   services
 } from "./site";
+import { blogPosts } from "./blogPosts";
 import { serviceAreaPages } from "./serviceAreaPages";
 
 export type FAQ = {

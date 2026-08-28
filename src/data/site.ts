@@ -15,6 +15,8 @@ export const business = {
   area: "Kansas City metro"
 };
 
+export { blogPosts } from "./blogPosts";
+
 export const socialShareImage = {
   url: "/images/social/noble-hardwoods-social.jpg",
   width: 1200,
@@ -253,7 +255,9 @@ export const featuredProjects = [
   }
 ];
 
-export const blogPosts = [
+// Preserved source copy for articles inherited from the previous site. The
+// live, typed collection (including these entries) lives in blogPosts.ts.
+export const legacyBlogPosts = [
   {
     title: "How to Care for Your Hardwood Floors",
     slug: "how-to-care-for-your-hardwood-floors",
