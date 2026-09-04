@@ -212,6 +212,34 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       <FAQSection faqs={page.faqs} className="bg-white" title={`${page.title} questions`} />
+      {page.guideLinks?.length ? (
+        <section className="border-y border-noble-ink/10 bg-[#f3eadc] py-12 sm:py-16">
+          <div className="mx-auto grid max-w-7xl gap-6 px-5 sm:px-6 lg:grid-cols-[0.58fr_1.42fr] lg:px-8">
+            <div>
+              <p className="carpenter-eyebrow">Planning resources</p>
+              <h2 className="mt-4 text-3xl font-black uppercase leading-none text-noble-ink sm:text-4xl">
+                Know what to expect.
+              </h2>
+            </div>
+            <div className="grid gap-5">
+              {page.guideLinks.map((guide) => (
+                <Link
+                  key={guide.href}
+                  href={guide.href}
+                  className="group border-l-4 border-noble-orange bg-white px-6 py-5 transition hover:-translate-y-0.5"
+                >
+                  <span className="flex items-center justify-between gap-5 text-base font-extrabold text-noble-ink group-hover:text-noble-orange">
+                    {guide.label} <ArrowMark />
+                  </span>
+                  <span className="mt-2 block max-w-2xl text-sm leading-7 text-noble-ink/65">
+                    {guide.description}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
       <RelatedServices currentHref={page.href} hrefs={page.relatedServices} />
       <CTABand
         title="Ready to talk through your floors?"

@@ -57,6 +57,305 @@ const nobleAuthor = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "How Long Does Hardwood Floor Refinishing Take? A Kansas City Fall Planning Guide",
+    seoTitle: "How Long Does Hardwood Floor Refinishing Take? | KC",
+    metaDescription:
+      "Plan a Kansas City hardwood floor refinishing project with realistic timing for sanding, stain, finish, cure, furniture, rugs, pets, and fall gatherings.",
+    slug: "how-long-does-hardwood-floor-refinishing-take",
+    href: "/blog/how-long-does-hardwood-floor-refinishing-take",
+    date: "September 3, 2026",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
+    category: "Planning Guide",
+    ...nobleAuthor,
+    image: "/images/project-flooring/robinson-home-kitchen-hardwood-floor-2.webp",
+    imageAlt: "Refinished oak hardwood floor in a warm Kansas City kitchen",
+    excerpt:
+      "A realistic guide to sanding days, stain and finish timing, cure time, furniture, rugs, pets, and planning a Kansas City project before fall gatherings.",
+    quickAnswer:
+      "Most full hardwood floor refinishing projects require several working days onsite, followed by additional protected time while the finish cures. A straightforward room can move faster than a connected main floor with repairs, stain, stairs, or detailed edges. The finish system, temperature, humidity, airflow, and household access also affect the schedule. For a dependable plan, work backward from the day you need the rooms fully usable—not only from the last day the crew is onsite.",
+    readTime: "12 minute read",
+    keyTakeaways: [
+      "Separate active workdays from drying and cure time when planning the project.",
+      "Repairs, stain, stairs, layout, finish choice, and jobsite conditions can extend the schedule.",
+      "Confirm return dates for people, pets, furniture, rugs, and cleaning for the exact finish used."
+    ],
+    sections: [
+      {
+        id: "timeline-at-a-glance",
+        heading: "Hardwood floor refinishing timelines at a glance",
+        paragraphs: [
+          "A full sand and refinish is a sequence, not a single appointment. The crew must prepare and isolate the rooms, sand the field and edges, complete repairs, clean the surface, apply optional stain, and build the finish system. Each coat must be ready for the next step. After the final application, the floor may be dry enough for limited access before it is cured enough for furniture, rugs, pets, or normal household use.",
+          "For early planning, think in relative windows. A maintenance coat is usually the shortest path when the existing finish qualifies. A single open room is generally simpler than a continuous first floor. Stairs, closets, built-ins, tight halls, dark damage, board replacement, or a major color change add detail work that square footage alone does not show.",
+          "The National Wood Flooring Association distinguishes a maintenance coat from a full resand: a maintenance coat cleans and lightly abrades the existing finish, while a full refinish sands back to raw wood when wear or damage requires it. That scope decision is the first major timing decision."
+        ],
+        table: {
+          caption: "Relative planning windows—your written project schedule controls",
+          headers: ["Project type", "Typical onsite complexity", "What may add time"],
+          rows: [
+            ["Maintenance coat", "Shortest", "Compatibility testing, cleaning, coat and dry time"],
+            ["One open room", "Shorter", "Edges, repairs, stain selection and finish schedule"],
+            ["Connected main floor", "Several working days", "Multiple rooms, transitions, access and coat sequence"],
+            ["Large or detailed project", "Longer/custom", "Stairs, repairs, dark stain, closets and intricate handwork"]
+          ]
+        },
+        links: [
+          {
+            label: "Compare screen and recoat with full refinishing",
+            href: "/blog/screen-recoat-vs-refinish-hardwood-floors"
+          },
+          {
+            label: "Explore Kansas City hardwood floor refinishing",
+            href: "/hardwood-floor-refinishing-kansas-city"
+          }
+        ]
+      },
+      {
+        id: "day-by-day",
+        heading: "What happens during a full refinishing project?",
+        paragraphs: [
+          "The first phase is preparation. Furniture and movable belongings leave the work area, doors and openings are addressed, floor vents are protected as appropriate, and the crew confirms access, power, finish choices, and any areas that must remain usable. Existing shoe molding, appliances, floor vents, or thresholds may need specific coordination. Good preparation prevents avoidable stops once sanding begins.",
+          "Sanding usually progresses through multiple abrasive steps rather than one pass. The field, perimeter, corners, closets, and transitions require different tools. The goal is a flat, consistent surface with the old coating removed and a scratch pattern appropriate for stain or finish. Dust-conscious equipment captures material at the source, but no sanding project should be described as completely dust-free.",
+          "Repairs and detail work happen before the final finish sequence. Damaged boards may be replaced or laced in, fasteners set, gaps evaluated, and transitions corrected. If a stain is selected, samples should be approved on the actual floor because species, age, sanding, and light all affect color. Stain then needs suitable conditions and enough drying before finish is applied.",
+          "The finish phase may include several applications with drying or abrasion between coats, depending on the system. Once the final coat is down, the work area needs protection. The crew's last onsite day is therefore not necessarily the day the room returns to normal. Your handoff instructions should spell out the next milestones."
+        ],
+        bullets: [
+          "Prepare rooms, access paths, vents, appliances, and household logistics",
+          "Sand open areas, edges, corners, closets, stairs, and transitions as scoped",
+          "Complete board repairs and detailed surface preparation",
+          "Approve stain samples on the actual wood when color is changing",
+          "Apply the specified stain and finish system with required intervals",
+          "Protect the final coat and follow the written return-to-use schedule"
+        ],
+        links: [
+          {
+            label: "Learn how dust-conscious sanding works",
+            href: "/dustless-hardwood-floor-refinishing-kansas-city"
+          },
+          {
+            label: "See stain colors for Kansas City homes",
+            href: "/blog/best-hardwood-floor-stain-colors-kansas-city"
+          }
+        ]
+      },
+      {
+        id: "what-changes-schedule",
+        heading: "Seven factors that change the refinishing schedule",
+        paragraphs: [
+          "Square footage influences the schedule, but it is only one input. Two projects with the same measured area can require different amounts of edge work, repair, stain preparation, and household coordination. A professional schedule should be based on the floor that is actually present, not a calculator that treats every room as an empty rectangle.",
+          "Condition is often the biggest unknown. Pet stains, old water damage, exposed gray wood, loose boards, cupping, previous patchwork, adhesive, wax, or contaminated coatings may change the process. Some dark discoloration cannot be sanded away safely and may require board replacement. Active moisture must be solved before a cosmetic finish can be expected to last.",
+          "Color and finish choices also matter. Staying near the wood's natural tone can simplify the sequence, while stain adds sampling, application, and dry time. Finish products have their own application ranges and return-to-use guidance. Manufacturer technical data also warns that high humidity and low temperature can lengthen dry time, which is why the indoor jobsite—not the date on a calendar—must stay within the chosen system's requirements."
+        ],
+        bullets: [
+          "Total area, room count, closets, halls, stairs, and edge detail",
+          "Floor condition, damaged boards, pet stains, water history, and repairs",
+          "Existing wax, polish, adhesive, paint, or incompatible coating residue",
+          "Natural finish versus a new stain color and the time needed for approval",
+          "Selected finish system, coat count, dry intervals, and cure guidance",
+          "Indoor temperature, humidity, ventilation, and reliable HVAC operation",
+          "Access, furniture, appliances, pets, children, and other trades in the home"
+        ],
+        links: [
+          {
+            label: "Review hardwood floor repair options",
+            href: "/hardwood-floor-repair-kansas-city"
+          },
+          {
+            label: "Read the water- and pet-damage repair guide",
+            href: "/blog/repair-water-pet-damaged-hardwood-floors-kc"
+          }
+        ]
+      },
+      {
+        id: "dry-time-vs-cure-time",
+        heading: "Dry time versus cure time: when can life return?",
+        paragraphs: [
+          "Dry and cured do not mean the same thing. A coating can become dry enough for the next application or limited foot traffic while it is still gaining hardness and chemical resistance. Treating the earliest walk-on time as permission for rugs, heavy furniture, pet claws, wet cleaning, or a crowded gathering can mark a finish that has not reached the appropriate stage.",
+          "There is no responsible universal answer for every floor because waterborne, oil-modified, conversion, penetrating, and other finish systems behave differently. Even within a category, product instructions vary. Ask which exact system will be used, what the indoor conditions must be, and which milestone controls each household activity.",
+          "Follow the written guidance Noble provides for your project over any generic chart online. Use clean socks only when permitted, lift rather than slide furniture, protect furniture feet as directed, and keep rugs off until the specified point. Avoid taping protective paper or plastic directly to a fresh surface unless the finish manufacturer and flooring professional specifically approve it."
+        ],
+        table: {
+          caption: "Return-to-use questions to settle before work starts",
+          headers: ["Activity", "Why it needs a separate answer", "Confirm in writing"],
+          rows: [
+            ["Light foot traffic", "The earliest dry milestone is product-specific", "Time, footwear and route"],
+            ["Pets and children", "Claws, toys and sudden movement add abrasion", "Return time and restrictions"],
+            ["Furniture", "Weight and dragging can dent or scuff young finish", "Return date and felt-pad guidance"],
+            ["Area rugs", "Covered finish may cure differently and trap moisture", "Full waiting period"],
+            ["Wet cleaning", "Water and cleaners can affect a young coating", "Approved cleaner and start date"],
+            ["Normal/high traffic", "Usable and fully cured are different stages", "Full-cure expectations"]
+          ]
+        },
+        callout:
+          "Plan for the slowest household milestone you care about. If the dining room must hold furniture and a rug for a gathering, the last coat is not the planning finish line."
+      },
+      {
+        id: "stay-home-or-leave",
+        heading: "Can you stay home while hardwood floors are refinished?",
+        paragraphs: [
+          "Sometimes a household can remain in an isolated part of the home; sometimes leaving is more practical. The answer depends on the rooms included, whether the floor blocks bedrooms or exits, the finish system, ventilation, odor sensitivity, children, pets, and whether anyone needs accessible passage. A first-floor project that cuts off the kitchen and every exterior door is different from an upstairs bedroom with a separate route.",
+          "Map the work area before scheduling. Decide where people will sleep, how medications and essential belongings will be reached, whether the refrigerator or laundry will be available, and which entrance the crew will use. Plan pet boarding or confinement before equipment arrives. Cats and dogs cannot understand a wet-finish boundary, and a paw print is a project issue as well as a safety concern.",
+          "Ask about ventilation and occupancy requirements for the exact products on your project. Do not rely on the phrase 'low odor' as a complete safety or access plan. Product labels, safety data, jobsite conditions, and your contractor's instructions should guide when people and animals can occupy adjacent spaces."
+        ],
+        bullets: [
+          "Identify the rooms, stairs, doors, and hallways that will be unavailable",
+          "Remove medications, work gear, children's supplies, and daily essentials",
+          "Plan refrigerator, cooking, bathroom, laundry, and overnight access",
+          "Arrange a secure plan for every pet before sanding and coating begin",
+          "Confirm HVAC, ventilation, odor, and occupancy instructions",
+          "Share accessibility, respiratory, or schedule needs during the estimate"
+        ]
+      },
+      {
+        id: "fall-holiday-planning",
+        heading: "Planning Kansas City floors before fall and holiday gatherings",
+        paragraphs: [
+          "Early fall is a natural planning moment in Kansas City: school routines settle in, homeowners turn attention indoors, and Thanksgiving or year-end gatherings appear on the calendar. September climate normals also show meaningful temperature movement across the month. Outdoor weather does not dictate an indoor finish schedule by itself, but it is a reminder to keep HVAC and jobsite conditions stable rather than assuming an open window solves ventilation or drying.",
+          "If you want finished rooms for a specific event, choose the true ready date first. That may be the day furniture, rugs, pets, and normal traffic can return—not the day sanding ends. Then add the product-specific cure allowance, the finish sequence, sanding and repair days, furniture removal, stain decisions, and a contingency for discovered damage. Work backward to identify the latest sensible start date.",
+          "Avoid stacking trades on top of one another. Painting, cabinet work, appliance delivery, moving crews, and floor refinishing all need access and can create dust or damage. Decide the sequence with the contractors involved. In many remodels, messy overhead work happens first, while final flooring timing is coordinated to reduce the chance that ladders, tools, or deliveries mark the completed surface.",
+          "Demand also matters. A project that must be ready before Thanksgiving or a December gathering should enter the estimating and scheduling process well ahead of the desired start. An early conversation gives more room for repair decisions, stain samples, furniture logistics, and a finish schedule that is not compressed around a hard deadline."
+        ],
+        table: {
+          caption: "Build the schedule backward from the event",
+          headers: ["Planning milestone", "Question to answer"],
+          rows: [
+            ["Event-ready date", "When must normal traffic, furniture and rugs be back?"],
+            ["Protected cure window", "What does the exact finish require before those uses?"],
+            ["Final-coat date", "When can the last application happen under suitable conditions?"],
+            ["Work window", "How many sanding, repair, stain and finish days are scoped?"],
+            ["Preparation", "When will furniture move and stain choices be finalized?"],
+            ["Contingency", "What happens if repair or moisture issues are discovered?"]
+          ]
+        },
+        links: [
+          {
+            label: "Hardwood flooring in Overland Park",
+            href: "/service-areas/hardwood-flooring-overland-park-ks"
+          },
+          {
+            label: "Hardwood flooring in Prairie Village",
+            href: "/service-areas/hardwood-flooring-prairie-village-ks"
+          }
+        ]
+      },
+      {
+        id: "planning-checklist",
+        heading: "Your refinishing timeline checklist",
+        paragraphs: [
+          "A dependable timeline begins during the estimate. Show every room and transition you may want included, point out water or pet history, list products used on the floor, and explain any deadline that matters. Ask whether the recommendation is a maintenance coat or full refinish and which condition findings support that choice.",
+          "Before approving the work, make sure the written scope names the rooms, repairs, sanding process, stain decision, finish system, expected onsite window, and household responsibilities. It should also explain how unforeseen repairs are authorized. If the plan depends on one immovable event, discuss schedule risk openly instead of leaving it implied.",
+          "Noble Hardwoods serves Kansas City, Overland Park, Leawood, Prairie Village, Lenexa, and surrounding communities. Share approximate square footage, full-room photos, close-ups of damage, the stain direction you like, and your target date. That gives the team a useful starting point for a floor-specific plan."
+        ],
+        bullets: [
+          "Measure or estimate the hardwood area and identify every connected room",
+          "Photograph full rooms, transitions, stairs, and the worst damage",
+          "List known cleaners, polishes, waxes, coatings, leaks, and prior repairs",
+          "Choose whether the existing color stays or changes",
+          "Name the event date and the level of use required by that date",
+          "Confirm people, pet, furniture, rug, cleaning, and appliance milestones",
+          "Get the scope, products, responsibilities, schedule, and exclusions in writing",
+          "Leave practical contingency between completion and an important gathering"
+        ],
+        callout:
+          "The right answer is not simply 'three days' or 'one week.' It is a floor-specific work plan plus a finish-specific return-to-use plan.",
+        links: [
+          {
+            label: "Request a refinishing timeline and quote",
+            href: "/contact"
+          },
+          {
+            label: "Review Kansas City refinishing costs",
+            href: "/blog/hardwood-floor-refinishing-cost-kansas-city"
+          }
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "How many days does it take to refinish hardwood floors?",
+        answer:
+          "Most full refinishing projects require several working days onsite. Size, layout, repairs, stain, stairs, finish system, and jobsite conditions determine the actual schedule, and protected cure time continues after the last coat."
+      },
+      {
+        question: "Can hardwood floors be refinished in one day?",
+        answer:
+          "A qualifying maintenance coat may have a much shorter onsite window than full refinishing. Sanding to bare wood, making repairs, changing color, and applying a complete finish system should not be treated as a universal one-day service."
+      },
+      {
+        question: "How long after refinishing can you walk on hardwood floors?",
+        answer:
+          "The earliest walk-on time depends on the exact finish product, coat schedule, temperature, humidity, and airflow. Follow the written project instructions and ask whether clean socks, normal shoes, or only a specific route is permitted."
+      },
+      {
+        question: "When can furniture go back on refinished hardwood floors?",
+        answer:
+          "Furniture timing is finish-specific and is usually later than the first limited foot traffic. Confirm the return date, lift furniture instead of sliding it, and use only the floor protection recommended for the project."
+      },
+      {
+        question: "When can area rugs go back after floor refinishing?",
+        answer:
+          "Area rugs often require a longer wait because they cover the surface during cure. Use the rug date supplied for the exact finish system rather than a generic online rule."
+      },
+      {
+        question: "Do stain colors add time to hardwood floor refinishing?",
+        answer:
+          "They can. Changing color adds sample review, stain application, and suitable drying before the finish sequence. Wood species, desired color, and indoor conditions all affect that step."
+      },
+      {
+        question: "Can I stay home during floor refinishing?",
+        answer:
+          "It depends on access, ventilation, the rooms being finished, the chosen products, and the needs of people and pets. Map sleeping, exits, bathrooms, food, pets, and essential belongings with the contractor before work begins."
+      },
+      {
+        question: "How early should I schedule refinishing before the holidays?",
+        answer:
+          "Start the estimate and scheduling conversation well ahead of the event. Work backward from when normal traffic, furniture, and rugs must return, then include cure time, finish days, sanding, repairs, preparation, and contingency."
+      }
+    ],
+    relatedServices: [
+      "/hardwood-floor-refinishing-kansas-city",
+      "/dustless-hardwood-floor-refinishing-kansas-city",
+      "/hardwood-floor-repair-kansas-city"
+    ],
+    relatedAreas: [
+      { label: "Kansas City, MO", href: "/service-areas/hardwood-flooring-kansas-city-mo" },
+      { label: "Overland Park, KS", href: "/service-areas/hardwood-flooring-overland-park-ks" },
+      { label: "Prairie Village, KS", href: "/service-areas/hardwood-flooring-prairie-village-ks" }
+    ],
+    relatedProject: {
+      label: "Installation and refinishing in Overland Park",
+      href: "/projects/floor-installation-and-refinishing-in-overland-park-ks"
+    },
+    review: {
+      name: "Jordan Vaughan",
+      quote:
+        "Noble was prepared to explain, work with, and communicate timelines and goals for our main floor project. They had flawless execution that made my floors the envy and praise of friends and family.",
+      detail: "Main-floor project planning and execution"
+    },
+    sources: [
+      {
+        label: "National Wood Flooring Association — Refinishing your floors",
+        href: "https://woodfloors.org/refinishing-your-floors/",
+        external: true
+      },
+      {
+        label: "National Wood Flooring Association — Wood floor finishes",
+        href: "https://woodfloors.org/finishes/",
+        external: true
+      },
+      {
+        label: "National Weather Service — Kansas City climate normals",
+        href: "https://www.weather.gov/eax/eaxclinormals",
+        external: true
+      },
+      {
+        label: "Bona — Traffic HD technical data sheet",
+        href: "https://www.bona.com/globalassets/catalogassets/bona-traffic-hd-tds.pdf",
+        external: true
+      }
+    ]
+  },
+  {
     title: "How Much Does Hardwood Floor Refinishing Cost in Kansas City?",
     seoTitle: "Hardwood Floor Refinishing Cost Kansas City (2026)",
     metaDescription:
@@ -190,6 +489,10 @@ export const blogPosts: BlogPost[] = [
           {
             label: "Request a Noble Hardwoods quote",
             href: "/contact"
+          },
+          {
+            label: "Plan your hardwood refinishing timeline",
+            href: "/blog/how-long-does-hardwood-floor-refinishing-take"
           },
           {
             label: "Hardwood flooring in Overland Park",
@@ -994,6 +1297,10 @@ export const blogPosts: BlogPost[] = [
           {
             label: "Learn about dustless sanding availability",
             href: "/dustless-hardwood-floor-refinishing-kansas-city"
+          },
+          {
+            label: "Plan the refinishing and cure timeline",
+            href: "/blog/how-long-does-hardwood-floor-refinishing-take"
           },
           {
             label: "See hardwood flooring in Kansas City, MO",

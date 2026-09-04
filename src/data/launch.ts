@@ -31,6 +31,7 @@ export type ServicePage = {
   process: string[];
   faqs: FAQ[];
   relatedServices: string[];
+  guideLinks?: { label: string; href: string; description: string }[];
 };
 
 const sharedProcess = processSteps;
@@ -83,6 +84,14 @@ export const servicePages: ServicePage[] = [
       "/dustless-hardwood-floor-refinishing-kansas-city",
       "/hardwood-floor-repair-kansas-city",
       "/hardwood-floor-installation-kansas-city"
+    ],
+    guideLinks: [
+      {
+        label: "How long does hardwood floor refinishing take?",
+        href: "/blog/how-long-does-hardwood-floor-refinishing-take",
+        description:
+          "Plan sanding, stain, finish, cure time, furniture, rugs, pets, and a fall or holiday deadline."
+      }
     ]
   },
   {
