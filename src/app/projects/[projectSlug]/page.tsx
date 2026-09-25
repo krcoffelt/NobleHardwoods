@@ -24,21 +24,32 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) return {};
 
+  const titleBySlug: Record<string, string> = {
+    "floor-installation-and-refinishing-in-overland-park-ks":
+      "Overland Park Floor Installation & Refinishing | Noble",
+    "floor-installation-and-finish-in-lawrence-ks":
+      "Lawrence Hardwood Installation & Finish | Noble",
+    "stage-steps-installation-in-lenexa-ks": "Lenexa Hardwood Stage & Steps | Noble",
+    "installation-repair-and-refinish-in-briarcliff-mo":
+      "Briarcliff Hardwood Repair & Refinishing | Noble"
+  };
+  const seoTitle = titleBySlug[project.slug] ?? project.title;
+
   return {
-    title: project.title,
+    title: { absolute: seoTitle },
     description: project.summary,
     alternates: {
       canonical: project.href
     },
     openGraph: {
-      title: `${project.title} | Noble Hardwoods`,
+      title: seoTitle,
       description: project.summary,
       url: project.href,
       images: [socialShareImage]
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Noble Hardwoods`,
+      title: seoTitle,
       description: project.summary,
       images: [socialShareImage]
     }
@@ -146,6 +157,41 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 <p className="text-sm font-extrabold leading-7 text-noble-ink">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-noble-ink/10 bg-[#f3eadc] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+              Project Story
+            </p>
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] text-noble-ink sm:text-5xl">
+              The problem, the hardwood plan, and the result.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-px bg-noble-ink/12 lg:grid-cols-3">
+            {[
+              { label: "01 / Challenge", text: project.challenge },
+              { label: "02 / Approach", text: project.approach },
+              { label: "03 / Result", text: project.result }
+            ].map((item) => (
+              <article key={item.label} className="bg-white p-6 sm:p-8">
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-noble-orange">
+                  {item.label}
+                </p>
+                <p className="mt-5 text-base leading-8 text-noble-ink/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 border-l-4 border-noble-orange bg-white/70 p-6 sm:p-8">
+            <p className="text-xs font-black uppercase tracking-[0.14em] text-noble-orange">
+              Planning Note
+            </p>
+            <p className="mt-4 max-w-4xl text-base leading-8 text-noble-ink/72">
+              {project.planningNote}
+            </p>
           </div>
         </div>
       </section>

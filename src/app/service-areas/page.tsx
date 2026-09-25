@@ -5,19 +5,19 @@ import { CTABand } from "@/components/CTABand";
 import { FAQSection } from "@/components/FAQSection";
 import { InteriorHero } from "@/components/InteriorHero";
 import { JsonLd } from "@/components/JsonLd";
-import { getAbsoluteUrl, getAreaSchema } from "@/data/launch";
+import { getBusinessSchema } from "@/data/launch";
 import { locatedProjectTotal, serviceAreaPages } from "@/data/serviceAreaPages";
-import { business, faqs, services, socialShareImage } from "@/data/site";
+import { faqs, services, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Kansas City Hardwood Flooring Service Areas",
+  title: { absolute: "Kansas City Hardwood Service Areas | Noble Hardwoods" },
   description:
     "Noble Hardwoods serves Kansas City, Overland Park, Leawood, Lenexa, Prairie Village, Mission Hills, Fairway, Shawnee, Olathe, and nearby areas.",
   alternates: {
     canonical: "/service-areas"
   },
   openGraph: {
-    title: "Kansas City Hardwood Flooring Service Areas | Noble Hardwoods",
+    title: "Kansas City Hardwood Service Areas | Noble Hardwoods",
     description:
       "Hardwood floor refinishing, installation, repair, stairs, railings, and custom floors across the Kansas City metro.",
     url: "/service-areas",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kansas City Hardwood Flooring Service Areas | Noble Hardwoods",
+    title: "Kansas City Hardwood Service Areas | Noble Hardwoods",
     description:
       "Hardwood floor refinishing, installation, repair, stairs, railings, and custom floors across the Kansas City metro.",
     images: [socialShareImage]
@@ -33,20 +33,7 @@ export const metadata: Metadata = {
 };
 
 export default function ServiceAreasPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "@id": business.schemaId,
-    name: business.name,
-    url: getAbsoluteUrl("/service-areas"),
-    telephone: business.phone,
-    email: business.email,
-    areaServed: getAreaSchema(),
-    image: getAbsoluteUrl("/images/noble-hardwoods-hero.jpg"),
-    logo: getAbsoluteUrl(business.logo),
-    sameAs: [business.instagram],
-    priceRange: "$$"
-  };
+  const schema = getBusinessSchema();
 
   return (
     <>

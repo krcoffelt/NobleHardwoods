@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
 import { QuoteForm } from "@/components/QuoteForm";
+import { getAbsoluteUrl } from "@/data/launch";
 import { business, faqs } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Get a Hardwood Flooring Quote in Kansas City",
+  title: { absolute: "Kansas City Hardwood Flooring Quote | Noble Hardwoods" },
   description:
     "Contact Noble Hardwoods for hardwood floor refinishing, installation, repair, stairs, railings, and custom hardwood floors in Kansas City and surrounding areas.",
   alternates: {
@@ -13,8 +15,24 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Request a Noble Hardwoods quote",
+    url: getAbsoluteUrl("/contact"),
+    mainEntity: {
+      "@id": business.schemaId,
+      "@type": "HomeAndConstructionBusiness",
+      name: business.name,
+      telephone: business.phone,
+      email: business.email,
+      url: business.siteUrl
+    }
+  };
+
   return (
     <>
+      <JsonLd data={schema} />
       <section className="relative overflow-hidden bg-cream-50 text-noble-ink">
         <div className="absolute inset-y-0 right-0 hidden w-[55%] bg-noble-mist lg:block" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-[78rem] gap-8 px-5 pb-14 pt-11 sm:gap-10 sm:px-6 sm:py-20 lg:min-h-[64rem] lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:px-8 lg:py-24 xl:px-0">

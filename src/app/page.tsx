@@ -12,22 +12,22 @@ import {
   faqs,
   processSteps,
   reviews,
-  serviceAreas,
   services,
   socialShareImage
 } from "@/data/site";
-import { getAbsoluteUrl, getAreaSchema, getReviewSchema } from "@/data/launch";
+import { getBusinessSchema, getReviewSchema } from "@/data/launch";
+import { serviceAreaPages } from "@/data/serviceAreaPages";
 import { durasealStains, getDurasealStainImage } from "@/data/stains";
 
 export const metadata: Metadata = {
-  title: "Kansas City Hardwood Flooring Company",
+  title: { absolute: "Kansas City Hardwood Refinishing & Installation | Noble" },
   description:
     "Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors throughout Kansas City, Overland Park, Leawood, Lenexa, Prairie Village, and nearby areas.",
   alternates: {
     canonical: "/"
   },
   openGraph: {
-    title: "Kansas City Hardwood Flooring Company | Noble Hardwoods",
+    title: "Kansas City Hardwood Refinishing & Installation | Noble",
     description:
       "Hardwood floor refinishing, installation, repair, stairs, railings, and custom wood floor patterns across the Kansas City metro.",
     url: "/",
@@ -35,12 +35,50 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kansas City Hardwood Flooring Company | Noble Hardwoods",
+    title: "Kansas City Hardwood Refinishing & Installation | Noble",
     description:
       "Hardwood floor refinishing, installation, repair, stairs, railings, and custom wood floor patterns across the Kansas City metro.",
     images: [socialShareImage]
   }
 };
+
+const zeraServicePreview = [
+  {
+    number: "01",
+    title: "Interior painting",
+    text: "Painting and related finish work for homes across the Kansas City metro."
+  },
+  {
+    number: "02",
+    title: "Drywall",
+    text: "Installation, repair, patching, and preparation for a clean finished surface."
+  },
+  {
+    number: "03",
+    title: "General contracting",
+    text: "Practical home projects that extend beyond Noble Hardwoods’ flooring specialty."
+  }
+];
+
+const homepageServiceAreaSlugs = [
+  "hardwood-flooring-kansas-city-mo",
+  "hardwood-flooring-overland-park-ks",
+  "hardwood-flooring-lees-summit-mo",
+  "hardwood-flooring-prairie-village-ks",
+  "hardwood-flooring-leawood-ks",
+  "hardwood-flooring-shawnee-ks",
+  "hardwood-flooring-olathe-ks",
+  "hardwood-flooring-roeland-park-ks",
+  "hardwood-flooring-mission-ks",
+  "hardwood-flooring-westwood-ks",
+  "hardwood-flooring-lenexa-ks",
+  "hardwood-flooring-lawrence-ks"
+];
+
+const homepageServiceAreas = homepageServiceAreaSlugs.flatMap((slug) => {
+  const area = serviceAreaPages.find((item) => item.slug === slug);
+  return area ? [area] : [];
+});
 
 export default function Home() {
   const serviceRail = [services[1], services[0], services[2], services[3]];
@@ -103,20 +141,7 @@ export default function Home() {
   ];
   const resourceCards = blogPosts.slice(0, 3);
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "@id": business.schemaId,
-    name: business.name,
-    url: business.siteUrl,
-    telephone: business.phone,
-    email: business.email,
-    areaServed: getAreaSchema(),
-    image: getAbsoluteUrl("/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"),
-    logo: getAbsoluteUrl(business.logo),
-    sameAs: [business.instagram],
-    priceRange: "$$",
-    description:
-      "Kansas City hardwood flooring company offering refinishing, installation, repair, stairs, railings, and custom hardwood floors, with dustless sanding available.",
+    ...getBusinessSchema(),
     review: getReviewSchema()
   };
 
@@ -141,9 +166,9 @@ export default function Home() {
             <div className="inline-flex items-center gap-4 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-noble-orange sm:text-xs">
               <span>Kansas City Hardwood</span>
             </div>
-            <h1 className="home-hero-title mt-5 max-w-[31rem] text-[2.8rem] font-black uppercase tracking-normal text-noble-ink min-[390px]:text-[3.2rem] sm:mt-7 sm:text-7xl lg:text-[4.15rem] xl:max-w-xl xl:text-7xl">
-              Hardwood floors
-              <span className="mt-1 block text-noble-orange sm:mt-2">built to last.</span>
+            <h1 className="home-hero-title mt-5 max-w-[34rem] text-[2.55rem] font-black uppercase tracking-normal text-noble-ink min-[390px]:text-[2.9rem] sm:mt-7 sm:text-6xl lg:text-[3.65rem] xl:max-w-2xl xl:text-[4.15rem]">
+              Kansas City Hardwood Floor
+              <span className="mt-1 block text-noble-orange sm:mt-2">Refinishing &amp; Installation</span>
             </h1>
             <p className="mt-5 max-w-md text-[0.98rem] font-medium leading-7 text-noble-ink/70 sm:mt-7 sm:text-base sm:leading-8">
               Refinishing, installation, repair, stairs, and custom hardwood work for Kansas City homes.
@@ -530,7 +555,7 @@ export default function Home() {
             {resourceCards.map((post) => (
               <Link key={post.href} href={post.href} className="carpenter-card group block snap-start bg-white">
                 <div className="relative aspect-[1.22/1] overflow-hidden bg-noble-mist">
-                  <Image src={post.image} alt="" fill className="object-cover" sizes="(min-width: 1024px) 33vw, 90vw" />
+                  <Image src={post.image} alt={post.imageAlt} fill className="object-cover" sizes="(min-width: 1024px) 33vw, 90vw" />
                 </div>
                 <div className="p-5 sm:p-7">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-noble-orange">{post.category}</p>
@@ -543,6 +568,68 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        aria-labelledby="zera-services-heading"
+        className="relative overflow-hidden border-y border-noble-ink/8 bg-cream-50 py-16 sm:py-28 lg:py-32"
+      >
+        <div className="absolute -right-24 -top-24 size-72 rounded-full border border-noble-orange/15 sm:size-96" aria-hidden="true" />
+        <div className="carpenter-container relative grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-16">
+          <div data-reveal>
+            <p className="carpenter-eyebrow text-noble-ink">More for your home</p>
+            <h2
+              id="zera-services-heading"
+              className="carpenter-title mt-5 max-w-xl text-[2.3rem] font-bold text-noble-ink sm:mt-6 sm:text-6xl lg:text-[4rem]"
+            >
+              The work beyond your hardwood floors.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
+              Zera Services, LLC—the company behind Noble Hardwoods—helps Kansas City homeowners
+              with painting, drywall, and other practical contracting projects.
+            </p>
+            <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-9 sm:flex sm:gap-4">
+              <ButtonLink href={business.zeraServicesHref} className="px-4 sm:px-8">
+                Explore Zera <ArrowMark className="ml-4" />
+              </ButtonLink>
+              <ButtonLink href={business.zeraPhoneHref} variant="secondary" className="px-4 sm:px-8">
+                Call Zera
+              </ButtonLink>
+            </div>
+          </div>
+
+          <div className="border-t-4 border-noble-orange bg-white p-5 shadow-[0_28px_80px_rgba(87,51,31,0.12)] sm:p-8 lg:p-10" data-reveal>
+            <div className="flex items-center gap-4 border-b border-noble-ink/12 pb-5 sm:gap-5 sm:pb-7">
+              <div className="grid size-14 shrink-0 place-items-center bg-noble-ink text-2xl font-bold text-white sm:size-16 sm:text-3xl" aria-hidden="true">
+                Z
+              </div>
+              <div>
+                <p className="text-xl font-bold leading-tight text-noble-ink sm:text-2xl">Zera Services, LLC</p>
+                <p className="mt-1 text-sm leading-6 text-noble-ink/60">Kansas City contracting services</p>
+              </div>
+            </div>
+
+            <div className="divide-y divide-noble-ink/12">
+              {zeraServicePreview.map((service) => (
+                <article key={service.title} className="grid grid-cols-[2rem_1fr] gap-3 py-5 sm:grid-cols-[2.5rem_1fr] sm:gap-5 sm:py-6">
+                  <p className="pt-1 text-xs font-bold tabular-nums text-noble-orange">{service.number}</p>
+                  <div>
+                    <h3 className="text-lg font-bold text-noble-ink sm:text-xl">{service.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-noble-ink/64 sm:text-[0.95rem]">{service.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <Link
+              href={business.zeraServicesHref}
+              className="group mt-1 inline-flex min-h-12 items-center gap-4 text-sm font-bold uppercase text-noble-ink transition duration-300 hover:text-noble-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-noble-orange"
+            >
+              View all Zera services
+              <ArrowMark className="transition duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-16 sm:py-24 lg:py-28">
         <div className="carpenter-container">
           <div className="mx-auto max-w-3xl text-center">
@@ -551,16 +638,42 @@ export default function Home() {
               Proudly serving the Kansas City metro area.
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-noble-ink/68">
-              Local hardwood work for Kansas City homes, from Brookside to Leawood and beyond.
+              Explore Noble’s verified project history and hardwood flooring services in
+              communities across the metro.
             </p>
           </div>
           <div className="mt-9 grid grid-cols-2 gap-2 sm:mt-12 sm:grid-cols-3 lg:grid-cols-4">
-            {serviceAreas.map((area) => (
-              <Link key={area} href="/service-areas" className="group flex min-h-16 items-end border-t-2 border-noble-orange bg-cream-50 p-3.5 transition duration-300 hover:-translate-y-0.5 hover:bg-noble-orange sm:min-h-24 sm:p-5">
-                <span className="text-sm font-bold uppercase leading-tight text-noble-ink transition group-hover:text-white">{area}</span>
+            {homepageServiceAreas.map((area) => (
+              <Link
+                key={area.slug}
+                href={area.href}
+                aria-label={`${area.city}, ${area.state}: ${area.projectCount}+ completed projects`}
+                className="group flex min-h-32 flex-col justify-between border-t-2 border-noble-orange bg-cream-50 p-4 transition duration-300 hover:-translate-y-0.5 hover:bg-noble-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-noble-orange sm:min-h-36 sm:p-5"
+              >
+                <span className="flex items-start justify-between gap-3">
+                  <span className="text-sm font-bold uppercase leading-tight text-noble-ink transition group-hover:text-white">
+                    {area.city}, {area.state}
+                  </span>
+                  <ArrowMark className="shrink-0 text-noble-ink transition duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                </span>
+                <span className="mt-6 block border-t border-noble-ink/12 pt-3 transition group-hover:border-white/35">
+                  <span className="block font-mono text-2xl font-bold tabular-nums text-noble-orange transition group-hover:text-white sm:text-3xl">
+                    {area.projectCount}+
+                  </span>
+                  <span className="mt-1 block text-[0.65rem] font-bold uppercase leading-4 tracking-[0.1em] text-noble-ink/58 transition group-hover:text-white/82">
+                    Completed projects
+                  </span>
+                </span>
               </Link>
             ))}
           </div>
+          <Link
+            href="/service-areas"
+            className="group mx-auto mt-8 flex min-h-12 w-fit items-center gap-4 text-sm font-bold uppercase text-noble-ink transition hover:text-noble-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-noble-orange sm:mt-10"
+          >
+            View all service areas
+            <ArrowMark className="transition duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
       </section>
 

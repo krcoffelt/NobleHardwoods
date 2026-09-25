@@ -4,7 +4,7 @@ import { ArrowMark } from "@/components/ArrowMark";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ButtonLink } from "@/components/ButtonLink";
 import { JsonLd } from "@/components/JsonLd";
-import { getAbsoluteUrl, getAreaSchema } from "@/data/launch";
+import { getAbsoluteUrl } from "@/data/launch";
 import { business, socialShareImage } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     "Call Zera Services LLC for painting, drywall, and general contracting services across the Kansas City metro.",
   alternates: {
     canonical: "/zera-services"
+  },
+  robots: {
+    index: false,
+    follow: true
   },
   openGraph: {
     title: "Zera Services LLC | Kansas City Contracting Services",
@@ -51,11 +55,10 @@ const zeraServices = [
 export default function ZeraServicesPage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    name: "Zera Services LLC",
+    "@type": "WebPage",
+    name: "Zera Services LLC contracting services",
     url: getAbsoluteUrl("/zera-services"),
-    telephone: business.zeraPhone,
-    areaServed: getAreaSchema(),
+    isPartOf: business.siteUrl,
     description:
       "Kansas City painting, drywall, and general contracting services from Zera Services LLC."
   };

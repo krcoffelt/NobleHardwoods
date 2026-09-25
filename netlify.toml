@@ -11,9 +11,113 @@
   port = 8888
   framework = "#auto"
 
+# Canonical host in one hop for both HTTP host variants.
+[[redirects]]
+  from = "http://noblehardwoods.co/*"
+  to = "https://www.noblehardwoods.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.noblehardwoods.co/*"
+  to = "https://www.noblehardwoods.co/:splat"
+  status = 301
+  force = true
+
+# Preserve authority and remove 404s for the legacy Webflow service URLs.
+[[redirects]]
+  from = "/service/installation"
+  to = "/hardwood-floor-installation-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/refinishing"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/refinish"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/repair"
+  to = "/hardwood-floor-repair-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/dustless-sanding"
+  to = "/dustless-hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/custom-floors"
+  to = "/custom-hardwood-floors-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/stairs-railings"
+  to = "/hardwood-stairs-railings-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/refinish-recoat-and-repair"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/refinish-recoat-repair"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/refinish-and-repair"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/stairs-and-railings"
+  to = "/hardwood-stairs-railings-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/custom-floor-patterns"
+  to = "/custom-hardwood-floors-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/service/custom-flooring"
+  to = "/custom-hardwood-floors-kansas-city"
+  status = 301
+
 [[redirects]]
   from = "/services/installation"
   to = "/hardwood-floor-installation-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/refinishing"
+  to = "/hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/repair"
+  to = "/hardwood-floor-repair-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/dustless-sanding"
+  to = "/dustless-hardwood-floor-refinishing-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/custom-floors"
+  to = "/custom-hardwood-floors-kansas-city"
+  status = 301
+
+[[redirects]]
+  from = "/services/stairs-railings"
+  to = "/hardwood-stairs-railings-kansas-city"
   status = 301
 
 [[redirects]]

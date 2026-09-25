@@ -5,6 +5,24 @@ export const business = {
   email: "info@noblehardwoods.co",
   emailHref: "mailto:info@noblehardwoods.co",
   instagram: "https://www.instagram.com/noblehardwoodskcmo/",
+  googleBusinessProfile: "https://g.page/r/CVDjg6Cs_lh_EAE",
+  bbbProfile:
+    "https://www.bbb.org/us/mo/kansas-city/profile/hardwood-floor-contractors/noble-hardwoods-llc-0714-1000025951",
+  socialProfiles: [
+    "https://g.page/r/CVDjg6Cs_lh_EAE",
+    "https://www.instagram.com/noblehardwoodskcmo/",
+    "https://www.bbb.org/us/mo/kansas-city/profile/hardwood-floor-contractors/noble-hardwoods-llc-0714-1000025951"
+  ],
+  openingHours: {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "07:00",
+    closes: "17:00",
+    display: "Monday-Friday, 7 AM-5 PM"
+  },
+  geo: {
+    latitude: 39.058078,
+    longitude: -94.562411
+  },
   zeraServicesHref: "/zera-services",
   zeraPhone: "(816) 882-0101",
   zeraPhoneHref: "tel:+18168820101",
@@ -176,9 +194,17 @@ export const featuredProjects = [
     category: "Construction",
     date: "Jul 2022",
     image: "/images/projects/living-room-hardwood-floors.jpg",
-    alt: "Finished hardwood floors in a bright living room",
+    alt: "Finished hardwood floors in a bright Overland Park living room",
     summary:
       "Whole-home hardwood installation and refinishing for a warm, consistent floor plan.",
+    challenge:
+      "The project combined new hardwood installation with existing floors that also needed refinishing. The visible challenge was continuity: connected living areas and their transitions needed to read as one considered floor plan rather than separate phases of work.",
+    approach:
+      "Noble installed hardwood in the selected living areas, prepared the existing material for refinishing, and coordinated stain and finish decisions across the points where new and existing flooring met. Treating the connected surfaces as one visual system kept layout, color, and sheen decisions aligned.",
+    result:
+      "The finished Overland Park home has a warmer, more consistent hardwood direction across the main living spaces, with the new installation and renewed existing floor supporting the same overall look.",
+    planningNote:
+      "This kind of mixed installation-and-refinishing project works best when the new boards, existing flooring, transitions, stain direction, and final sheen are considered together. Addressing those decisions as one scope gives the installer a clearer path through connected rooms and gives the homeowner one visual standard for evaluating the completed floor.",
     scope: [
       "Installed hardwood in key living areas",
       "Refinished existing hardwood for a more consistent look",
@@ -197,9 +223,17 @@ export const featuredProjects = [
     category: "Remodeling",
     date: "Jul 2022",
     image: "/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp",
-    alt: "Natural hardwood floors in a bright kitchen",
+    alt: "Natural hardwood floors installed in a bright Lawrence kitchen",
     summary:
       "Whole-home installation of unfinished hardwood floors, stairs, and railings.",
+    challenge:
+      "A whole-home unfinished hardwood installation needed to connect the main floors with the stair and railing package. The project required those horizontal and vertical elements to feel related instead of reading as isolated selections.",
+    approach:
+      "Noble installed unfinished hardwood, then completed the on-site finishing process for a natural direction. Stair and railing details were coordinated with the floor plan so landings, level changes, and the surrounding woodwork belonged to the same project language.",
+    result:
+      "The Lawrence project carries a consistent natural hardwood character through the home and into the stair system, giving the new installation a deliberate, finished relationship from one level to the next.",
+    planningNote:
+      "Unfinished flooring creates room to coordinate the floor and stair package during the same on-site finishing process. For this Lawrence installation, that made the relationship between main floors, landings, treads, and railings an important part of the plan rather than a collection of separate finish decisions made at different stages.",
     scope: [
       "Installed unfinished hardwood flooring",
       "Finished new floors on site for a natural tone",
@@ -218,9 +252,17 @@ export const featuredProjects = [
     category: "Construction",
     date: "Oct 2023",
     image: "/images/projects/hardwood-stairs.jpg",
-    alt: "Hardwood stairs with black railings",
+    alt: "Hardwood stage steps with black railings in Lenexa, Kansas",
     summary:
       "Commercial hardwood stage installation with full-length stair treads and risers.",
+    challenge:
+      "The commercial stage needed a durable hardwood surface and full-length steps that could function as a clear, finished architectural element. The stair faces, nosing, and broad horizontal runs all needed consistent alignment.",
+    approach:
+      "Noble installed the hardwood stage surface, built the full-length stair treads and risers, and finished the connected components as one assembly. The work emphasized straight layout, clean edges, and a finish plan suited to repeated use.",
+    result:
+      "The completed Lenexa stage and steps create a cohesive hardwood feature with a strong visual line across the full width of the installation and a practical transition between levels.",
+    planningNote:
+      "A full-width stage and stair assembly depends on disciplined layout because small inconsistencies become more visible across long horizontal runs. Planning the stage surface, tread depth, riser faces, nosing, edges, and finish as a single architectural feature helped keep the completed Lenexa installation visually ordered and ready for repeated use. It also kept the transition between the stage and surrounding floor easy to understand from the audience area.",
     scope: [
       "Installed hardwood stage surface",
       "Built full-length stair treads and risers",
@@ -239,9 +281,17 @@ export const featuredProjects = [
     category: "Remodeling",
     date: "Oct 2023",
     image: "/images/noble-hardwoods-hero.jpg",
-    alt: "Premium hardwood floors in a warm living room",
+    alt: "Repaired and refinished hardwood floors in a Briarcliff living room",
     summary:
       "Hardwood floor installation, repair, and refinishing with new planks laced into existing flooring.",
+    challenge:
+      "The Briarcliff floor required more than one service. New material had to meet existing hardwood, damaged or incomplete areas needed repair, and the broader surface needed refinishing so the work would not end in an obvious patch.",
+    approach:
+      "Noble installed hardwood where material was needed, laced new boards into the existing field, and then repaired and refinished the connected flooring. Staggering the new work into the old floor helped distribute the transition before the final surface was finished.",
+    result:
+      "The completed floor reads as a more unified hardwood surface, with installation, repair, and refinishing working together instead of leaving three visibly separate scopes of work.",
+    planningNote:
+      "Lacing boards into an existing field is useful when a simple surface repair would leave a hard, obvious boundary. On this Briarcliff project, coordinating installation, repair, and full-surface refinishing allowed the transition to be distributed through the floor pattern before color and sheen were addressed across the connected area.",
     scope: [
       "Installed new hardwood where needed",
       "Laced new boards into existing hardwood",

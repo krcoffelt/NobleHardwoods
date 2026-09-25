@@ -1,3 +1,6 @@
+import { expandedLegacyPosts } from "./expandedLegacyPosts";
+import { seoOpportunityPosts } from "./seoOpportunityPosts";
+
 export type BlogLink = {
   label: string;
   href: string;
@@ -56,6 +59,8 @@ const nobleAuthor = {
 };
 
 export const blogPosts: BlogPost[] = [
+  ...seoOpportunityPosts,
+  ...expandedLegacyPosts,
   {
     title: "How Long Does Hardwood Floor Refinishing Take? A Kansas City Fall Planning Guide",
     seoTitle: "How Long Does Hardwood Floor Refinishing Take? | KC",
@@ -1540,4 +1545,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   }
-];
+].filter(
+  (post, index, posts) => posts.findIndex((candidate) => candidate.slug === post.slug) === index
+);

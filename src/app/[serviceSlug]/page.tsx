@@ -118,6 +118,50 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
+      {page.detailSections?.length ? (
+        <section className="border-y border-noble-ink/10 bg-[#f3eadc] py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
+                Refinishing Guide
+              </p>
+              <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] text-noble-ink sm:text-5xl">
+                Plan the floor, finish, and household schedule together.
+              </h2>
+            </div>
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              {page.detailSections.map((section, index) => (
+                <article key={section.heading} className="bg-white p-6 sm:p-8">
+                  <p className="text-xs font-black tabular-nums text-noble-orange">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-4 text-2xl font-black uppercase leading-tight text-noble-ink">
+                    {section.heading}
+                  </h3>
+                  <div className="mt-5 space-y-4">
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph} className="text-sm leading-7 text-noble-ink/70">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  {section.bullets?.length ? (
+                    <ul className="mt-6 grid gap-3 border-t border-noble-ink/10 pt-5">
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet} className="grid grid-cols-[0.6rem_1fr] gap-3 text-sm leading-6 text-noble-ink/68">
+                          <span className="mt-2 size-1.5 bg-noble-orange" aria-hidden="true" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="bg-noble-mist py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>

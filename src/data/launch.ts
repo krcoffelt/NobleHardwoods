@@ -28,6 +28,11 @@ export type ServicePage = {
   imageAlt: string;
   includes: string[];
   problems: string[];
+  detailSections?: {
+    heading: string;
+    paragraphs: string[];
+    bullets?: string[];
+  }[];
   process: string[];
   faqs: FAQ[];
   relatedServices: string[];
@@ -63,6 +68,38 @@ export const servicePages: ServicePage[] = [
       "Pet wear, water marks, and discoloration",
       "Old finishes that no longer protect the wood",
       "Floors that need a new color or more consistent sheen"
+    ],
+    detailSections: [
+      {
+        heading: "What a full hardwood floor refinish changes",
+        paragraphs: [
+          "A full refinish removes the existing coating and, when present, stain so the condition of the wood can be addressed directly. The field, edges, corners, closets, thresholds, and other detailed areas require a planned sanding sequence rather than one quick pass. The goal is a consistent surface ready for repair, optional color, and a new protective finish system.",
+          "Refinishing can reduce broad surface scratches, worn traffic lanes, uneven sheen, and many signs of everyday use. It can also create the opportunity to repair damaged boards or change the floor's color. It cannot solve an active leak, structural movement, or every deep stain without additional repair. Noble evaluates those conditions before promising a cosmetic result.",
+          "Kansas City homes often contain connected rooms built or remodeled at different times. When the hardwood flows without natural breaks, sanding and finishing the connected field together can create a more consistent result than stopping in the middle of a sightline. Doorways, cabinets, stairs, vents, appliances, base details, and rooms that must remain accessible all belong in the scope conversation."
+        ]
+      },
+      {
+        heading: "Screen and recoat or sand to bare wood?",
+        paragraphs: [
+          "A professional maintenance coat is intended for a sound, compatible finish that has become lightly scratched or dull but has not worn through. The existing surface is thoroughly cleaned and prepared so a fresh coat can bond. It is the less invasive option when the floor qualifies, but it does not remove deep scratches, change stain color, or correct damage below the coating.",
+          "Full refinishing is appropriate when finish is missing, wear is widespread, a color change is requested, repairs need to be blended, or the existing coating cannot support a maintenance coat. Previous wax, oil, polish, silicone, or unknown cleaning products can also change the preparation plan because coating adhesion depends on a clean, compatible surface.",
+          "The useful decision is based on floor condition, not the lower initial price. Choosing a recoat for a floor that needs sanding can leave the underlying problems visible. Sanding a floor that only needs maintenance removes more material and creates more disruption than necessary."
+        ],
+        bullets: [
+          "Recoat: intact compatible finish with light wear",
+          "Refinish: exposed wood, broad wear, deep scratches, or color change",
+          "Repair first: damaged boards, moisture, movement, or missing material",
+          "Test compatibility when maintenance products or floor history are unknown"
+        ]
+      },
+      {
+        heading: "Stain, finish, and return-to-use planning",
+        paragraphs: [
+          "Stain should be sampled on the actual floor whenever possible. Red oak, white oak, old boards, new repairs, previous sanding, and natural variation can all change the color. Review samples in daylight and evening light beside cabinets, trim, stone, and other fixed materials. A stain name or printed chip is only a starting direction.",
+          "The finish system affects application, sheen, drying, cure, maintenance, and the schedule for people, pets, furniture, rugs, and cleaning. There is no safe universal promise for every product. Noble provides project-specific care and return-to-use guidance so the final days are planned around the system actually installed.",
+          "Work backward from the date the rooms must be fully usable. Include furniture removal, active workdays, repair discovery, sample approval, dry time between applications, protected cure time, and the later return of rugs or heavy pieces. A floor can be dry enough for careful access before it is cured for normal household use."
+        ]
+      }
     ],
     process: sharedProcess,
     faqs: [
@@ -202,7 +239,7 @@ export const servicePages: ServicePage[] = [
     slug: "dustless-hardwood-floor-refinishing-kansas-city",
     href: "/dustless-hardwood-floor-refinishing-kansas-city",
     title: "Dustless Sanding Available",
-    seoTitle: "Dustless Floor Sanding Available in Kansas City",
+    seoTitle: "Dustless Hardwood Sanding Kansas City",
     metaDescription:
       "Dustless sanding is available for hardwood floor refinishing projects across Kansas City and surrounding areas.",
     eyebrow: "Dustless Sanding Available",
@@ -363,7 +400,6 @@ export const sitemapRoutes = [
   "/projects",
   "/blog",
   "/stain-gallery",
-  "/zera-services",
   "/service-areas",
   "/about",
   "/privacy",
@@ -424,4 +460,34 @@ export function getAreaSchema() {
     })),
     ...plannedAreas
   ];
+}
+
+export function getBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "@id": business.schemaId,
+    name: business.name,
+    url: business.siteUrl,
+    telephone: business.phone,
+    email: business.email,
+    areaServed: getAreaSchema(),
+    image: getAbsoluteUrl("/images/project-flooring/apartment-kitchen-hardwood-floor-2.webp"),
+    logo: getAbsoluteUrl(business.logo),
+    sameAs: business.socialProfiles,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: business.openingHours.days,
+      opens: business.openingHours.opens,
+      closes: business.openingHours.closes
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: business.geo.latitude,
+      longitude: business.geo.longitude
+    },
+    priceRange: "$$",
+    description:
+      "Kansas City hardwood flooring company offering refinishing, installation, repair, stairs, railings, and custom hardwood floors, with dustless sanding available."
+  };
 }

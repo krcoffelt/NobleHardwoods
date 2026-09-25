@@ -48,7 +48,10 @@ export function Footer() {
             Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors for
             homes across Kansas City and surrounding areas.
           </p>
-          <p className="mt-4 text-sm font-semibold text-white/55 sm:mt-6">Serving the {business.area}</p>
+          <p className="mt-4 text-sm font-semibold text-white/55 sm:mt-6">
+            Service-area business serving the {business.area}
+          </p>
+          <p className="mt-2 text-sm text-white/55">{business.openingHours.display}</p>
         </div>
 
         <div className="grid divide-y divide-white/10 border-y border-white/10 sm:hidden">
@@ -82,6 +85,12 @@ export function Footer() {
             <Link href="/privacy">Privacy Policy</Link>
             <Link href={business.instagram} target="_blank" rel="noreferrer">
               Instagram
+            </Link>
+            <Link href={business.googleBusinessProfile} target="_blank" rel="noreferrer">
+              Google Business Profile
+            </Link>
+            <Link href={business.bbbProfile} target="_blank" rel="noreferrer">
+              BBB Profile
             </Link>
           </FooterDetails>
         </div>
@@ -117,6 +126,12 @@ export function Footer() {
             <Link href="/privacy">Privacy Policy</Link>
             <Link href={business.instagram} target="_blank" rel="noreferrer">
               Instagram
+            </Link>
+            <Link href={business.googleBusinessProfile} target="_blank" rel="noreferrer">
+              Google Business Profile
+            </Link>
+            <Link href={business.bbbProfile} target="_blank" rel="noreferrer">
+              BBB Profile
             </Link>
           </FooterGroup>
         </div>
