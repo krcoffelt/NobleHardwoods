@@ -9,7 +9,7 @@ type TrackingWindow = Window & {
   clarity?: (...args: unknown[]) => void;
 };
 
-const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-SMJ9LNP4RZ";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 
