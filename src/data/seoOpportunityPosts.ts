@@ -242,6 +242,9 @@ export const seoOpportunityPosts: BlogPost[] = [
           "Make stain samples on representative boards",
           "Review cost and availability for the required dimensions",
           "Confirm the finish and maintenance plan"
+        ],
+        links: [
+          { label: "Compare solid and engineered hardwood construction", href: "/blog/solid-vs-engineered-hardwood-kansas-city" }
         ]
       }
     ],

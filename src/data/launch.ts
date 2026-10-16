@@ -181,6 +181,13 @@ export const servicePages: ServicePage[] = [
           "Yes. White oak is a popular option for Kansas City homeowners who want a durable floor with a warm, timeless look."
       }
     ],
+    guideLinks: [
+      {
+        label: "Solid vs. engineered hardwood for Kansas City homes",
+        href: "/blog/solid-vs-engineered-hardwood-kansas-city",
+        description: "Compare room conditions, subfloors, seasonal humidity, and future refinishing before choosing your flooring."
+      }
+    ],
     relatedServices: [
       "/custom-hardwood-floors-kansas-city",
       "/hardwood-floor-refinishing-kansas-city",

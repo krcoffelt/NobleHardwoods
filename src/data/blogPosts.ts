@@ -1,5 +1,6 @@
 import { expandedLegacyPosts } from "./expandedLegacyPosts";
 import { seoOpportunityPosts } from "./seoOpportunityPosts";
+import { solidEngineeredPost } from "./solidEngineeredPost";
 
 export type BlogLink = {
   label: string;
@@ -59,6 +60,7 @@ const nobleAuthor = {
 };
 
 export const blogPosts: BlogPost[] = [
+  solidEngineeredPost,
   ...seoOpportunityPosts,
   ...expandedLegacyPosts,
   {
@@ -659,7 +661,8 @@ export const blogPosts: BlogPost[] = [
           {
             label: "See hardwood flooring services in Olathe",
             href: "/service-areas/hardwood-flooring-olathe-ks"
-          }
+          },
+          { label: "Compare solid and engineered hardwood for your home", href: "/blog/solid-vs-engineered-hardwood-kansas-city" }
         ]
       },
       {
