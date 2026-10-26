@@ -1,0 +1,422 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 151
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 160
+  },
+  {
+    "path": "/services",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 165
+  },
+  {
+    "path": "/projects",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 151
+  },
+  {
+    "path": "/blog",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 142
+  },
+  {
+    "path": "/stain-gallery",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 127
+  },
+  {
+    "path": "/service-areas",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 143
+  },
+  {
+    "path": "/about",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 146
+  },
+  {
+    "path": "/privacy",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 135
+  },
+  {
+    "path": "/projects/floor-installation-and-refinishing-in-overland-park-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 83
+  },
+  {
+    "path": "/projects/floor-installation-and-finish-in-lawrence-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 76
+  },
+  {
+    "path": "/projects/stage-steps-installation-in-lenexa-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 80
+  },
+  {
+    "path": "/projects/installation-repair-and-refinish-in-briarcliff-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 98
+  },
+  {
+    "path": "/blog/solid-vs-engineered-hardwood-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 154
+  },
+  {
+    "path": "/blog/hardwood-stair-refinishing-carpet-to-wood-stairs",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 154
+  },
+  {
+    "path": "/blog/white-oak-vs-red-oak-hardwood-floors",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 160
+  },
+  {
+    "path": "/blog/refinish-hardwood-floors-before-selling",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 155
+  },
+  {
+    "path": "/blog/how-to-care-for-your-hardwood-floors",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 158
+  },
+  {
+    "path": "/blog/do-hardwood-floors-provide-the-best-return-on-investment",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 153
+  },
+  {
+    "path": "/blog/wood-flooring-trends-21-trendy-flooring-ideas",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 155
+  },
+  {
+    "path": "/blog/how-to-polishing-your-hardwood-floors",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 154
+  },
+  {
+    "path": "/blog/how-long-does-hardwood-floor-refinishing-take",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 153
+  },
+  {
+    "path": "/blog/hardwood-floor-refinishing-cost-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 154
+  },
+  {
+    "path": "/blog/hardwood-floor-installation-cost-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 154
+  },
+  {
+    "path": "/blog/repair-water-pet-damaged-hardwood-floors-kc",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 151
+  },
+  {
+    "path": "/blog/best-hardwood-floor-stain-colors-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 154
+  },
+  {
+    "path": "/blog/screen-recoat-vs-refinish-hardwood-floors",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 151
+  },
+  {
+    "path": "/hardwood-floor-refinishing-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 160
+  },
+  {
+    "path": "/hardwood-floor-installation-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 157
+  },
+  {
+    "path": "/hardwood-floor-repair-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 156
+  },
+  {
+    "path": "/dustless-hardwood-floor-refinishing-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 111
+  },
+  {
+    "path": "/hardwood-stairs-railings-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 145
+  },
+  {
+    "path": "/custom-hardwood-floors-kansas-city",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 143
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-kansas-city-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 137
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-overland-park-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 151
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-lees-summit-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 135
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-prairie-village-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 136
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-leawood-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 125
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-shawnee-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 128
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-olathe-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 121
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-roeland-park-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 113
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-weatherby-lake-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 115
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-mission-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 107
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-grandview-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 109
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-westwood-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 108
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-lenexa-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 148
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-gladstone-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 109
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-north-kansas-city-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 117
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-raytown-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 107
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-fairway-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 107
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-independence-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 112
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-lawrence-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 108
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-basehor-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 107
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-liberty-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 107
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-parkville-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 109
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-riverside-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 109
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-belton-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 106
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-kansas-city-ks",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 111
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-kearney-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 107
+  },
+  {
+    "path": "/service-areas/hardwood-flooring-peculiar-mo",
+    "status": 200,
+    "h1": 1,
+    "canonical": true,
+    "metaLength": 108
+  }
+]

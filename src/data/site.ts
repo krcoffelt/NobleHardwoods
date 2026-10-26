@@ -106,19 +106,19 @@ export const reviews = [
   {
     name: "Adam Chiarelli",
     quote:
-      "This crew was incredible. The Noble team was professional, kind, and gave us excellent quality. They made our dream a reality.",
+      "This crew was incredible. Josiah was professional, kind, and he and his team gave us excellent quality. They made our dream a reality.",
     detail: "Original red oak refinishing with a natural finish"
   },
   {
     name: "Eric Murray",
     quote:
-      "They installed new floors for us and refinished old ones. The work was done in a timely manner and they are great craftsmen.",
+      "They installed new floors for us and refinished old ones and the work was done in a timely manner and they are great craftsman.",
     detail: "Installation and refinishing in the same home"
   },
   {
     name: "Jordan Vaughan",
     quote:
-      "Quality, value, and prompt communication. Noble communicated timelines and goals, then delivered flawless execution.",
+      "If you are looking for quality, value, and prompt communication, go no further on your search. Noble was prepared to explain, work with, and communicate timelines and goals for our main floor project. They had flawless execution that made my floors the envy and praise of friends and family.",
     detail: "Main floor hardwood project"
   }
 ];

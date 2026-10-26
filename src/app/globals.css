@@ -116,7 +116,7 @@ h2 {
 .carpenter-eyebrow {
   display: inline-flex;
   align-items: center;
-  color: #ef5f3d;
+  color: #bd4023;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -231,7 +231,6 @@ h2 {
 
 @keyframes hero-copy-in {
   from {
-    opacity: 0;
     transform: translate3d(0, 2.5rem, 0);
   }
 

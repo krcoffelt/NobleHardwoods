@@ -357,7 +357,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         label: "Bona — Traffic HD technical data sheet",
-        href: "https://www.bona.com/globalassets/catalogassets/bona-traffic-hd-tds.pdf",
+        href: "https://www.bona.com/globalassets/catalogassets/tds-bona-traffic-hd-us-enus_20260527131533.pdf",
         external: true
       }
     ]
@@ -561,7 +561,7 @@ export const blogPosts: BlogPost[] = [
     review: {
       name: "Adam Chiarelli",
       quote:
-        "This crew was incredible. The Noble team was professional, kind, and gave us excellent quality. They made our dream a reality.",
+        "This crew was incredible. Josiah was professional, kind, and he and his team gave us excellent quality. They made our dream a reality.",
       detail: "Original red oak refinishing with a natural finish"
     },
     sources: [
@@ -775,8 +775,8 @@ export const blogPosts: BlogPost[] = [
         external: true
       },
       {
-        label: "National Wood Flooring Association — Selecting wood floors",
-        href: "https://woodfloors.org/selecting-your-floors/",
+        label: "National Wood Flooring Association — Types of wood floors",
+        href: "https://woodfloors.org/types-of-wood-floors/",
         external: true
       }
     ]
@@ -1189,8 +1189,8 @@ export const blogPosts: BlogPost[] = [
         external: true
       },
       {
-        label: "National Wood Flooring Association — Selecting wood floors",
-        href: "https://woodfloors.org/selecting-your-floors/",
+        label: "National Wood Flooring Association — Types of wood floors",
+        href: "https://woodfloors.org/types-of-wood-floors/",
         external: true
       }
     ]

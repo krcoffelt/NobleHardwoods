@@ -25,7 +25,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
     <>
       <JsonLd data={schema} />
       <nav aria-label="Breadcrumb" className="bg-noble-mist">
-        <ol className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-noble-ink/56 sm:px-6 lg:px-8">
+        <ol className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-noble-ink/72 sm:px-6 lg:px-8">
           {crumbs.map((crumb, index) => (
             <li key={crumb.href} className="flex items-center gap-2">
               {index < crumbs.length - 1 ? (

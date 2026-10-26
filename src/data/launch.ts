@@ -48,7 +48,7 @@ export const servicePages: ServicePage[] = [
     title: "Hardwood Floor Refinishing",
     seoTitle: "Hardwood Floor Refinishing Kansas City",
     metaDescription:
-      "Bring worn hardwood floors back to life with professional hardwood floor refinishing in Kansas City. Noble Hardwoods offers sanding, staining, recoating, repairs, and durable finishes.",
+      "Restore worn hardwood floors with Noble Hardwoods in Kansas City. Explore sanding, staining, repairs, and finish options, then request a free refinishing quote.",
     eyebrow: "Sanding & Refinishing",
     h1: "Hardwood Floor Refinishing in Kansas City",
     intro:
@@ -137,7 +137,7 @@ export const servicePages: ServicePage[] = [
     title: "Hardwood Floor Installation",
     seoTitle: "Hardwood Floor Installation Kansas City",
     metaDescription:
-      "Noble Hardwoods installs unfinished, prefinished, solid, engineered, and custom hardwood floors throughout Kansas City, Overland Park, Leawood, Lenexa, and nearby areas.",
+      "Noble Hardwoods installs solid, engineered, unfinished, and prefinished hardwood floors in Kansas City and nearby communities. Get a free installation quote.",
     eyebrow: "Installation",
     h1: "Hardwood Floor Installation in Kansas City",
     intro:
@@ -200,7 +200,7 @@ export const servicePages: ServicePage[] = [
     title: "Hardwood Floor Repair",
     seoTitle: "Hardwood Floor Repair Kansas City",
     metaDescription:
-      "Need hardwood floor repair in Kansas City? Noble Hardwoods repairs damaged boards, pet stains, water damage, loose planks, and lace-in hardwood to match existing floors.",
+      "Need hardwood floor repair in Kansas City? Noble Hardwoods repairs damaged boards, water damage, pet stains, and loose planks. Request a free project quote.",
     eyebrow: "Repairs",
     h1: "Hardwood Floor Repair in Kansas City",
     intro:

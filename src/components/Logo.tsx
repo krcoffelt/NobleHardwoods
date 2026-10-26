@@ -19,7 +19,7 @@ export function Logo() {
         />
         <Image
           src="/images/brand/noble-wordmark.png"
-          alt=""
+          alt="Noble Hardwoods"
           width={190}
           height={84}
           priority

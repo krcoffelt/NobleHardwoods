@@ -62,7 +62,7 @@ export default function ServiceAreasPage() {
             </h2>
             <p className="mt-5 text-base leading-8 text-noble-ink/68">
               Explore local hardwood flooring experience, services, answers, and project proof
-              for communities across the Kansas City region.
+              for communities across the Kansas City region. Start with <Link href="/service-areas/hardwood-flooring-leawood-ks" className="font-bold text-noble-ink underline hover:text-noble-orange">hardwood floor refinishing in Leawood</Link> for local service and project information.
             </p>
           </div>
           <div className="grid gap-px bg-noble-ink/12 sm:grid-cols-2">

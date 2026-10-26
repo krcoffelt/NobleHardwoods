@@ -22,7 +22,7 @@ import { durasealStains, getDurasealStainImage } from "@/data/stains";
 export const metadata: Metadata = {
   title: { absolute: "Kansas City Hardwood Refinishing & Installation | Noble" },
   description:
-    "Noble Hardwoods installs, refinishes, repairs, and restores hardwood floors throughout Kansas City, Overland Park, Leawood, Lenexa, Prairie Village, and nearby areas.",
+    "Noble Hardwoods refinishes, installs, and repairs hardwood floors in Kansas City, Overland Park, Leawood, and nearby communities. Request a free quote.",
   alternates: {
     canonical: "/"
   },
@@ -311,12 +311,12 @@ export default function Home() {
             <p className="mt-5 max-w-xl text-base leading-8 text-noble-ink/68 sm:mt-7 sm:text-lg sm:leading-9">
               Detail matters because the floor becomes part of daily life. Noble Hardwoods keeps the work careful, clear, and grounded in the home.
             </p>
-            <div className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:flex sm:gap-4">
+            <div className="mt-7 grid gap-3 sm:mt-10 sm:flex sm:gap-4">
               <ButtonLink href="#quote" className="px-4 sm:px-10">
                 Get a quote
               </ButtonLink>
               <ButtonLink href="/about" variant="secondary" className="px-4 sm:px-10">
-                Learn more
+                About Noble Hardwoods
               </ButtonLink>
             </div>
           </div>
@@ -333,7 +333,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-base leading-8 text-noble-ink/68 sm:text-lg sm:leading-9 lg:justify-self-end">
-              Installation, refinishing, repairs, stairs, and custom hardwood work handled with careful communication and jobsite respect.
+              Installation, refinishing, repairs, and custom hardwood work handled with careful communication and jobsite respect. Explore <Link href="/hardwood-stairs-railings-kansas-city" className="font-bold text-noble-ink underline hover:text-noble-orange">hardwood stairs and railings in Kansas City</Link> for treads, risers, and railing updates.
             </p>
           </div>
 

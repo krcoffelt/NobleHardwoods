@@ -24,8 +24,8 @@ const config: Config = {
           700: "#57331f"
         },
         noble: {
-          orange: "#ef5f3d",
-          "orange-dark": "#d84b2d",
+          orange: "#bd4023",
+          "orange-dark": "#a3331b",
           ink: "#1b1917",
           mist: "#f7f4ef"
         },
