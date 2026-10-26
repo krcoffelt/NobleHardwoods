@@ -660,7 +660,7 @@ export default function Home() {
                   <span className="block font-mono text-2xl font-bold tabular-nums text-noble-orange transition group-hover:text-white sm:text-3xl">
                     {area.projectCount}+
                   </span>
-                  <span className="mt-1 block text-[0.65rem] font-bold uppercase leading-4 tracking-[0.1em] text-noble-ink/58 transition group-hover:text-white/82">
+                  <span className="mt-1 block text-[0.65rem] font-bold uppercase leading-4 tracking-[0.1em] text-noble-ink/68 transition group-hover:text-white/82">
                     Completed projects
                   </span>
                 </span>

@@ -38,7 +38,7 @@ export function NearbyServiceAreas({ areas }: NearbyServiceAreasProps) {
               <p className="font-bold text-noble-ink transition group-hover:text-noble-orange">
                 {area.city}, {area.state}
               </p>
-              <p className="mt-2 text-xs font-bold uppercase tracking-[0.1em] text-noble-ink/55">
+              <p className="mt-2 text-xs font-bold uppercase tracking-[0.1em] text-noble-ink/68">
                 {area.projectCount}+ completed projects
               </p>
             </Link>

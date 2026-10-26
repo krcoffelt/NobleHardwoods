@@ -27,7 +27,7 @@ const fieldClass =
   "min-h-12 w-full rounded-md border border-noble-ink/15 bg-white px-3.5 text-[0.95rem] font-medium text-noble-ink shadow-[0_1px_2px_rgba(27,25,23,0.04)] outline-none transition duration-200 placeholder:text-noble-ink/35 hover:border-noble-ink/25 focus:border-noble-orange focus:ring-[3px] focus:ring-noble-orange/12 sm:px-4";
 
 const labelClass = "text-sm font-semibold leading-tight text-noble-ink";
-const helperClass = "text-xs font-normal leading-5 text-noble-ink/55";
+const helperClass = "text-xs font-normal leading-5 text-noble-ink/68";
 const errorClass = "text-xs font-semibold leading-5 text-[#9f2d1c]";
 
 const blockErrorFields: Record<FormBlockId, string[]> = {
@@ -193,7 +193,7 @@ export function QuoteForm() {
         <h2 className="text-[1.75rem] font-bold leading-tight text-noble-ink sm:text-[2rem]">
           Tell us about your floors.
         </h2>
-        <p className="mt-2 max-w-2xl text-sm font-normal leading-6 text-noble-ink/58">
+        <p className="mt-2 max-w-2xl text-sm font-normal leading-6 text-noble-ink/68">
           Share a few details so we can prepare a useful first response.
         </p>
       </div>
@@ -343,7 +343,7 @@ export function QuoteForm() {
         </FormBlock>
 
         <div className="bg-white p-5 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
-          <p className="max-w-md text-xs font-normal leading-5 text-noble-ink/55">
+          <p className="max-w-md text-xs font-normal leading-5 text-noble-ink/68">
             Your details are used only to follow up about this project.
           </p>
           <button

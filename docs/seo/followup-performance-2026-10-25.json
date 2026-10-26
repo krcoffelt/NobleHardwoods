@@ -1,0 +1,418 @@
+{
+  "scope": "Production baseline measured before follow-up; local accessibility/SEO verification only. No production after measurement or field data.",
+  "reports": [
+    {
+      "name": "home",
+      "target": "live",
+      "url": "https://www.noblehardwoods.co/",
+      "fetchTime": "2026-10-26T04:53:20.192Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/home-live.json",
+      "sha256": "b7f80a98e544e6cc086f42078e23a402069b4bc63d6dfc17de4f1759cf877517",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "performance": 80,
+        "accessibility": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 5195.073,
+        "first-contentful-paint": 1134.698,
+        "total-blocking-time": 65.5,
+        "cumulative-layout-shift": 0
+      },
+      "contrastFailures": [
+        {
+          "text": "Share a few details so we can prepare a useful first response.",
+          "selector": "div > form#quote-request-form > div.border-b > p.mt-2",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #7b7a78, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "Your details are used only to follow up about this project.",
+          "selector": "form#quote-request-form > div.divide-y > div.bg-white > p.max-w-md",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.89 (foreground color: #82817f, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "COMPLETED PROJECTS",
+          "selector": "div.mt-9 > a.group > span.mt-6 > span.mt-1",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.26 (foreground color: #7b7976, background color: #fffdf8, font size: 7.8pt (10.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ],
+      "unusedJavaScript": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-SMJ9LNP4RZ",
+          "wastedBytes": 79788
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "target": "local",
+      "url": "http://localhost:3217/",
+      "fetchTime": "2026-10-26T04:57:33.004Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/home-local.json",
+      "sha256": "7ab5a141beb988f1712b4500deb464e7219e7713fc3104ee1d3ec8fa44a83406",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "accessibility": 100,
+        "seo": 100
+      },
+      "metrics": {},
+      "contrastFailures": [],
+      "unusedJavaScript": []
+    },
+    {
+      "name": "contact",
+      "target": "live",
+      "url": "https://www.noblehardwoods.co/contact",
+      "fetchTime": "2026-10-26T04:52:25.802Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/contact-live.json",
+      "sha256": "828147c425657b3845746add43ad7e02376d57b17ffd4fc671f3288c0cc53fca",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "performance": 73,
+        "accessibility": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 5771.099,
+        "first-contentful-paint": 2771.605,
+        "total-blocking-time": 130,
+        "cumulative-layout-shift": 0
+      },
+      "contrastFailures": [
+        {
+          "text": "Share a few details so we can prepare a useful first response.",
+          "selector": "div.hero-enter-media > form#quote-request-form > div.border-b > p.mt-2",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #7b7a78, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "Your details are used only to follow up about this project.",
+          "selector": "form#quote-request-form > div.divide-y > div.bg-white > p.max-w-md",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.89 (foreground color: #82817f, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ],
+      "unusedJavaScript": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-SMJ9LNP4RZ",
+          "wastedBytes": 79887
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "target": "local",
+      "url": "http://localhost:3217/contact",
+      "fetchTime": "2026-10-26T04:57:02.670Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/contact-local.json",
+      "sha256": "9204ab6ae232fde26e51f2472f31d355f1c984da807f95f1d106a92053b978a4",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "accessibility": 100,
+        "seo": 100
+      },
+      "metrics": {},
+      "contrastFailures": [],
+      "unusedJavaScript": []
+    },
+    {
+      "name": "overland-park",
+      "target": "live",
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-overland-park-ks",
+      "fetchTime": "2026-10-26T04:52:46.681Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/overland-park-live.json",
+      "sha256": "5354ab1df088475fd23d9d3505335e74e7bee2cb18e1393a7d6d6b61577e5787",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "performance": 77,
+        "accessibility": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 4905.510500000002,
+        "first-contentful-paint": 2893.2969999999996,
+        "total-blocking-time": 37,
+        "cumulative-layout-shift": 0
+      },
+      "contrastFailures": [
+        {
+          "text": "DOCUMENTED PROJECT",
+          "selector": "div.mt-10 > article.grid > div.flex > p.text-xs",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #bd4023, background color: #1b1917, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "01",
+          "selector": "div.mt-10 > article.grid > div.flex > p.mt-10",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #444241, background color: #1b1917, font size: 36.0pt (48px), font weight: bold). Expected contrast ratio of 3:1"
+        },
+        {
+          "text": "17+ COMPLETED PROJECTS",
+          "selector": "div.mx-auto > div.mt-8 > a.group > p.mt-2",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.89 (foreground color: #82817f, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "18+ COMPLETED PROJECTS",
+          "selector": "div.mx-auto > div.mt-8 > a.group > p.mt-2",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.89 (foreground color: #82817f, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "6+ COMPLETED PROJECTS",
+          "selector": "div.mx-auto > div.mt-8 > a.group > p.mt-2",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.89 (foreground color: #82817f, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "12+ COMPLETED PROJECTS",
+          "selector": "div.mx-auto > div.mt-8 > a.group > p.mt-2",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.89 (foreground color: #82817f, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ],
+      "unusedJavaScript": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-SMJ9LNP4RZ",
+          "wastedBytes": 79756
+        }
+      ]
+    },
+    {
+      "name": "overland-park",
+      "target": "local",
+      "url": "http://localhost:3217/service-areas/hardwood-flooring-overland-park-ks",
+      "fetchTime": "2026-10-26T04:57:27.541Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/overland-park-local.json",
+      "sha256": "79ec210d7156cc4de82ab7831ab6f2820a12993911390f9e28e6fa9a73fec1be",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "accessibility": 100,
+        "seo": 100
+      },
+      "metrics": {},
+      "contrastFailures": [],
+      "unusedJavaScript": []
+    },
+    {
+      "name": "refinishing",
+      "target": "live",
+      "url": "https://www.noblehardwoods.co/hardwood-floor-refinishing-kansas-city",
+      "fetchTime": "2026-10-26T04:56:01.084Z",
+      "lighthouseVersion": "12.8.2",
+      "rawReport": "output/lighthouse/refinishing-live.json",
+      "sha256": "47e8d5073f1cf59c68f3dc926ad9a23f28da1a678f620d4ab42ef0eb23ddfede",
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        }
+      },
+      "scores": {
+        "performance": 72,
+        "accessibility": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "largest-contentful-paint": 5756.481000000002,
+        "first-contentful-paint": 3070.8,
+        "total-blocking-time": 86,
+        "cumulative-layout-shift": 0
+      },
+      "contrastFailures": [
+        {
+          "text": "REFINISHING GUIDE",
+          "selector": "section.border-y > div.mx-auto > div.max-w-3xl > p.text-xs",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #bd4023, background color: #f3eadc, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "text": "PLANNING RESOURCES",
+          "selector": "section.border-y > div.mx-auto > div > p.carpenter-eyebrow",
+          "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #bd4023, background color: #f3eadc, font size: 8.6pt (11.52px), font weight: bold). Expected contrast ratio of 4.5:1"
+        }
+      ],
+      "unusedJavaScript": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-SMJ9LNP4RZ",
+          "wastedBytes": 79788
+        }
+      ]
+    }
+  ]
+}

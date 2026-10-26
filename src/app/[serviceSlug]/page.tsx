@@ -123,10 +123,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-xs font-black uppercase tracking-[0.16em] text-noble-orange">
-                Refinishing Guide
+                {page.detailHeading ? "Planning guide" : "Refinishing Guide"}
               </p>
               <h2 className="mt-5 text-4xl font-black uppercase leading-[0.96] text-noble-ink sm:text-5xl">
-                Plan the floor, finish, and household schedule together.
+                {page.detailHeading ?? "Plan the floor, finish, and household schedule together."}
               </h2>
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">

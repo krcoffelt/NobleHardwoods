@@ -1,0 +1,630 @@
+{
+  "checkedAt": "2026-10-26T04:56:59.112Z",
+  "crawl": [
+    {
+      "url": "https://www.noblehardwoods.co/",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/contact",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/contact"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/services",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/services"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/projects",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/projects"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/stain-gallery",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/stain-gallery"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/about",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/about"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/privacy",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/privacy"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/projects/floor-installation-and-refinishing-in-overland-park-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/projects/floor-installation-and-refinishing-in-overland-park-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/projects/floor-installation-and-finish-in-lawrence-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/projects/floor-installation-and-finish-in-lawrence-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/projects/stage-steps-installation-in-lenexa-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/projects/stage-steps-installation-in-lenexa-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/projects/installation-repair-and-refinish-in-briarcliff-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/projects/installation-repair-and-refinish-in-briarcliff-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/solid-vs-engineered-hardwood-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/solid-vs-engineered-hardwood-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/hardwood-stair-refinishing-carpet-to-wood-stairs",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/hardwood-stair-refinishing-carpet-to-wood-stairs"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/white-oak-vs-red-oak-hardwood-floors",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/white-oak-vs-red-oak-hardwood-floors"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/refinish-hardwood-floors-before-selling",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/refinish-hardwood-floors-before-selling"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/how-to-care-for-your-hardwood-floors",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/how-to-care-for-your-hardwood-floors"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/do-hardwood-floors-provide-the-best-return-on-investment",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/do-hardwood-floors-provide-the-best-return-on-investment"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/wood-flooring-trends-21-trendy-flooring-ideas",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/wood-flooring-trends-21-trendy-flooring-ideas"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/how-to-polishing-your-hardwood-floors",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/how-to-polishing-your-hardwood-floors"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/how-long-does-hardwood-floor-refinishing-take",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/how-long-does-hardwood-floor-refinishing-take"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/hardwood-floor-refinishing-cost-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/hardwood-floor-refinishing-cost-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/hardwood-floor-installation-cost-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/hardwood-floor-installation-cost-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/repair-water-pet-damaged-hardwood-floors-kc",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/repair-water-pet-damaged-hardwood-floors-kc"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/best-hardwood-floor-stain-colors-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/best-hardwood-floor-stain-colors-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/blog/screen-recoat-vs-refinish-hardwood-floors",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/blog/screen-recoat-vs-refinish-hardwood-floors"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/hardwood-floor-refinishing-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/hardwood-floor-refinishing-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/hardwood-floor-installation-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/hardwood-floor-installation-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/hardwood-floor-repair-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/hardwood-floor-repair-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/dustless-hardwood-floor-refinishing-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/dustless-hardwood-floor-refinishing-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/hardwood-stairs-railings-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/hardwood-stairs-railings-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/custom-hardwood-floors-kansas-city",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/custom-hardwood-floors-kansas-city"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-kansas-city-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-kansas-city-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-overland-park-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-overland-park-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-lees-summit-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-lees-summit-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-prairie-village-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-prairie-village-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-leawood-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-leawood-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-shawnee-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-shawnee-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-olathe-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-olathe-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-roeland-park-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-roeland-park-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-weatherby-lake-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-weatherby-lake-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-mission-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-mission-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-grandview-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-grandview-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-westwood-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-westwood-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-lenexa-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-lenexa-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-gladstone-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-gladstone-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-north-kansas-city-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-north-kansas-city-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-raytown-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-raytown-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-fairway-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-fairway-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-independence-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-independence-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-lawrence-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-lawrence-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-basehor-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-basehor-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-liberty-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-liberty-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-parkville-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-parkville-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-riverside-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-riverside-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-belton-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-belton-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-kansas-city-ks",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-kansas-city-ks"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-kearney-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-kearney-mo"
+    },
+    {
+      "url": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-peculiar-mo",
+      "status": 200,
+      "h1": 1,
+      "canonical": "https://www.noblehardwoods.co/service-areas/hardwood-flooring-peculiar-mo"
+    }
+  ],
+  "browser": [
+    {
+      "route": "/",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 0,
+      "mainWords": 897,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 0,
+      "mainWords": 134,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/service-areas/hardwood-flooring-overland-park-ks",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 0,
+      "mainWords": 572,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/hardwood-floor-installation-kansas-city",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 3,
+      "mainWords": 761,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "guides": [
+        "/blog/hardwood-floor-installation-cost-kansas-city",
+        "/blog/solid-vs-engineered-hardwood-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/hardwood-floor-repair-kansas-city",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 3,
+      "mainWords": 747,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "guides": [
+        "/blog/repair-water-pet-damaged-hardwood-floors-kc",
+        "/blog/screen-recoat-vs-refinish-hardwood-floors"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/dustless-hardwood-floor-refinishing-kansas-city",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 3,
+      "mainWords": 752,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "guides": [
+        "/blog/how-long-does-hardwood-floor-refinishing-take",
+        "/blog/hardwood-floor-refinishing-cost-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/hardwood-stairs-railings-kansas-city",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 3,
+      "mainWords": 726,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "guides": [
+        "/blog/hardwood-stair-refinishing-carpet-to-wood-stairs",
+        "/blog/best-hardwood-floor-stain-colors-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/custom-hardwood-floors-kansas-city",
+      "width": 390,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "none",
+      "guideCards": 3,
+      "mainWords": 754,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+      "guides": [
+        "/blog/wood-flooring-trends-21-trendy-flooring-ideas",
+        "/blog/white-oak-vs-red-oak-hardwood-floors",
+        "/blog/hardwood-floor-installation-cost-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 0,
+      "mainWords": 1057,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 0,
+      "mainWords": 294,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/service-areas/hardwood-flooring-overland-park-ks",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 0,
+      "mainWords": 578,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/hardwood-floor-installation-kansas-city",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 3,
+      "mainWords": 767,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "guides": [
+        "/blog/hardwood-floor-installation-cost-kansas-city",
+        "/blog/solid-vs-engineered-hardwood-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/hardwood-floor-repair-kansas-city",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 3,
+      "mainWords": 753,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "guides": [
+        "/blog/repair-water-pet-damaged-hardwood-floors-kc",
+        "/blog/screen-recoat-vs-refinish-hardwood-floors"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/dustless-hardwood-floor-refinishing-kansas-city",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 3,
+      "mainWords": 758,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "guides": [
+        "/blog/how-long-does-hardwood-floor-refinishing-take",
+        "/blog/hardwood-floor-refinishing-cost-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/hardwood-stairs-railings-kansas-city",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 3,
+      "mainWords": 732,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "guides": [
+        "/blog/hardwood-stair-refinishing-carpet-to-wood-stairs",
+        "/blog/best-hardwood-floor-stain-colors-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    },
+    {
+      "route": "/custom-hardwood-floors-kansas-city",
+      "width": 1440,
+      "h1": 1,
+      "overflow": false,
+      "opacity": "1",
+      "heroAnimation": "hero-copy-in",
+      "guideCards": 3,
+      "mainWords": 760,
+      "wordmark": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+      "guides": [
+        "/blog/wood-flooring-trends-21-trendy-flooring-ideas",
+        "/blog/white-oak-vs-red-oak-hardwood-floors",
+        "/blog/hardwood-floor-installation-cost-kansas-city"
+      ],
+      "nobleCallLinkInHTML": true
+    }
+  ],
+  "errors": [],
+  "emptyFormValidation": {
+    "leadRequests": 0,
+    "invalidFields": 6
+  },
+  "ctaAndWordmark": [
+    {
+      "width": 390,
+      "nobleCallLinks": 4,
+      "wordmark": {
+        "src": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=96&q=75",
+        "sizes": "(min-width: 640px) 128px, 96px",
+        "naturalWidth": 96,
+        "renderedWidth": 96,
+        "loaded": true
+      }
+    },
+    {
+      "width": 1440,
+      "nobleCallLinks": 4,
+      "wordmark": {
+        "src": "http://localhost:3217/_next/image?url=%2Fimages%2Fbrand%2Fnoble-wordmark.png&w=128&q=75",
+        "sizes": "(min-width: 640px) 128px, 96px",
+        "naturalWidth": 128,
+        "renderedWidth": 128,
+        "loaded": true
+      }
+    }
+  ]
+}

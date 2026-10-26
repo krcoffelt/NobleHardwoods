@@ -22,6 +22,7 @@ export function Logo() {
           alt="Noble Hardwoods"
           width={190}
           height={84}
+          sizes="(min-width: 640px) 128px, 96px"
           priority
           className="h-auto w-24 sm:w-32"
         />

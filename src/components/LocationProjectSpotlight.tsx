@@ -44,10 +44,10 @@ export function LocationProjectSpotlight({
               className="grid overflow-hidden border border-noble-ink/10 bg-white lg:grid-cols-[0.34fr_1.66fr]"
             >
               <div className="flex min-h-44 flex-col justify-between bg-noble-ink p-7 text-white sm:p-9">
-                <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-noble-orange">
+                <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-cream-50">
                   Documented project
                 </p>
-                <p className="mt-10 font-mono text-5xl font-bold tabular-nums text-white/18">
+                <p className="mt-10 font-mono text-5xl font-bold tabular-nums text-white/60">
                   {String(index + 1).padStart(2, "0")}
                 </p>
               </div>

@@ -27,7 +27,7 @@
 - [x] `git diff --check` passed.
 - [x] Crawl all 60 local production sitemap URLs: all 200, one H1 each, canonical present. Evidence: `verification-2026-10-26.json`.
 - [x] Chrome desktop and 390×844 mobile inspection: homepage readable, hero opacity 1, no horizontal overflow. Contact, Overland Park, area hub, stairs and About: one H1, expected canonical, no mobile overflow. Leawood contextual link and absence of agency metric copy verified in rendered DOM.
-- [ ] Push one tested commit to main; record exact live remote SHA and CI/Netlify outcome in the separate deployment receipt after pushing.
+- [x] First batch published at `3be6444b8820324363da69f865b260fd59f8777a`; exact remote main reverified during follow-up. The existing deployment receipt in the original project records Netlify deploy `6aded35d015d6850a6f75b26`. Fresh Netlify API access requires authentication; do not claim it was freshly reverified here.
 
 ## Deferred for Kyle / future verified content
 
@@ -38,3 +38,15 @@
 - [ ] Review city title strategy against actual GSC data before broad changes to pages already ranking. The provider's historical homepage landing URLs alone do not establish cannibalization.
 - [ ] Confirm GSC/GA4/GBP Insights data and request recrawls with appropriate access. No traffic, conversion, review or rank improvement is claimed by this implementation.
 - [ ] New Lighthouse/CrUX measurements remain separate follow-up; original audit's single-run lab scores are not field data.
+
+## Supported follow-up — October 25, 2026 (America/Chicago)
+
+- [x] Run fresh production mobile Lighthouse 12.8.2 baselines for Home, Contact, Overland Park and Refinishing. Record settings, metrics, raw report hashes, and limitations in `followup-performance-2026-10-25.json`. CrUX and the LCP target remain unresolved; the combined deferred item above is not complete.
+- [x] Attribute the reported ~78 KiB of unused JavaScript to the Google Analytics tag. Preserve analytics/consent as instructed; no speculative application bundle removal.
+- [x] Add general homeowner planning sections and existing guide links to Installation, Repair, Dustless, Stairs and Custom. Preserve ranked routes, titles, reviews and existing project claims. Owner-specific pricing, process, equipment and job proof are still deferred above; this is partial content expansion, not completion of the audit's full content program.
+- [x] Correct reproduced contrast failures in quote-form helpers, homepage area counts, nearby-area counts and the dark project spotlight. Local mobile Lighthouse accessibility/SEO scores are 100/100 on Home, Contact and Overland Park; no sitewide score is claimed.
+- [x] Supply responsive wordmark sizes matching the existing 96px/128px CSS display widths.
+- [x] Pass lint, production build, diff check, the 60-page local sitemap crawl, guide destination checks, 16 mobile/desktop browser checks and empty-form validation without sending a lead. Evidence: `followup-verification-2026-10-25.json`.
+- [x] Keep this follow-up isolated on `codex/seo-supported-followup`; no push or deployment. Original Downloads edits preserved.
+
+See `supported-followup-2026-10-25.md` for the implementation summary and remaining owner/external actions. The first batch was not reimplemented or repushed.

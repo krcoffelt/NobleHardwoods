@@ -9,6 +9,7 @@ import {
 } from "./site";
 import { blogPosts } from "./blogPosts";
 import { serviceAreaPages } from "./serviceAreaPages";
+import { servicePlanning } from "./servicePlanning";
 
 export type FAQ = {
   question: string;
@@ -28,6 +29,7 @@ export type ServicePage = {
   imageAlt: string;
   includes: string[];
   problems: string[];
+  detailHeading?: string;
   detailSections?: {
     heading: string;
     paragraphs: string[];
@@ -132,6 +134,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
+    ...servicePlanning.installation,
     slug: "hardwood-floor-installation-kansas-city",
     href: "/hardwood-floor-installation-kansas-city",
     title: "Hardwood Floor Installation",
@@ -181,13 +184,6 @@ export const servicePages: ServicePage[] = [
           "Yes. White oak is a popular option for Kansas City homeowners who want a durable floor with a warm, timeless look."
       }
     ],
-    guideLinks: [
-      {
-        label: "Solid vs. engineered hardwood for Kansas City homes",
-        href: "/blog/solid-vs-engineered-hardwood-kansas-city",
-        description: "Compare room conditions, subfloors, seasonal humidity, and future refinishing before choosing your flooring."
-      }
-    ],
     relatedServices: [
       "/custom-hardwood-floors-kansas-city",
       "/hardwood-floor-refinishing-kansas-city",
@@ -195,6 +191,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
+    ...servicePlanning.repair,
     slug: "hardwood-floor-repair-kansas-city",
     href: "/hardwood-floor-repair-kansas-city",
     title: "Hardwood Floor Repair",
@@ -243,6 +240,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
+    ...servicePlanning.dustless,
     slug: "dustless-hardwood-floor-refinishing-kansas-city",
     href: "/dustless-hardwood-floor-refinishing-kansas-city",
     title: "Dustless Sanding Available",
@@ -291,6 +289,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
+    ...servicePlanning.stairs,
     slug: "hardwood-stairs-railings-kansas-city",
     href: "/hardwood-stairs-railings-kansas-city",
     title: "Stairs & Railings",
@@ -343,6 +342,7 @@ export const servicePages: ServicePage[] = [
     ]
   },
   {
+    ...servicePlanning.custom,
     slug: "custom-hardwood-floors-kansas-city",
     href: "/custom-hardwood-floors-kansas-city",
     title: "Custom Hardwood Floors",
